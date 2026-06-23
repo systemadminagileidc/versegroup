@@ -1,0 +1,73 @@
+{#
+    _extraFields.twig
+        component twig used in templates/_layouts/_grid-blocks/_formBlock.twig to create form fields
+#}
+{% if fieldsBlock|length %}
+    {# Go through each field and create the input form #}
+    {% for key, inputField in fieldsBlock %}
+        <div class="stack stack-small">
+            {% switch inputField.inputType %}
+            {% case 'dropdown' %}
+                <h5 class="label"><label for="{{ inputField.label|kebab }}">{{ inputField.label }}</label>
+                </h5>
+                <div class="form--select-element">
+                    <select class="form-element {{ backgroundColour }} {{ borderColour }}"
+                            placeholder="{{ inputField.placeholder }}"
+                            id="{{ inputField.label|kebab }}"
+                            type="text"
+                            name="message[{{ inputField.label }}]"
+                            data-selectbox="1"
+                            value="">
+                        {# Create options using input field matrix #}
+                        {% if inputField.options|length %}
+                            {% for key, optionField in inputField.options %}
+                                <option class="form--select-element--option">{{ optionField.optionName }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                </div>
+            {% case 'text' %}
+                <h5 class="label"><label for="{{ inputField.label|kebab }}">{{ inputField.label }}</label>
+                </h5>
+                <input class="form-element {{ backgroundColour }} {{ borderColour }}"
+                       placeholder="{{ inputField.placeholder }}"
+                       id="{{ inputField.label|kebab }}"
+                       type="text"
+                       name="message[{{ inputField.label }}]"
+                       value="">
+            {% case 'datePicker' %}
+                <h5 class="label"><label for="{{ inputField.label|kebab }}">{{ inputField.label }}</label>
+                </h5>
+                <input class="form-element {{ inputField.label|kebab }} datepicker {{ backgroundColour }} {{ borderColour }}"
+                       placeholder="Select a Date"
+                       id="{{ inputField.label|kebab }}"
+                       type="text"
+                       name="message[{{ inputField.label }}]"
+                       value="">
+            {% case 'dateRange' %}
+                <h5 class="label"><label>{{ inputField.label }}</label></h5>
+                <div class="has-two-columns grid-gap-300">
+                    <div>
+                        <h6 class="label"><label for="from">From:</label></h6>
+                        <input placeholder="Start Date" type="text" id="from" name="message[Date From]"
+                               class="{{ backgroundColour }} {{ borderColour }}">
+                    </div>
+                    <div>
+                        <h6 class="label"><label for="to">To:</label></h6>
+                        <input placeholder="End Date" type="text" id="to" name="message[Date To]"
+                               class="{{ backgroundColour }} {{ borderColour }}">
+                    </div>
+                </div>
+            {% case 'number' %}
+                <h5 class="label"><label for="{{ inputField.label|kebab }}">{{ inputField.label }}</label>
+                </h5>
+                <input class="form-element {{ backgroundColour }} {{ borderColour }}"
+                       placeholder="{{ inputField.placeholder }}"
+                       id="{{ inputField.label|kebab }}"
+                       type="number"
+                       name="message[{{ inputField.label }}]"
+                       value="">
+            {% endswitch %}
+        </div>
+    {% endfor %}
+{% endif %}

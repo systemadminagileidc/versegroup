@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: attractionSearch
+name: 'Attraction Search'
+propagationMethod: all
+siteSettings:
+  bfee3748-6727-406a-b769-74430862086f: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

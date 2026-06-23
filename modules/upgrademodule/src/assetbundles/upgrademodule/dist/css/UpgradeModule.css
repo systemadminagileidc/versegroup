@@ -1,0 +1,160 @@
+/**
+ * Upgrade Module module for Craft CMS
+ *
+ * Upgrade Module CSS
+ *
+ * @author    George Hawthorne
+ * @copyright Copyright (c) 2021 George Hawthorne
+ * @link      thomas-conner.com
+ * @package   UpgradeModule
+ * @since     1.0.0
+ */
+
+/* Hides font settings in master */
+/*#sidebar a[href*="fontSettings"] {*/
+/*    display: none;*/
+/*}*/
+
+body.login {
+    background: url('../img/installer-bg.png') center center / cover no-repeat;
+}
+
+body.login #poweredby {
+    margin: 1rem 0 0 0;
+}
+body.login #login-form{
+    background: rgba(255,255,255,1);
+    padding: 1rem;
+    border-radius:5px;
+}
+body.login label, body.login #forgot-password {
+    /*background-color: #FFF;*/
+}
+.button.primary{
+    align-self: start;
+    background-color: black;
+    background-size: 100% 100%;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    padding:5px 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color ease-in 200ms;
+}
+.button.ghost{
+    align-self: start;
+    background-color: transparent;
+    background-size: 100% 100%;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+}
+.button.secondary{
+    display: inline-block;
+    background-color: transparent;
+    color: black;
+    border: none;
+    width: auto;
+    min-height: unset;
+    text-align: left;
+    border-bottom: 1px solid transparent;
+    padding: 0;
+    border-radius: 0;
+    font-weight: 400;
+}
+.button.secondary:after {
+    display: inline;
+    content: '  >';
+    font-weight: 900;
+    padding: 0 5px 5px 0;
+}
+/* Layouts in page builder */
+div[data-type=gridRow] .titlebar {
+    background-color: #9fddfd;
+    margin-bottom: 5px;
+}
+div[data-type=channelRow] .titlebar {
+    background-color: #f3d74d;
+    margin-bottom: 5px;
+}
+/* Blocks in grid row */
+div[data-type=textBlock] .titlebar {
+    background-color: #96d0e0;
+    margin-bottom: 5px;
+}
+div[data-type=imageBlock] .titlebar {
+    background-color: #9dbe7e;
+    margin-bottom: 5px;
+}
+div[data-type=entryBlock] .titlebar {
+    background-color: #eead7c;
+    margin-bottom: 5px;
+}
+div[data-type=slidesBlock] .titlebar {
+    background-color: #cab7dd;
+    margin-bottom: 5px;
+}
+div[data-type=videoBlock] .titlebar {
+    background-color: #dda0a1;
+    margin-bottom: 5px;
+}
+div[data-type=cardBlock] .titlebar {
+    background-color: #d6cc8e;
+    margin-bottom: 5px;
+}
+div[data-type=spacerBlock] .titlebar {
+    background-color: #8ed6b4;
+    margin-bottom: 5px;
+}
+div[data-type=locationBlock] .titlebar {
+    background-color: #9aaad4;
+    margin-bottom: 5px;
+}
+div[data-type=accordionBlock] .titlebar {
+    background-color: #9dd4fc;
+    margin-bottom: 5px;
+}
+div[data-type=hero] .titlebar {
+    background-color: #9aaad4;
+    margin-bottom: 5px;
+}
+div[data-type=heroSlides] .titlebar {
+    background-color: #9dd4fc;
+    margin-bottom: 5px;
+}
+/* Footer Blocks in grid row */
+div[data-type=navigationBlock] .titlebar {
+    background-color: #9fddfd;
+    margin-bottom: 5px;
+}
+div[data-type=affiliateBlock] .titlebar {
+    background-color: #f3d74d;
+    margin-bottom: 5px;
+}
+div[data-type=addressBlock] .titlebar {
+    background-color: #96d0e0;
+    margin-bottom: 5px;
+}
+div[data-type=horizontalLine] .titlebar {
+    background-color: #9dbe7e;
+    margin-bottom: 5px;
+}
+div[data-type=iconsBlock] .titlebar {
+    background-color: #eead7c;
+    margin-bottom: 5px;
+}
+div[data-type=spacer] .titlebar {
+    background-color: #cab7dd;
+    margin-bottom: 5px;
+}
+div[data-type=text] .titlebar {
+    background-color: #dda0a1;
+    margin-bottom: 5px;
+}
+div[data-type=image] .titlebar {
+    background-color: #d6cc8e;
+    margin-bottom: 5px;
+}

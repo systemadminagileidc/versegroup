@@ -1,0 +1,92 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 09de7142-9c26-4492-b60a-b69534ef671a # Fonts
+handle: fontSettings
+instructions: ''
+name: 'Font Settings'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 3f1bbe97-ba38-4bcc-a7f7-610f763d8882 # H1
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 4bb98d1e-dd19-4add-aeee-6e7d07b9ff9c # H2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e9b4b434-b42a-4515-899d-cba0529d07ac # H3
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 99c495d9-a358-4dc4-888f-a38c0051bd2e # H4
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 15393e3c-1a73-4fb5-937a-56fdcbf3af62 # H5
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 7f2c2ed8-ad36-453c-82fa-041c2d82cc28 # H6
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - ba677730-e8c6-4014-9d05-2ef9d2e8cd56 # P
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 898ad5d9-8864-459f-bf23-6234b02b4e47 # Blockquote
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8a940651-a78f-4485-9a0f-5712f423be54 # Form Label
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 00480f3a-0dce-4c7c-8362-e6a9b522e6b0 # Button
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_fontsettings}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

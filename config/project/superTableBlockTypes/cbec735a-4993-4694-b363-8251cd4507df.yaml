@@ -1,0 +1,35 @@
+field: 72652102-0f42-425d-8d39-4dbf1174bd3b # Hero Content
+fieldLayouts:
+  a6d15d3c-a0b4-40fb-9acc-6f1b0863a144:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 44ebe5b2-8f14-48b9-a466-427f7b21a552 # Hero Block
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  44ebe5b2-8f14-48b9-a466-427f7b21a552: # Hero Block
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: heroBlock
+    instructions: '<strong class="color-secondary-highlight">SEARCH</strong> Attractions, Places to Stay & Places to Eat'
+    name: 'Hero Block'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_heroblock}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

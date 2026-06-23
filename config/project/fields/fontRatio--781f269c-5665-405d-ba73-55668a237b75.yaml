@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: 'decimal(3,2)'
+fieldGroup: 09de7142-9c26-4492-b60a-b69534ef671a # Fonts
+handle: fontRatio
+instructions: 'This is a Major Third scale that powers font sizes. All items are calculated off the base size, so change that and cascade across your whole project'
+name: 'Font Ratio'
+searchable: false
+settings:
+  decimals: '2'
+  defaultValue: 1.3
+  max: 2.5
+  min: 1
+  prefix: null
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

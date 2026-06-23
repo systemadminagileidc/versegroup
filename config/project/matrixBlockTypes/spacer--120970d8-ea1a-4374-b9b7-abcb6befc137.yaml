@@ -1,0 +1,42 @@
+field: c2525dff-4e5c-4e3f-8072-ae3a6fd14f15 # Block
+fieldLayouts:
+  a8e0a391-4941-427e-84b1-9f5405e4ed1d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 124a5d08-3e0e-48a8-a079-a34ce6f4ce04 # Column Span
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  124a5d08-3e0e-48a8-a079-a34ce6f4ce04: # Column Span
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: columnSpan
+    instructions: ''
+    name: 'Column Span'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 1
+      max: null
+      min: 1
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+handle: spacer
+name: Spacer
+sortOrder: 6

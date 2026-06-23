@@ -1,0 +1,14 @@
+columnSuffix: xaclqzof
+contentColumnType: boolean
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: attractionHideSearchIcon
+instructions: 'This will hide the attraction icon from the attraction search in main navigation and filters'
+name: 'Attraction Hide Search Icon'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

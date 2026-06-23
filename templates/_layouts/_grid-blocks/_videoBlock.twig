@@ -1,0 +1,30 @@
+{% if block.video|length %}
+    {% set adminThumbnail = block.thumbnail.one() %}
+
+    {% for video in block.video.all() %}
+
+        {% if craft.embeddedAssets.get(video) != null %}
+            {% set vid = craft.embeddedAssets.get(video) %}
+
+            {% set id = vid.getVideoId()  %}
+            {% set vidThumbnail = vid.image %}
+            {% set vidThumbnailCrop = vid.getImageToSize(1080) %}
+            {% set providerName = vid.providerName %}
+
+            <div class="popup-video {{ providerName }}" href=" https://www.youtube.com/watch?v={{ id }}">
+                <img src="{{ adminThumbnail.url() ?? vidThumbnailCrop.url }}" alt="video">
+                <i class="fas fa-play-circle"></i>
+            </div>
+
+        {% else %}
+
+            {% set vid = video.getUrl() %}
+
+            <video class="js-player" controls poster="" width="100%">
+                <source src="{{ vid }}" type="video/mp4"/>
+                <source src="{{ vid }}" type="video/webm"/>
+            </video>
+
+        {% endif %}
+    {% endfor %}
+{% endif %}

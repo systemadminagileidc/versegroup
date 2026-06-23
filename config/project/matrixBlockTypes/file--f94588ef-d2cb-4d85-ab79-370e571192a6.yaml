@@ -1,0 +1,83 @@
+field: 92101062-3367-4fca-9b32-99253a13b1c9 # Accordion Content
+fieldLayouts:
+  2b9aca6c-8889-4f0d-b935-af513ededc33:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fffbc2f6-53c8-42b9-b073-0711381777e3 # File Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 7547e5bf-5fb5-4edb-a6ab-3119856f6a1d # Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  7547e5bf-5fb5-4edb-a6ab-3119856f6a1d: # Link Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkText
+    instructions: ''
+    name: 'Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fffbc2f6-53c8-42b9-b073-0711381777e3: # File Content
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: fileContent
+    instructions: ''
+    name: 'File Content'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: file
+name: File
+sortOrder: 2

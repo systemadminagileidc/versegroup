@@ -1,0 +1,322 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 09de7142-9c26-4492-b60a-b69534ef671a # Fonts
+handle: headingFont
+instructions: ''
+name: 'Heading Font'
+searchable: false
+settings:
+  addRowLabel: ''
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Font Name'
+            -
+              - handle
+              - fontName
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Font Weight'
+            -
+              - handle
+              - fontWeight
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '100'
+                    -
+                      - value
+                      - '100'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '200'
+                    -
+                      - value
+                      - '200'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '300'
+                    -
+                      - value
+                      - '300'
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '400'
+                    -
+                      - value
+                      - '400'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '500'
+                    -
+                      - value
+                      - '500'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '600'
+                    -
+                      - value
+                      - '600'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '700'
+                    -
+                      - value
+                      - '700'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '800'
+                    -
+                      - value
+                      - '800'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '900'
+                    -
+                      - value
+                      - '900'
+                    -
+                      - default
+                      - false
+      -
+        - col4
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Font Style'
+            -
+              - handle
+              - fontStyle
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Serif
+                    -
+                      - value
+                      - Serif
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Sans-serif
+                    -
+                      - value
+                      - Sans-Serif
+                    -
+                      - default
+                      - false
+      -
+        - col5
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Line Height'
+            -
+              - handle
+              - lineHeight
+            -
+              - width
+              - ''
+            -
+              - type
+              - number
+      -
+        - col6
+        -
+          __assoc__:
+            -
+              - heading
+              - Spacing
+            -
+              - handle
+              - spacing
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '0'
+                    -
+                      - value
+                      - '--f0'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '1'
+                    -
+                      - value
+                      - '--f1'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '2'
+                    -
+                      - value
+                      - '--f2'
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '3'
+                    -
+                      - value
+                      - '--f3'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '4'
+                    -
+                      - value
+                      - '--f4'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '5'
+                    -
+                      - value
+                      - '--f5'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '6'
+                    -
+                      - value
+                      - '--f6'
+                    -
+                      - default
+                      - false
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - Roboto
+        -
+          - col2
+          - '300'
+        -
+          - col4
+          - Serif
+        -
+          - col5
+          - '1.2'
+        -
+          - col6
+          - '--f2'
+  maxRows: '1'
+  minRows: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

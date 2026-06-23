@@ -1,0 +1,23 @@
+{% set faqs = block.faq.all() %}
+<div class="accordion
+{{ block.type.handle }}
+{{ block.blockColour ?? '' }}
+">
+    {% for faq in faqs %}
+        <div class="stack accordion-block
+                {{ block.accordionBackground ?? '' }}
+                {{ block.activeAccordionBackground ?? '' }}
+                {{ block.activeUiColour ?? '' }}
+                {{ block.uiColour ?? '' }}
+                ">
+            <div class="trigger stack">
+                <h4>{{ faq.title }}</h4>
+                <i class="{{ master.accordionStyle[0].defaultIcon ?? 'fas fa-plus' }} icon-default"></i>
+                <i class="{{ master.accordionStyle[0].activeIcon ?? 'fa fa-minus' }} icon-active"></i>
+            </div>
+            <div class="draw">
+                {{ faq.excerpt }}
+            </div>
+        </div>
+    {% endfor %}
+</div>

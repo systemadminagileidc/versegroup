@@ -1,0 +1,66 @@
+{% set limit = block.tweetNumber ?? 3 %}
+{% set transformDimensions = craft.app.assetTransforms.getTransformByHandle('medium') %}
+{# {% dd transformDimensions %} #}
+{% for key, tweet in craft.ssTwitterFeed.displayPost( limit ) %}
+    <div class="stack card tweet-card">
+        {% if tweet.image_url %}
+            <figure class="rel-pos" >
+                <img alt="{{ tweet.screen_name }}" src="{{ tweet.image_url }}">
+                <a href="#popup-tweet-{{ key }}" class="abs popup-tweet"></a>
+            </figure>
+        {% endif %}
+        <div class="stack">
+            <div class="title">
+                <h4>{{ tweet.screen_name }}<span style="font-size:1rem;"><br/> (@{{ tweet.name }})</span></h4>
+
+                <div class="info">
+                    <p>
+                        <a href="{{ tweet.retweet_link }}" target="_blank">
+                            <i class="fas fa-retweet"></i>
+                        </a>&nbsp;{{ tweet.retweet_count }}
+                    </p>
+                    <p>
+                        <a href="{{ tweet.favorite_link }}" target="_blank">
+                            <i class="fas fa-heart"></i>
+                        </a>&nbsp;{{ tweet.favorite_count }}
+                    </p>
+                </div>
+            </div>
+            <div class="text">
+                <p>{{ tweet.text_html|raw }}</p> {# OR  {{ tweet.text_html | raw }} #}
+            </div>
+            <a href="#popup-tweet-{{ key }}" class="button secondary popup-tweet">View Tweet</a>
+        </div>
+        <div id="popup-tweet-{{ key }}" class="tweet-card-popup card-popup mfp-hide">
+            {% if tweet.image_url %}
+                <div>
+                    <img alt="{{ tweet.screen_name }}" src="{{ tweet.image_url }}">
+                </div>
+            {% endif %}
+            <div class="stack">
+
+                <div class="info">
+                    <p>Created: {{ tweet.created_at }}</p>
+                    <p>
+                        <a href="{{ tweet.retweet_link }}" target="_blank">
+                            <i class="fas fa-retweet"></i>
+                        </a> &nbsp;{{ tweet.retweet_count }}
+                    </p>
+                    <p>
+                        <a href="{{ tweet.favorite_link }}" target="_blank">
+                            <i class="fas fa-heart"></i>
+                        </a>&nbsp;{{ tweet.favorite_count }}
+                    </p>
+                </div>
+                <h4>{{ tweet.screen_name }} <span style="font-size:1rem;">(<a href="{{ tweet.url }}"
+                                                                              target="_blank">@{{ tweet.name }}</a>)</span>
+                </h4>
+                <div>
+                    {{ tweet.text_html|raw }}
+                </div>
+                <a href="{{ tweet.url }}" target="_blank" class="button secondary right">View on Twitter</a>
+
+            </div>
+        </div>
+    </div>
+{% endfor %}

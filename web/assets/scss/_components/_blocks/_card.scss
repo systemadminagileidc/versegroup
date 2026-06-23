@@ -1,0 +1,173 @@
+@use "../../_utilities/_mixins/media-query" as *;
+
+.card {
+  position: relative;
+  // background-color: #ececec;
+
+  // Faux background darken on hover
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.25s ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus-within {
+    text-decoration: none;
+
+    &::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .content {
+    padding: var(--s3);
+
+    &:first-child {
+      margin-top: var(--s1);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &.overlap {
+    .content {
+      background-color: rgba(black, 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  img,
+  figure {
+    border-radius: 0;
+    width: 100%;
+
+    &.auto {
+      width: auto;
+    }
+  }
+
+  &[class*="border-"] {
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  &.rounded {
+    &-5 {
+      border-radius: 5px;
+
+      img,
+      figure {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+    }
+
+    &-10 {
+      border-radius: 10px;
+
+      img,
+      figure {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+
+    &-15 {
+      border-radius: 15px;
+
+      img,
+      figure {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+    }
+
+    &-25 {
+      border-radius: 25px;
+
+      img,
+      figure {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+    }
+  }
+
+  &.drop {
+    box-shadow: 4px 4px 10px 2px var(--dark-main);
+    margin-top: var(--s1);
+    margin-bottom: var(--s1);
+  }
+}
+
+.gridRow:not(.slick-initialized) {
+  .stackCard {
+    @include mq(tablet) {
+      display: grid;
+      grid-template: auto / repeat(10, 1fr);
+      grid-gap: var(--s2);
+
+      figure,
+      .imglink {
+        grid-column: auto / span 4;
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .inner {
+        margin-top: 0;
+        grid-column: auto / span 6;
+        justify-content: center;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Cards with no gap
+.grid-gap-000 {
+  .card + .card {
+    border-left: 1px solid var(--dark-main);
+  }
+}
+
+// Remove box shadow if the section has a border
+section[class*="bg"] .card {
+  box-shadow: none;
+}
+
+// Cards with pixel grid gap
+.grid-gap-pixel {
+  grid-gap:1px;
+}

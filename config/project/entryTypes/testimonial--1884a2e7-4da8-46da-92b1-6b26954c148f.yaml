@@ -1,0 +1,65 @@
+fieldLayouts:
+  f4a4fcfa-8d53-4c73-a9af-4d920bab3412:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: ''
+            label: Name
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: b74c2ea3-c134-4b37-ab0d-b341a539085b # Thumbnail
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 602986fb-25c4-4302-b1ea-4871ab358a76 # Plain Text
+            instructions: ''
+            label: Role
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 9eaac802-459f-46dd-8225-699303c96e47 # Plain Excerpt
+            instructions: ''
+            label: Testimonial
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: testimonial
+hasTitleField: true
+name: Testimonial
+section: 5c515f22-a3b3-4503-b4df-222c80844a57 # Testimonials
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

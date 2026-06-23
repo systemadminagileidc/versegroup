@@ -1,0 +1,12 @@
+{% set buttonRepeater = block.buttonRepeater.all() ?? '' %}
+
+{% if buttonRepeater %}
+    {% for buttonBlock in buttonRepeater %}
+        {% if buttonBlock.button is defined and buttonBlock.button.getUrl() %}
+            {% set buttonStyle = buttonBlock.buttonStyle ?? '' %}
+            {% set buttonColour = buttonBlock.buttonColour ?? '' %}
+            <a class="button {{ buttonStyle }} {{ buttonColour }}" href="{{ buttonBlock.button.getUrl() }}"
+               target="{{ buttonBlock.button.getTarget() }}">{{ buttonBlock.button.customText ? buttonBlock.button.customText : buttonBlock.button.defaultText }}</a>
+        {% endif %}
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,76 @@
+@use "../_utilities/_mixins/media-query" as *;
+
+.row-yellow-border { 
+  border-top: 10px solid var(--primary-highlight);
+
+  @include mq(large-tablet) {
+    > .gridRow > .attractions-card:last-child {
+      border-top: 10px solid var(--primary-highlight);
+    }
+  }
+
+  @include mq(tablet) {
+    border-top: 0px solid var(--primary-highlight);
+
+    > .gridRow > .attractions-card {
+      border-top: 10px solid var(--primary-highlight);
+    }
+  }
+  .grid {
+    .attractions-card {
+      &:hover,
+      &:focus-within {
+        outline: 1px solid var(--primary-highlight);
+      }
+    }
+  }
+}
+
+.attractions-card {
+  transition: background-color 0.25s ease-in-out;
+
+  a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+  }
+
+  .description {
+    padding: var(--s5);
+
+    .subtitle {
+      color: var(--dark-highlight);
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: var(--primary-highlight);
+
+    .description > * {
+      color: var(--dark-main);
+    }
+  }
+
+  &.attrCard {
+    padding: 0;
+
+    img {
+      width:100%; 
+      object-fit: cover;
+    }
+  }
+}
+
+.grid-row:not(#hero) {
+ .attractions-card {
+   &.attrCard {
+     padding: 0;
+   }
+ }
+}
+

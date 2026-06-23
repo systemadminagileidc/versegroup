@@ -1,0 +1,41 @@
+field: 7384a9a5-b042-41e5-b3cf-053014056b9e # Block
+fieldLayouts:
+  08849442-ec88-4ccf-adbd-e912f4797c41:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 9ff7f694-0402-4594-a457-dfceef961626 # Add to any
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9ff7f694-0402-4594-a457-dfceef961626: # Add to any
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: addToAny
+    instructions: ''
+    name: 'Add to any'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: share
+name: Share
+sortOrder: 2

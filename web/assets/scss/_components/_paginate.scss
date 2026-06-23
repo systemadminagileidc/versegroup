@@ -1,0 +1,27 @@
+.pagination {
+  text-align: center;
+  grid-column: 1/-1;
+  padding-bottom: 20px;
+  & > div {
+    button {
+      border: none;
+      background-color: transparent;
+      color: var(--primary-main);
+      cursor: pointer;
+      padding: var(--s1) var(--s3);
+      font-weight: normal;
+
+      &:hover,
+      &:focus {
+        background-color: var(--primary-main);
+        color: var(--primary-invert);
+      }
+
+      &.weight-bold {
+        font-weight: bold;
+        background-color: var(--primary-main);
+        color: var(--primary-invert);
+      }
+    }
+  }
+}

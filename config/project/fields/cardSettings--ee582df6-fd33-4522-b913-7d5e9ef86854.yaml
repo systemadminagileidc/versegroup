@@ -1,0 +1,233 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 7265e9bc-b902-4d44-9d77-49c982028299 # Master
+handle: cardSettings
+instructions: ''
+name: 'Card Settings'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Border Radius'
+            -
+              - handle
+              - borderRadius
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Square
+                    -
+                      - value
+                      - ''
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Rounded(5)
+                    -
+                      - value
+                      - rounded-5
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Rounded(10)
+                    -
+                      - value
+                      - rounded-15
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Rounded(20)
+                    -
+                      - value
+                      - rounded-20
+                    -
+                      - default
+                      - false
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Drop Shadow'
+            -
+              - handle
+              - dropShadow
+            -
+              - width
+              - ''
+            -
+              - type
+              - lightswitch
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Border Colour'
+            -
+              - handle
+              - borderColour
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - None
+                    -
+                      - value
+                      - none
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Light
+                    -
+                      - value
+                      - border-light-main
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Dark
+                    -
+                      - value
+                      - border-dark-main
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Primary
+                    -
+                      - value
+                      - border-primary-main
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Secondary
+                    -
+                      - value
+                      - border-secondary-main
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Tertiary
+                    -
+                      - value
+                      - border-tertiary-main
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Quaternary
+                    -
+                      - value
+                      - border-quaternary-main
+                    -
+                      - default
+                      - false
+      -
+        - col4
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Title Font'
+            -
+              - handle
+              - titleFont
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Body Font'
+                    -
+                      - value
+                      - body-font
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Heading Font'
+                    -
+                      - value
+                      - heading-font
+                    -
+                      - default
+                      - false
+  maxRows: '1'
+  minRows: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

@@ -1,0 +1,15 @@
+{% if image %}
+    {% set imageExtraLarge = image.getUrl('extraLarge')?? '' %}
+    {% set imageLarge = image.getUrl('large')?? '' %}
+    {% set imageMediumLarge = image.getUrl('mediumLarge')?? '' %}
+    {% set imageMedium = image.getUrl('medium')?? '' %}
+    {% set imageSmall = image.getUrl('small')?? '' %}
+    <picture>
+        <source media="(min-width:1920px) or (min-height:1080px)" src="{{ imageExtraLarge }}" />
+        <source media="(min-width:1536px) or (min-height:864px)" src="{{ imageLarge }}, {{ imageExtraLarge }} 2x" />
+        <source media="(min-width:768px) or (min-height:432px)" src="{{ imageMediumLarge }}, {{ imageLarge }} 2x" />
+        <source media="(min-width:576px) or (min-height:342px)" src="{{ imageMedium }}, {{ imageMediumLarge }} 2x" />
+        <source media="(min-width:384px) or (min-height:216px)" src="{{ imageSmall }}, {{ imageMedium }} 2x" />
+        <img class="hero-banner" src="{{ imageLarge }}" alt="{{ image.title }}"/>
+    </picture>
+{% endif %}

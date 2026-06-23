@@ -1,0 +1,44 @@
+{% set offset = offset ?? 0 %}
+
+
+{% set allowedSectionHandles = [section] %}
+{% set allowedSections = allowedSectionHandles|map(handle=> craft.app.sections.sectionByHandle(handle)) %}
+{% set section = section in allowedSectionHandles ? section : allowedSectionHandles|join(',') %}
+
+{% set filters = {
+    search:search,
+    section: section,
+    relatedTo: categoryId,
+    limit:limit,
+} %}
+{% set entryQuery = craft.entries(filters|merge({
+    offset: offset,
+    with:[
+        ['image',{
+            withTransforms:['thumbnail']
+        }]
+    ]
+})) %}
+
+{#{% do sprig.pushUrl('?' ~ filters|url_encode) %}#}
+{% set entries = entryQuery.all() %}
+{% if entries is empty %}
+    <h3 style="flex: 0 0 100px; border: 1px solid white; grid-column: 1/-1;"
+        class="bg-primary align-center color-light pad-300">
+        No Entries Found</h3>
+{% else %}
+    {% for entry in entries %}
+        {% include "_layouts/_block-partials/_entry-card.twig" %}
+    {% endfor %}
+    {% if limit > -1 %}
+        <div id="replace">
+            <input type="hidden" name="offset" value="{{ offset + limit }}">
+            <button class="button load-more gap-top-200"
+                    sprig
+                    s-target="#replace"
+                    s-swap="outerHTML">Load more
+            </button>
+        </div>
+    {% endif %}
+{% endif %}
+

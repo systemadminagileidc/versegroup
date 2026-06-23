@@ -1,0 +1,36 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: d2c32663-a4c9-41e8-aba4-8e9ff3e0a643 # Page Builder
+handle: headerBuilder
+instructions: ''
+name: 'Header Builder'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 8c391b9e-5a66-493c-bcbe-0ac0d498e298 # Header Settings
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 67c7c51f-2f9c-4a68-bdcb-41ffdb733a15 # Header Content
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_headerbuilder}}'
+  fieldLayout: matrix
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

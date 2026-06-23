@@ -1,0 +1,42 @@
+field: 67c7c51f-2f9c-4a68-bdcb-41ffdb733a15 # Header Content
+fieldLayouts:
+  466b77b9-cdd9-4ef3-91d3-02656c7463ff:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b74fdd21-b454-49a3-8d34-1a8edfb710e2 # Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  b74fdd21-b454-49a3-8d34-1a8edfb710e2: # Width
+    columnSuffix: null
+    contentColumnType: smallint(3)
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: 100
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: '%'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+handle: spaceBlock
+name: 'Space Block'
+sortOrder: 6

@@ -1,0 +1,36 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Custom Fields module for Craft CMS 3.x
+ *
+ * SectionField Field Input
+ *
+ * @author    George Hawthorne
+ * @copyright Copyright (c) 2021 George Hawthorne
+ * @link      seguin.com
+ * @package   CustomFieldsModule
+ * @since     1.0.0
+ */
+#}
+{% import '_includes/forms' as forms %}
+
+{% if field.allowMultiple %}
+        {{ forms.checkboxGroup({
+                id : field.handle,
+                name : field.handle,
+                values: value,
+                placeholder: 'Choose Sections...' | t('section-field'),
+                options: sections
+        }) }}
+{% else %}
+        {{ forms.radioGroup({
+                id : field.handle,
+                name : field.handle,
+                value: value,
+                placeholder: 'Choose a Section...' | t('section-field'),
+                options: sections
+        }) }}
+        {% if value is iterable %}
+                <p class="warning">{{ "Multiple sections selected, but field only allows one section. Selecting a new value will clear the existing multiple section selection." | t('section-field') }}</p>
+        {% endif %}
+{% endif %}

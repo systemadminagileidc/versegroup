@@ -1,0 +1,99 @@
+field: c02ef64e-5db0-4199-a0aa-477805ddcf6e # Layout
+fieldLayouts:
+  c101f094-c396-4c86-b68d-26e71155478a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4ce0f21a-e37a-4434-bfd5-e03d629a29a1 # Slider Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4ce0f21a-e37a-4434-bfd5-e03d629a29a1: # Slider Settings
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: sliderSettings
+    instructions: ''
+    name: 'Slider Settings'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Slides to show'
+                -
+                  - handle
+                  - slidesToShow
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - number
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Arrows
+                -
+                  - handle
+                  - arrows
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - lightswitch
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Dots
+                -
+                  - handle
+                  - dots
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - lightswitch
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - '3'
+            -
+              - col2
+              - ''
+            -
+              - col3
+              - ''
+      maxRows: '1'
+      minRows: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+handle: slider
+name: Slider
+sortOrder: 5

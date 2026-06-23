@@ -1,0 +1,21 @@
+{% extends "_base-layouts/generic-page-layout.twig" %}
+{% block content %}
+    {% include "_layouts/_page-content.twig" with {pageBuilder:error.pageBuilder} %}
+{#    <div class="grid-row">#}
+{#        <div class="grid narrow pad-bottom-700 pad-top-700">#}
+{#            <div style="text-align: center" class="center pad-bottom-700 pad-top-700">#}
+{#                <a href="{{ siteUrl }}" class="logo">#}
+{#                    {% if headerSettings.image|length %}#}
+{#                        {% include "_layouts/_block-partials/_block-atoms/_image.twig" with {block: headerSettings} %}#}
+{#                    {% else %}#}
+{#                        <i class="fas fa-image"></i>#}
+{#                    {% endif %}#}
+{#                </a>#}
+{#                <div class="pad-700">#}
+{#                    <h2>Page not found</h2>#}
+{#                    <a class="button primary center" href="{{ alias("@web") }}">Vew Home</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}

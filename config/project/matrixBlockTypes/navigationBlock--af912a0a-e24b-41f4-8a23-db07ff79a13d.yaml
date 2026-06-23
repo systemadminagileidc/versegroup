@@ -1,0 +1,362 @@
+field: 67c7c51f-2f9c-4a68-bdcb-41ffdb733a15 # Header Content
+fieldLayouts:
+  fcda4fd6-1375-445e-a957-a8cc2644028a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fa5678eb-6596-458d-b5cb-4e4fe3a35b81 # Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 22d28a51-3518-4d4d-88e6-4bc1be39f7a9 # Nav Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 9eb804b1-37d8-4afa-b961-8b55f74e9ef2 # Nav Gap
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 74c29abd-0e8a-42f8-be76-6478d4c66ec9 # Hover Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: fb6d7ca4-5880-435d-a725-a29d67769a81 # Nav Items
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9eb804b1-37d8-4afa-b961-8b55f74e9ef2: # Nav Gap
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: navGap
+    instructions: ''
+    name: 'Nav Gap'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - flex-gap-000
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'XX Small'
+            -
+              - value
+              - flex-gap-100
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'X Small'
+            -
+              - value
+              - flex-gap-200
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - flex-gap-300
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - flex-gap-400
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - flex-gap-500
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'X Large'
+            -
+              - value
+              - flex-gap-600
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'XX Large'
+            -
+              - value
+              - flex-gap-700
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  22d28a51-3518-4d4d-88e6-4bc1be39f7a9: # Nav Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: navOrientation
+    instructions: ''
+    name: 'Nav Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Evenly'
+            -
+              - value
+              - space-evenly
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Between'
+            -
+              - value
+              - space-between
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Centre
+            -
+              - value
+              - centre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Even Stretch'
+            -
+              - value
+              - evenStretch
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  74c29abd-0e8a-42f8-be76-6478d4c66ec9: # Hover Style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: hoverStyle
+    instructions: ''
+    name: 'Hover Style'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Highlight
+            -
+              - value
+              - high-light
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Underline Text'
+            -
+              - value
+              - underlineText
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Underline Block'
+            -
+              - value
+              - underlineBlock
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Background Highlight'
+            -
+              - value
+              - backgroundHighlight
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  fa5678eb-6596-458d-b5cb-4e4fe3a35b81: # Width
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 80
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: '%'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  fb6d7ca4-5880-435d-a725-a29d67769a81: # Nav Items
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: navItems
+    instructions: ''
+    name: 'Nav Items'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - b3071b40-c115-4e98-9550-c88a4d743e00 # Nav Item
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - a27f1176-a6a7-420d-b5fc-c416ccd0523b # Sub Nav
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 02934acb-5b52-4af3-856e-b5a429bd36e6 # Icon
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_36_navitems}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: navigationBlock
+name: 'Navigation Block'
+sortOrder: 1

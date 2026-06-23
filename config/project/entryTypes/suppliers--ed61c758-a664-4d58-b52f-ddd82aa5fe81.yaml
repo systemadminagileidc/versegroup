@@ -1,0 +1,65 @@
+fieldLayouts:
+  456a500d-7563-43c0-bd71-e6aca2405e5b:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: ''
+            label: 'Company Name'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 50
+          -
+            fieldUid: b74c2ea3-c134-4b37-ab0d-b341a539085b # Thumbnail
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1d63db27-ae09-4003-b04d-d0a7ac37b501 # Category
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 4ae2014b-9fdf-4d09-977e-03d2a8b9795d # Excerpt
+            instructions: ''
+            label: 'Company Description'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: suppliers
+hasTitleField: true
+name: Suppliers
+section: 41eeafcc-ed57-4d78-99a6-0896ee1e6e96 # Suppliers
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

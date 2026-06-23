@@ -1,0 +1,22 @@
+fieldLayouts:
+  cfb9d6a0-20fd-4b6f-8bdb-db926ec753f4:
+    tabs:
+      -
+        elements:
+          -
+            heading: '404 Page'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 8a590f78-5665-4cd9-8319-23d44655c436 # Page Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: error
+name: '404'
+sortOrder: 1

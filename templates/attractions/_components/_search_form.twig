@@ -1,0 +1,13 @@
+<form action="/attractions/search/area" class="attractionsForm attractionFormOverlay">
+	<section class="grid-row default pad-top-000 pad-bottom-000 default">
+		<div class="grid gridRow bg-secondary-main small-blocks">
+			{{entry.attractionsFormLabel}}
+		</div>
+	</section>
+	<section class="grid-row default pad-top-000 pad-bottom-000">
+		<div class="grid gridRow bg-primary-main small-blocks">
+			{% include '_layouts/_block-partials/_attractionsFormBlock' %}
+		</div>
+	</section>
+	{% if includeX %}<button class="mobileAltSearch" type="button">x</button>{% endif %}
+</form>

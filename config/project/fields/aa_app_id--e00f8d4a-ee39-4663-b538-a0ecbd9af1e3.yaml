@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: aa_app_id
+instructions: ''
+name: App
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:5f9c1816-78b1-4b40-b558-bff3a99cafc1' # App
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

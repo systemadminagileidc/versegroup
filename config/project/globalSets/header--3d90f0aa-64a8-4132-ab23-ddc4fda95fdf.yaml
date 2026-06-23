@@ -1,0 +1,28 @@
+fieldLayouts:
+  3ac1e60c-2761-451f-a7ed-6df44251b800:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7db1b0f1-4f1f-4a0c-a135-08e6014e7582 # Header Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 23f399c9-9be6-40ff-820a-79b1c378043c # Header Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Navigation
+        sortOrder: 1
+handle: header
+name: 'Header '
+sortOrder: 5

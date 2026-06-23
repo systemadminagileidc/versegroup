@@ -1,0 +1,42 @@
+{#
+    _attractions-filter-bar.twig
+        Creates a bar for the attractions search page
+#}
+{% if attractions|length > 0 %}
+    <section class="grid-row gap-top-000 default pad-top-300 pad-bottom-300  attractions-map-filter attractions-form">
+        <div class="grid align-full-border gridRow pad-000 small-blocks color__main-background" id="attractionFilterBar">
+            {# Attraction Type #}
+            <div class="form-item">
+                {% set attractiontypes = craft.categories.group('attractionType').all() %}
+                <style>
+                    {%- for type in attractiontypes -%}
+                    {% if type.attractionTypeIcon|length > 0 %}
+                    .attrtype{{type.id}} a:before { background-image:url('{{type.attractionTypeIcon.one().getUrl}}')}
+                    .attrsub-flag{{type.id}} a:before { background-image:url('{{type.attractionTypeIcon.one().getUrl}}')}
+                    {% endif %}
+                    {%- endfor -%}
+                </style>
+                <label for="types" class="visually-hidden">Select a type</label>
+                <select id="types" class="bg-light-main" name="types" data-area="{{ searchTerm|replace(' ','+') }}">
+                    <option value="">Filter Attractions</option>
+                    {% for type in attractiontypes %}
+                        {% if not type.attractionHidden %}
+                            <option class="attraction-filter-item {% if type.level == 1 %}attrtype{{type.id}}{% else %}attrsub {% if not type.attractionHideSearchIcon %}attrsub-flag{{type.id}}{% endif %}{% endif %} {% if type.attractionTypeIcon|length > 0 and not type.attractionHideSearchIcon %}hasIcon{% else %}noIcon{% endif %}" {% if types and types|length == 1 and type.id in types %}selected{% endif %} value="{{type.id}}">{{type.title}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+
+            {# Spacer #}
+            <div class="form-item spacer"></div>
+
+            {# Grid View #}
+            <input id="afgrid" class="" type="radio" name="map" value="" {% if not mapview %}checked{% endif %} />
+            <label for="afgrid" class="attractions-form-icon-label stack form-item form-item-small"><span class="icon icon-grid"></span><span class="text">Grid</span></label>
+
+            {# Map View #}
+            <input id="afmap" class="" type="radio" name="map" value="1" {% if mapview %}checked{% endif %} />
+            <label for="afmap" class="attractions-form-icon-label stack form-item form-item-small"><span class="icon icon-map"></span><span class="text">Map</span></label>
+        </div>
+    </section>
+{% endif %}

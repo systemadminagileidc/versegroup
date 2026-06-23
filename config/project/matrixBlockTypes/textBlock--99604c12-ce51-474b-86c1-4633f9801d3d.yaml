@@ -1,0 +1,979 @@
+field: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+fieldLayouts:
+  a93389d2-e358-4f2b-8c87-fbda648848bc:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 68c6effa-f0fa-43c0-b231-152a3744205b # Block Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 84a960be-9712-420d-9a12-653e8f202cfd # Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 280eb52f-b042-42e5-aec1-5affa69e4fd3 # Block Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 39805259-cdd3-4016-915c-ef6207b6588d # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 45cf5792-3687-4d1e-8bf4-057e4a031710 # Button Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 90aa0ca8-ac74-481a-8bbe-f31a1cc1655e # Button Repeater
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 75
+          -
+            fieldUid: 01f37fc9-9156-4eaa-936c-0a51b6597d23 # Mobile Order
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  01f37fc9-9156-4eaa-936c-0a51b6597d23: # Mobile Order
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mobileOrder
+    instructions: ''
+    name: 'Mobile Order'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - '1'
+            -
+              - value
+              - mobileOne
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '2'
+            -
+              - value
+              - mobileTwo
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '3'
+            -
+              - value
+              - mobileThree
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '4'
+            -
+              - value
+              - mobileFour
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Last
+            -
+              - value
+              - mobileLast
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  45cf5792-3687-4d1e-8bf4-057e4a031710: # Button Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonOrientation
+    instructions: 'Set button(s) oreintation'
+    name: 'Button Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Evenly'
+            -
+              - value
+              - space-evenly
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Around'
+            -
+              - value
+              - space-around
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Between'
+            -
+              - value
+              - space-between
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Even Stretch'
+            -
+              - value
+              - evenStretch
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  68c6effa-f0fa-43c0-b231-152a3744205b: # Block Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockColour
+    instructions: 'Set block background colour'
+    name: 'Block Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - ''
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - 'bg-light-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - 'bg-dark-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - 'bg-primary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - 'bg-secondary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - 'bg-tertiary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - 'bg-quaternary-main pad-400'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  84a960be-9712-420d-9a12-653e8f202cfd: # Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: orientation
+    instructions: 'Set block oreintation'
+    name: Orientation
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Stretch
+            -
+              - value
+              - stretch
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Left'
+            -
+              - value
+              - topLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Center'
+            -
+              - value
+              - topCenter
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Right'
+            -
+              - value
+              - topRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Left'
+            -
+              - value
+              - centreLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Centre'
+            -
+              - value
+              - centreCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Right'
+            -
+              - value
+              - centreRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Left'
+            -
+              - value
+              - bottomLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Centre'
+            -
+              - value
+              - bottomCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Right'
+            -
+              - value
+              - bottomRight
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  90aa0ca8-ac74-481a-8bbe-f31a1cc1655e: # Button Repeater
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonRepeater
+    instructions: 'Add buttons to the block'
+    name: 'Button Repeater'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 0abe53bf-af82-4868-9423-20df60677319 # Button
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 8340f1d5-25cd-41fe-889c-7b120d93da66 # Button Style
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 0eaa9707-aa22-4682-9d9f-0d3e3e8e4cad # Button Colour
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_48_buttonrepeater}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a Button'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  280eb52f-b042-42e5-aec1-5affa69e4fd3: # Block Padding
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockPadding
+    instructions: 'Set optional block padding'
+    name: 'Block Padding'
+    searchable: false
+    settings:
+      addRowLabel: ''
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Padding Top'
+                -
+                  - handle
+                  - paddingTop
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - None
+                        -
+                          - value
+                          - pad-top-000
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Small'
+                        -
+                          - value
+                          - pad-top-100
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Small'
+                        -
+                          - value
+                          - pad-top-200
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Small
+                        -
+                          - value
+                          - pad-top-300
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Medium
+                        -
+                          - value
+                          - pad-top-400
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Large
+                        -
+                          - value
+                          - pad-top-500
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Large'
+                        -
+                          - value
+                          - pad-top-600
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Large'
+                        -
+                          - value
+                          - pad-top-700
+                        -
+                          - default
+                          - false
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Padding Bottom'
+                -
+                  - handle
+                  - paddingBottom
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - None
+                        -
+                          - value
+                          - pad-bottom-000
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Small'
+                        -
+                          - value
+                          - pad-bottom-100
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Small'
+                        -
+                          - value
+                          - pad-bottom-200
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Small
+                        -
+                          - value
+                          - pad-bottom-300
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Medium
+                        -
+                          - value
+                          - pad-bottom-400
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Large
+                        -
+                          - value
+                          - pad-bottom-500
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Large'
+                        -
+                          - value
+                          - pad-bottom-600
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Large'
+                        -
+                          - value
+                          - pad-bottom-700
+                        -
+                          - default
+                          - false
+          -
+            - col4
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Padding  Left'
+                -
+                  - handle
+                  - paddingLeft
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - None
+                        -
+                          - value
+                          - none
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Small'
+                        -
+                          - value
+                          - pad-left-100
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Small'
+                        -
+                          - value
+                          - pad-left-200
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Small
+                        -
+                          - value
+                          - pad-left-300
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Medium
+                        -
+                          - value
+                          - pad-left-400
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Large
+                        -
+                          - value
+                          - largepad-left-500
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Large'
+                        -
+                          - value
+                          - pad-left-600
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Large'
+                        -
+                          - value
+                          - pad-left-700
+                        -
+                          - default
+                          - false
+          -
+            - col5
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Padding Right'
+                -
+                  - handle
+                  - paddingRight
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - None
+                        -
+                          - value
+                          - pad-right-000
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Small'
+                        -
+                          - value
+                          - pad-right-100
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Small'
+                        -
+                          - value
+                          - pad-right-200
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Small
+                        -
+                          - value
+                          - pad-right-300
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Medium
+                        -
+                          - value
+                          - pad-right-400
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Large
+                        -
+                          - value
+                          - pad-right-500
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Large'
+                        -
+                          - value
+                          - pad-right-600
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Large'
+                        -
+                          - value
+                          - pad-right-700
+                        -
+                          - default
+                          - false
+      maxRows: '1'
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  39805259-cdd3-4016-915c-ef6207b6588d: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: 'This is the main text area of the bock.'
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: textBlock
+name: Text
+sortOrder: 1

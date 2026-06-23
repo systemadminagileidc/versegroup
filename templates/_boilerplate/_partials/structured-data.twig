@@ -1,0 +1,73 @@
+{% hook 'seomateMeta' %}
+{% if craft.app.urlManager.matchedElement and craft.app.urlManager.matchedElement.uri == '__home__' %}
+
+    {% set seomate = {
+        config: {
+            includeSitenameInTitle: false
+        },
+        meta: {
+            title: 'Custom title'
+        },
+    } %}
+{% endif %}
+
+
+
+{# @var schema \Spatie\SchemaOrg\Schema #}
+    {% if entry is defined %}
+
+        {% set schema = craft.schema %}
+
+        {% set globalSeo = siteMeta.globalSeoFields.one() %}
+        {% set globalDescription = globalSeo.description ?? '' %}
+        {# SET page default #}
+        {% set title = entry.title ?? '' %}
+        {% set description = entry.excerpt ? entry.excerpt : globalDescription %}
+        {% set location = siteMeta.location ?? '' %}
+
+        {# IF page overwrites exist #}
+        {% if entry.seoFields != null %}
+            {% set pageSeo = entry.seoFields.one() %}
+            {% set title = pageSeo.title ?? entry.title %}
+            {% set description = pageSeo.description ?? globalDescription %}
+
+        {% endif %}
+
+        {# IF home page set to global values #}
+        {% if craft.app.urlManager.matchedElement and craft.app.urlManager.matchedElement.uri == '__home__' %}
+            {% set title = globalSeo.seotitle ?? alias("@siteName") %}
+            {% set description = globalDescription %}
+
+        {% endif %}
+
+        {{ schema
+            .localBusiness
+                .name(title)
+                .address(schema.postalAddress
+                    .addressCountry(location.parts.country ?? '')
+                    .addressLocality(location.parts.city?? '')
+                    .addressRegion(location.parts.county?? '')
+                    .postalCode(location.parts.postcode?? '')
+                    .streetAddress(location.parts.number?? ''~' '~location.parts.address?? '')
+                )
+                .dateCreated(entry.dateCreated)
+                .dateModified(entry.dateUpdated)
+                .datePublished(entry.postDate)
+                .copyrightYear(entry.postDate | date('Y'))
+                .email(siteMeta.email)
+                .headline(entry.title)
+                .description(description | striptags)
+                .url(entry.url)
+                .mainEntityOfPage(entry.url)
+                .inLanguage('nb_no')
+                .author(schema.organization
+                    .name(globalSeo.seotitle ?? '')
+                    .url(alias('@web'))
+                )
+                .keywords(globalSeo.keywords ?? '')
+
+
+        | raw }}
+
+
+    {% endif %}

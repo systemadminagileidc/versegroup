@@ -1,0 +1,14 @@
+columnSuffix: null
+contentColumnType: boolean
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: attraction_nationaltrust_member
+instructions: ''
+name: 'National Trust Member'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,0 +1,32 @@
+
+{% set channelSelectionID = block.channels ?? '0' %}
+{% set section = craft.app.sections.getSectionById(channelSelectionID) %}
+
+{% macro listChildren(entry, level) %}
+   {% set levelChildren = entry.children().level(level).all() %}
+   {% if levelChildren|length > 0 %}
+   <ul>
+      {% for child in levelChildren %}
+         <li><a href="{{child.getUrl()}}">{{child.title}}</a></li>
+         {{ _self.listChildren(child, (level + 1) ) }}
+      {% endfor %}
+   </ul>
+   {% endif %}
+{% endmacro %}
+<div>
+<div class="stack">
+{% set entries = craft.entries({
+    section:section.handle
+}) %}
+{% if entries|length %}
+   <h2>{{section.name}}</h2>
+    <ul>
+    {% set baseLevelEntries = entries.level(1).all() %}
+    {% for entry in baseLevelEntries %}
+       <li><a href="{{entry.getUrl()}}">{{entry.title}}</a></li>
+       {{ _self.listChildren(entry, 2) }}
+    {% endfor %}
+    </ul>
+{% endif %}
+</div>
+</div>

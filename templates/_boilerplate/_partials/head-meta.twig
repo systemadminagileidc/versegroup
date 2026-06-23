@@ -1,0 +1,27 @@
+{# Set & alter SEO #}
+
+
+{% include "_boilerplate/_partials/structured-data.twig" %}
+
+{# -- Basic meta tags -- #}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');</script>
+
+{# -- Prefetch & preconnect headers and links -- #}
+{% set headerLink = "Link: " %}
+
+{% for url in prefetchUrls %}
+    {% set headerLink = headerLink ~ "<#{url}>; rel=dns-prefetch;," %}
+    {% set headerLink = headerLink ~ "<#{url}>; rel=preconnect; crossorigin;" %}
+    {% if not loop.last %}
+        {% set headerLink = headerLink ~ "," %}
+    {% endif %}
+    <link rel="dns-prefetch" href="{{ url }}">
+    <link rel="preconnect" href="{{ url }}" crossorigin>
+
+{% endfor %}
+{% header headerLink %}
+
+{% include "_boilerplate/_partials/favicon.twig" %}

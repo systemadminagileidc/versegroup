@@ -1,0 +1,71 @@
+field: 67c7c51f-2f9c-4a68-bdcb-41ffdb733a15 # Header Content
+fieldLayouts:
+  92a61af8-7f94-445b-80dc-ad428d2a76ce:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: df80bf76-f3b0-4a43-9323-d0a4c7c6e637 # Active Languages
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 07aa6986-33bc-47b7-b5c1-4f0ee1d0fd0f # Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  07aa6986-33bc-47b7-b5c1-4f0ee1d0fd0f: # Width
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 40
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: '%'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  df80bf76-f3b0-4a43-9323-d0a4c7c6e637: # Active Languages
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: activeLanguages
+    instructions: 'Language codes to allow. For example: en,af,sq,ar,hy,az,eu,be,bg,ca,zh-CN,zh-TW,hr,cs,da,nl,et,tl,fi,fr,gl,ka,de,el,ht,iw,hi,hu,is,id,ga,it,ja,ko,lv,lt,mk,ms,mt,no,fa,pl,pt,ro,ru,sr,sk,sl,es,sw,sv,th,tr,uk,ur,vi,cy,yi'
+    name: 'Active Languages'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: googleTranslateBlock
+name: 'Google Translate'
+sortOrder: 5

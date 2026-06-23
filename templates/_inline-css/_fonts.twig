@@ -1,0 +1,139 @@
+<style name="fonts">
+
+    /* FONT SETTINGS */
+    {% set font = fontSettings.fontImport|raw %}
+    {{ font|raw }}
+    :root {
+    {% set headingFont = fontSettings.headingFont[0] %}{% set bodyFont = fontSettings.bodyFont[0] %} --heading-font: '{{ headingFont.fontName }}',{{ headingFont.fontStyle }};
+        --heading-weight: {{ headingFont.fontWeight  ?? '700' }};
+        --body-font: '{{ bodyFont.fontName }}',{{ bodyFont.fontStyle }};
+        --body-weight: {{ bodyFont.fontWeight ?? '400' }};
+        --font-ratio: {{ fontSettings.fontRatio }};
+        --max-character-length: {{ fontSettings.maxLineLength }}ch;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: {{ headingFont.lineHeight ?? 1.2 }};
+        margin-bottom: var({{ headingFont.spacing ?? '--s2' }});
+    }
+
+    p, ul, ol, blockquote, li {
+        line-height: {{ bodyFont.lineHeight ?? 1.2 }};
+        margin-bottom: var({{ bodyFont.spacing ?? '--s1' }});
+    }
+
+    {% if fontSettings.fontSettings|length %}
+    {% set font = fontSettings.fontSettings[0] %}
+
+    h1, .h1 {
+        font-size: clamp(var({{ font.h1[0].minSize }}), {{ font.h1[0].preferedSize }}, var({{ font.h1[0].maxSize }}));
+        font-family: var(--{{ font.h1[0].fontFamily }});
+        line-height: {{ font.h1[0].lineHeight ?? '' }};
+        {%- if font.h1[0].colour != 'inherit' -%}color:var({{font.h1[0].colour}});{%- endif -%}
+    }
+
+    h2, .h2 {
+        font-size: clamp(var({{ font.h2[0].minSize }}), {{ font.h2[0].preferedSize }}, var({{ font.h2[0].maxSize }}));
+        font-family: var(--{{ font.h2[0].fontFamily }});
+        line-height: {{ font.h2[0].lineHeight ?? '' }};
+        {%- if font.h2[0].colour != 'inherit' -%}color:var({{font.h2[0].colour}});{%- endif -%}
+    }
+
+    h3, .h3 {
+        font-size: clamp(var({{ font.h3[0].minSize }}), {{ font.h3[0].preferedSize }}, var({{ font.h3[0].maxSize }}));
+        font-family: var(--{{ font.h3[0].fontFamily }});
+        line-height: {{ font.h3[0].lineHeight ?? '' }};
+        {%- if font.h3[0].colour != 'inherit' -%}color:var({{font.h3[0].colour}});{%- endif -%}
+    }
+
+    h4, .h4 {
+        font-size: clamp(var({{ font.h4[0].minSize }}), {{ font.h4[0].preferedSize }}, var({{ font.h4[0].maxSize }}));
+        font-family: var(--{{ font.h4[0].fontFamily }});
+        line-height: {{ font.h4[0].lineHeight ?? '' }};
+        {%- if font.h4[0].colour != 'inherit' -%}color:var({{font.h4[0].colour}});{%- endif -%}
+    }
+
+    h5, .h5 {
+        font-size: clamp(var({{ font.h5[0].minSize }}), {{ font.h5[0].preferedSize }}, var({{ font.h5[0].maxSize }}));
+        font-family: var(--{{ font.h5[0].fontFamily }});
+        line-height: {{ font.h5[0].lineHeight ?? '' }};
+        {%- if font.h5[0].colour != 'inherit' -%}color:var({{font.h5[0].colour}});{%- endif -%}
+    }
+
+    h6, .h6 {
+        font-size: clamp(var({{ font.h6[0].minSize }}), {{ font.h6[0].preferedSize }}, var({{ font.h6[0].maxSize }}));
+        font-family: var(--{{ font.h6[0].fontFamily }});
+        line-height: {{ font.h6[0].lineHeight ?? '' }};
+        {%- if font.h6[0].colour != 'inherit' -%}color:var({{font.h6[0].colour}});{%- endif -%}
+    }
+
+    p {
+        font-size: clamp(var({{ font.p[0].minSize }}), {{ font.h6[0].preferedSize }}, var({{ font.p[0].maxSize }}));
+        font-family: var(--{{ font.p[0].fontFamily }});
+        line-height: {{ font.p[0].lineHeight ?? '' }};
+    }
+
+    blockquote,blockquote:before,blockquote:after {
+        font-size: clamp(var({{ font.blockquote[0].minSize }}), {{ font.blockquote[0].preferedSize }}, var({{ font.blockquote[0].maxSize }}));
+        font-family: var(--{{ font.blockquote[0].fontFamily }});
+        line-height: {{ font.blockquote[0].lineHeight ?? '' }};
+    }
+
+    .button, input[type="button"], button {
+        font-size: clamp(var({{ font.button[0].minSize }}), {{ font.button[0].preferedSize }}, var({{ font.button[0].maxSize }}));
+        font-family: var(--{{ font.button[0].fontFamily }});
+        line-height: {{ font.button[0].lineHeight ?? '' }};
+    }
+
+    label {
+        font-size: clamp(var({{ font.formLabel[0].minSize }}), {{ font.formLabel[0].preferedSize }}, var({{ font.formLabel[0].maxSize }}));
+        font-family: var(--{{ font.formLabel[0].fontFamily }});
+    }
+
+    /*SAFARI FALLBACK*/
+    /*This is hooked up with browser-detection.js to detect the users browser and output a class on the body */
+    html.safari-12 h1, html.safari-13 h1 {
+        font-size: min(max(var({{ font.h1[0].minSize }}), {{ font.h1[0].preferedSize }}), var({{ font.h1[0].maxSize }}));
+    }
+
+    html.safari-12 h2, html.safari-13 h2 {
+        font-size: min(max(var({{ font.h2[0].minSize }}), {{ font.h2[0].preferedSize }}), var({{ font.h2[0].maxSize }}));
+    }
+
+    html.safari-12 h3, html.safari-13 h3 {
+        font-size: min(max(var({{ font.h3[0].minSize }}), {{ font.h3[0].preferedSize }}), var({{ font.h3[0].maxSize }}));
+    }
+
+    html.safari-12 h4, html.safari-13 h4 {
+        font-size: min(max(var({{ font.h4[0].minSize }}), {{ font.h4[0].preferedSize }}), var({{ font.h4[0].maxSize }}));
+    }
+
+    html.safari-12 h5, html.safari-13 h5 {
+        font-size: min(max(var({{ font.h5[0].minSize }}), {{ font.h5[0].preferedSize }}), var({{ font.h5[0].maxSize }}));
+    }
+
+    html.safari-12 h6, html.safari-13 h6 {
+        font-size: min(max(var({{ font.h6[0].minSize }}), {{ font.h6[0].preferedSize }}), var({{ font.h6[0].maxSize }}));
+    }
+
+    html.safari-12 p, html.safari-13 p {
+        font-size: min(max(var({{ font.p[0].minSize }}), {{ font.p[0].preferedSize }}), var({{ font.p[0].maxSize }}));
+    }
+
+    html.safari-12 blockquote, html.safari-13 blockquote {
+        font-size: min(max(var({{ font.blockquote[0].minSize }}), {{ font.blockquote[0].preferedSize }}), var({{ font.blockquote[0].maxSize }}));
+
+    }
+
+    html.safari-12 label, html.safari-13 label {
+        font-size: min(max(var({{ font.formLabel[0].minSize }}), {{ font.formLabel[0].preferedSize }}), var({{ font.formLabel[0].maxSize }}));
+    }
+
+    {% endif %}
+    {% if master and master.buttonSettings %}
+    .button, input[type="submit"] {
+        font-family: var(--{{ master.buttonSettings[0].buttonFont }});
+    }
+    {% endif %}
+
+</style>

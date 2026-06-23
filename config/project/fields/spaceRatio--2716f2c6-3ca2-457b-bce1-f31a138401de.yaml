@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: 'decimal(3,2)'
+fieldGroup: 7265e9bc-b902-4d44-9d77-49c982028299 # Master
+handle: spaceRatio
+instructions: 'This is a Major Third scale that powers all margins & padding. All items are calculated off the base size, so change that and cascade across your whole project'
+name: 'Space Ratio'
+searchable: false
+settings:
+  decimals: '2'
+  defaultValue: 1.2
+  max: 2.5
+  min: 1
+  prefix: null
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

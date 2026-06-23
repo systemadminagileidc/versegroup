@@ -1,0 +1,554 @@
+field: c2525dff-4e5c-4e3f-8072-ae3a6fd14f15 # Block
+fieldLayouts:
+  f367cad8-29c0-443e-b16f-c80fb5494dab:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 977947a2-0823-42b6-a53f-2201c44d0a6c # Block TItle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7564540a-3b81-4900-a502-8b54a94a0f41 # Text Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fec0f3f0-27f7-48d4-aeb5-d4355f85d237 # Block Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 0f3ef6fb-c85d-414f-92bc-99c9c9e0a336 # Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 4b7ca3f9-a0f6-4ae5-b1ee-90146ff22231 # Block Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ec106518-1bc8-4afb-8832-e6c9d58bf125 # Embed
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2d07a96a-3259-4b50-968f-e4e478595e5b # Mobile Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0f3ef6fb-c85d-414f-92bc-99c9c9e0a336: # Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: orientation
+    instructions: ''
+    name: Orientation
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Stretch
+            -
+              - value
+              - stretch
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Left'
+            -
+              - value
+              - topLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Centre'
+            -
+              - value
+              - topCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Right'
+            -
+              - value
+              - topRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Left'
+            -
+              - value
+              - centreLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Centre'
+            -
+              - value
+              - centreCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Left'
+            -
+              - value
+              - bottomLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Centre'
+            -
+              - value
+              - bottomCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom RIght'
+            -
+              - value
+              - bottomRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Stretch'
+            -
+              - value
+              - 'centreCentre stretch'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  2d07a96a-3259-4b50-968f-e4e478595e5b: # Mobile Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mobileOrientation
+    instructions: ''
+    name: 'Mobile Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Stretch
+            -
+              - value
+              - stretchMobile
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Left'
+            -
+              - value
+              - topLeftMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Centre'
+            -
+              - value
+              - topCentreMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Right'
+            -
+              - value
+              - topRightMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Left'
+            -
+              - value
+              - centreLeftMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Centre'
+            -
+              - value
+              - centreCentreMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Right'
+            -
+              - value
+              - centreRightMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Left'
+            -
+              - value
+              - bottomLeftMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Centre'
+            -
+              - value
+              - bottomCentreMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Right'
+            -
+              - value
+              - bottomRightMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Stretch'
+            -
+              - value
+              - centreStretchMobile
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  4b7ca3f9-a0f6-4ae5-b1ee-90146ff22231: # Block Padding
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockPadding
+    instructions: ''
+    name: 'Block Padding'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - f273dd40-b798-4727-9409-adc124794431 # Padding Top
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - ed1ac0a4-a00a-4571-b335-52dd9943363f # Padding Bottom
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 0b858034-4677-4347-8edb-f513054d0938 # Padding Left
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c5af57ab-a295-46a1-b69d-cdac01cbb522 # Padding Right
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_102_blockpadding}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: '0'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  977947a2-0823-42b6-a53f-2201c44d0a6c: # Block TItle
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockTitle
+    instructions: ''
+    name: 'Block TItle'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7564540a-3b81-4900-a502-8b54a94a0f41: # Text Content
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: textContent
+    instructions: ''
+    name: 'Text Content'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  ec106518-1bc8-4afb-8832-e6c9d58bf125: # Embed
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: embed
+    instructions: ''
+    name: Embed
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - faeee99a-2605-4d38-915e-dacf03e54b9c # Embed code
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_102_embed}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  fec0f3f0-27f7-48d4-aeb5-d4355f85d237: # Block Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockColour
+    instructions: ''
+    name: 'Block Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - 'bg-light-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - 'bg-dark-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - 'bg-primary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - 'bg-secondary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - 'bg-tertiary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - 'bg-quaternary-main pad-400'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: text
+name: Text
+sortOrder: 7

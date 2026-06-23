@@ -1,0 +1,117 @@
+field: c7119ce1-d68c-4b69-b01a-4921c12993e1 # Related Entry
+fieldLayouts:
+  5b4ca45d-60b1-4b85-8953-753c6a288362:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 84620670-e0e7-4bb8-87b1-92d9dabcb632 # Entry
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 82f2654c-0db8-4dcb-985f-348be88f8931 # Popup
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fd50d1af-0d4a-445b-8d95-555703c5bc9a # Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d92334ab-7e58-4e14-b011-736a4ceb36a7 # Hide Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  82f2654c-0db8-4dcb-985f-348be88f8931: # Popup
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: popup
+    instructions: ''
+    name: Popup
+    searchable: false
+    settings:
+      default: false
+      offLabel: Page
+      onLabel: Popup
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  84620670-e0e7-4bb8-87b1-92d9dabcb632: # Entry
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: entry
+    instructions: ''
+    name: Entry
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  d92334ab-7e58-4e14-b011-736a4ceb36a7: # Hide Button
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideButton
+    instructions: ''
+    name: 'Hide Button'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  fd50d1af-0d4a-445b-8d95-555703c5bc9a: # Button Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonText
+    instructions: ''
+    name: 'Button Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

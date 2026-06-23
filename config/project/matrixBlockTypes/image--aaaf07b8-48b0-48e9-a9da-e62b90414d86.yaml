@@ -1,0 +1,244 @@
+field: f5ef695a-41f7-4438-98f1-6b23eb8ac2bc # Slide Content
+fieldLayouts:
+  999971e7-8a98-4eb6-8695-7ff7c0c4c8f4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a6ef6031-c2eb-4a0e-b997-199f39349bb4 # Image Asset
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 3e48f65a-1691-45d0-b4ce-f6383a4c332e # Image Crop
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 2e3df31e-e3ab-41a8-9bc7-a64c4b4bc22e # Image Fit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  2e3df31e-e3ab-41a8-9bc7-a64c4b4bc22e: # Image Fit
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageFit
+    instructions: ''
+    name: 'Image Fit'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Stretch
+            -
+              - value
+              - stretch
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Left'
+            -
+              - value
+              - topLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Right'
+            -
+              - value
+              - topRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Left'
+            -
+              - value
+              - bottomLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Right'
+            -
+              - value
+              - bottomRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre RIght'
+            -
+              - value
+              - centreRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Left'
+            -
+              - value
+              - centreLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Centre'
+            -
+              - value
+              - centreCentre
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  3e48f65a-1691-45d0-b4ce-f6383a4c332e: # Image Crop
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageCrop
+    instructions: ''
+    name: 'Image Crop'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Original
+            -
+              - value
+              - original
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Portrait
+            -
+              - value
+              - portrait
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '4:3'
+            -
+              - value
+              - fourThree
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '16:9'
+            -
+              - value
+              - medium
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Square
+            -
+              - value
+              - square
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a6ef6031-c2eb-4a0e-b997-199f39349bb4: # Image Asset
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageAsset
+    instructions: ''
+    name: 'Image Asset'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: image
+name: Image
+sortOrder: 2

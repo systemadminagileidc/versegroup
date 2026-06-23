@@ -1,0 +1,42 @@
+field: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+fieldLayouts:
+  c8d4e40f-481a-4970-8835-5e82ced713d7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7ac1c017-e2d1-4530-a33f-7e6968b9bc89 # Limit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7ac1c017-e2d1-4530-a33f-7e6968b9bc89: # Limit
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: limit
+    instructions: ''
+    name: Limit
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+handle: twitterBlock
+name: Twitter
+sortOrder: 12

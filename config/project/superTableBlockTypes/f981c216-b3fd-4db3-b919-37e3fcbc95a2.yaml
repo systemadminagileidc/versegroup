@@ -1,0 +1,98 @@
+field: 91285a7b-acaf-4bbf-b359-cfb09e487391 # Block Content
+fieldLayouts:
+  6ba2cf51-2375-444d-b0cd-0b08dc775b19:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 9e87d290-f6ff-488f-a93d-a118117caf1e # Text Block
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 74ff2097-f3bf-44a6-9b5e-0fe85aa6bd7a # Image Block
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1614ede1-4752-4855-8755-f38796c3cb6d # Card
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9e87d290-f6ff-488f-a93d-a118117caf1e: # Text Block
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: textBlock
+    instructions: ''
+    name: 'Text Block'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  74ff2097-f3bf-44a6-9b5e-0fe85aa6bd7a: # Image Block
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageBlock
+    instructions: ''
+    name: 'Image Block'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  1614ede1-4752-4855-8755-f38796c3cb6d: # Card
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: card
+    instructions: ''
+    name: Card
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

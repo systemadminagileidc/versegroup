@@ -1,0 +1,100 @@
+fieldLayouts:
+  53372c48-4e25-4896-a109-995840a0b263:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4ae2014b-9fdf-4d09-977e-03d2a8b9795d # Excerpt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ebf7a9f8-2506-4212-9ab9-b47c66f9e807 # Logo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a70e2e58-f8b7-4161-86bc-d854cb907a0e # Hero Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 43ac81ba-f40e-4bb9-9d46-10d4a8929776 # Attraction Form Display
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 691ace41-89cf-4772-bce2-8abf60517287 # Attractions Form Label
+            instructions: 'If left blank, the text from Globals > Attractions, will be used.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Hero
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 961df376-6fa9-4b26-b1c6-ade1f716d7eb # SEO Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Page Meta'
+        sortOrder: 3
+handle: attractionSearch
+hasTitleField: false
+name: 'Attraction Search'
+section: a1bfb0d8-2e8b-49ce-a691-26d11957503c # Attraction Search
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

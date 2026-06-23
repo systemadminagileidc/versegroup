@@ -1,0 +1,41 @@
+field: ee4b4809-7753-43c2-80e1-ff572ac4429c # Block
+fieldLayouts:
+  c40e299b-8b11-45d2-b8f7-f358021b4c4a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 08e5a346-ebf1-4d2a-829f-2c55ff3b805b # Tweet Number
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  08e5a346-ebf1-4d2a-829f-2c55ff3b805b: # Tweet Number
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: tweetNumber
+    instructions: ''
+    name: 'Tweet Number'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: twitterBlock
+name: Twitter
+sortOrder: 1

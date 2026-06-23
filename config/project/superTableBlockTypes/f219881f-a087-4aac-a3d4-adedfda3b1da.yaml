@@ -1,0 +1,182 @@
+field: d4dabe48-1706-44bb-91ea-1bb972146d63 # Super Extra Fields
+fieldLayouts:
+  f6529eba-65bb-467a-acc9-edf6d7d35be6:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d9dbec60-79bf-494e-bddc-17b897b59639 # Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b59ef47c-8f3c-491f-8843-840cdb8d6c49 # Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5e68bba9-943b-4ba2-9210-490dd336f082 # Input Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55e1f715-1b0b-4e93-a948-8aa5710b458e # Options
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5e68bba9-943b-4ba2-9210-490dd336f082: # Input Type
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: inputType
+    instructions: ''
+    name: 'Input Type'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Text
+            -
+              - value
+              - text
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Phone
+            -
+              - value
+              - phone
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Date Picker'
+            -
+              - value
+              - datePicker
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Date Range'
+            -
+              - value
+              - dateRange
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Number
+            -
+              - value
+              - number
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dropdown
+            -
+              - value
+              - dropdown
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  55e1f715-1b0b-4e93-a948-8aa5710b458e: # Options
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: options
+    instructions: ''
+    name: Options
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_options}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  b59ef47c-8f3c-491f-8843-840cdb8d6c49: # Placeholder
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: placeholder
+    instructions: ''
+    name: Placeholder
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d9dbec60-79bf-494e-bddc-17b897b59639: # Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: label
+    instructions: ''
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

@@ -1,0 +1,57 @@
+{# initialize a default value for search #}
+{% set searchterm = '' %}
+{# Change to query string variable area if it is used #}
+{% if craft.app.request.queryParams["area"] is defined %}
+	{% set searchterm = craft.app.request.queryParams["area"] %}
+{% endif %}
+{# Get whether map view is selected #}
+{% set mapview = craft.app.request.queryParams["map"] is defined and craft.app.request.queryParams["map"] == '1' %}
+{# Get selected types #}
+{% if craft.app.request.queryParams["types"] is defined and craft.app.request.queryParams["types"] != '' %}
+	{% set types = craft.app.request.queryParams["types"]|split(',') %}
+{% else %}
+	{% set types = [] %}
+{% endif %}
+
+{# Search Term #}
+<div class="form-item searchTerm">
+	<label for="searchTerm" class="visually-hidden">Search by area</label>
+	<input id="searchTerm" name="area" value="{{searchterm}}" placeholder="Where would you like to go?" class="bg-light-main areaSearch" autocomplete="off" />
+</div>
+
+{# Attraction Type #}
+<div class="form-item attractionFormSearch">
+	{% set attractiontypes = craft.categories.group('attractionType').all() %}
+	<style>
+		{%- for type in attractiontypes -%}
+		{% if type.attractionTypeIcon|length > 0 %}
+		.attrtype{{type.id}} a:before { background-image:url('{{type.attractionTypeIcon.one().getUrl}}')}
+		.attrsub-flag{{type.id}} a:before { background-image:url('{{type.attractionTypeIcon.one().getUrl}}')}
+		{% endif %}
+		{%- endfor -%}
+	</style>
+	<label for="types" class="visually-hidden">Select a type</label>
+	<select id="types" class="bg-light-main" name="types">
+		<option value="">What would you like to do?</option>
+		{% for type in attractiontypes %}
+			{% if not type.attractionHidden %}
+				<option class="{% if type.level == 1 %}attrtype{{type.id}}{% else %}attrsub {% if not type.attractionHideSearchIcon %}attrsub-flag{{type.id}}{% endif %}{% endif %} {% if type.attractionTypeIcon|length > 0 and not type.attractionHideSearchIcon %}hasIcon{% else %}noIcon{% endif %}" {% if types and type.id in types %}selected{% endif %} value="{{type.id}}">{{type.title}}</option>
+			{% endif %}
+		{% endfor %}
+	</select>
+</div>
+
+{% if searchType is defined and searchType != 'search' %}
+	{# Grid View #}
+	<input id="afgrid" class="" type="radio" name="map" value="" {% if not mapview %}checked{% endif %} />
+	<label for="afgrid" class="attractions-form-icon-label stack form-item form-item-small"><span class="icon icon-grid"></span><span class="text">Grid</span></label>
+
+	{# Map View #}
+	<input id="afmap" class="" type="radio" name="map" value="1" {% if mapview %}checked{% endif %} />
+	<label for="afmap" class="attractions-form-icon-label stack form-item form-item-small"><span class="icon icon-map"></span><span class="text">Map</span></label>
+{% endif %}
+
+{# Submit button #}
+<div id="attractionSearchSubmitButton" class="stack form-item form-item-small form-item-button disabled">
+	<input class="button primary master" type="submit" value="Submit" disabled>
+</div>

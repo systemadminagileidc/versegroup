@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: excludeAttractions
+instructions: ''
+name: 'Exclude Attractions'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:305f3d85-db06-447d-8f4b-3cbad76f8456' # Attractions
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

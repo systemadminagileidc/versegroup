@@ -1,0 +1,38 @@
+field: fb9cfd6f-b8eb-45cf-a0bb-cb2fdf62d6b9 # Password Protected
+fieldLayouts:
+  10542d54-442d-4807-a704-5dfbf2f712c4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b17810a9-0a78-4de6-820b-b8cf00ac3864 # Password
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  b17810a9-0a78-4de6-820b-b8cf00ac3864: # Password
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: password
+    instructions: ''
+    name: Password
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 255.4631 305.631"
+   width="41.79"
+   height="50"
+   version="1.1"
+   sodipodi:docname="accommodation-icon.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="9.2206724"
+     inkscape:cx="20.76855"
+     inkscape:cy="24.998177"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#2e3767;}.cls-2{fill:#fff;}</style>
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <path
+     class="cls-1"
+     d="M23.9443,118.0919a104.1751,104.1751,0,0,1,208.35,0c0,42.0046-14.6383,53.7266-93.47,168.0184a13.026,13.026,0,0,1-21.4092,0C38.5826,171.8185,23.9443,160.0965,23.9443,118.0919Z"
+     id="path6" />
+  <path
+     sodipodi:type="star"
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:1.046;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path1623"
+     inkscape:flatsided="false"
+     sodipodi:sides="5"
+     sodipodi:cx="-20.063614"
+     sodipodi:cy="20.388969"
+     sodipodi:r1="12.128207"
+     sodipodi:r2="6.0641036"
+     sodipodi:arg1="0.95054684"
+     sodipodi:arg2="1.5788654"
+     inkscape:rounded="0"
+     inkscape:randomized="0"
+     d="m -13.014237,30.258098 -7.098308,-3.805222 -7.15879,3.690178 1.425483,-7.926771 -5.721756,-5.668086 7.979306,-1.093792 3.62255,-7.193248 3.505999,7.25077 7.9606151,1.222415 -5.8124791,5.575014 z"
+     transform="matrix(6.0030488,0,0,6.0030488,248.39918,-0.60278792)"
+     inkscape:transform-center-x="-0.18153486"
+     inkscape:transform-center-y="-6.7794972" />
+</svg>

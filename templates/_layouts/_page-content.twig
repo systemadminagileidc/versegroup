@@ -1,0 +1,173 @@
+{#
+This is the page builder template
+
+Struture:
+-- General Page settings
+-- Switch on matrix layouts:
+    -- GridRow
+    -- ChannelRow
+    -- SocialRow
+
+Settings are applied to each row and then the blocks are included using their file name,
+as such all blocks in a matrix layout live in the same folder.
+#}
+
+{% if pageBuilder|length %}
+    {# Creating an array to store used attraction ids to prevent duplicates #}
+    {% set usedAttractionIds = ['0'] %}
+
+    {% for rowKey, row in pageBuilder.all() %}
+
+        {# Page Settings #}
+        {% set rowSpace = row.spaceTop %} {# space set on row #}
+        {% if rowSpace == 'default' %}
+            {% set rowSpace = master.masterRowSpacing %} {# set to global value #}
+        {% endif %}
+
+        {% set gridGap = row.gridGap %} {# gridgap set on row #}
+        {% if gridGap == 'default' %}
+            {% set gridGap = master.masterGridGap %}
+        {% endif %}
+
+        {% set width = row.rowWidth ?? '' %}
+        {% set rowLayout = row.rowLayout ?? '' %}
+
+        {% set colour = row.rowColour ?? '' %}
+        {% set paddingTop = row.paddingTop ?? '' %}
+        {% set paddingBottom = row.paddingBottom ?? '' %}
+        {% set anchorLabel = row.anchorLabel ?? '' %}
+        {% set mediaQueries = row.mediaQueries ?? '' %}
+
+        {% set backgroundImage = row.backgroundImage[0].image.one().getUrl() ?? '' %}
+        {% set overlay = row.backgroundImage[0].overlay ?? '' %}
+        {% set overlayType = row.backgroundImage[0].overlayType ?? '' %}
+        {% set opacity = row.backgroundImage[0].opacity ?? '' %}
+        {% set blendMode = row.backgroundImage[0].blendMode ?? '' %}
+        {% set backgroundRepeat = row.backgroundImage[0].repeat ?? 'no-repeat' %}
+        {% set backgroundPosition = row.backgroundImage[0].backgroundPosition ?? 'center center' %}
+        {% set backgroundSize = row.backgroundImage[0].backgroundSize ?? 'cover' %}
+
+        {% if row.advancedSettings|length %}
+            {% set slider = row.advancedSettings[0].slider ? 'slider' : '' %}
+            {% set slidesToShow = row.advancedSettings[0].slidesToShow ?? 3 %}
+            {% set blockSize = row.advancedSettings[0].blockSize ?? '' %}
+            {% set widthMod = row.advancedSettings[0].widthMod ?? '' %}
+            {% set customCssClass = row.advancedSettings[0].customCssClass ?? '' %}
+
+            {% if row.advancedSettings[0].arrows is defined %}
+                {% set arrowsOptions = row.advancedSettings[0].arrows ?? ' ' %}
+                {% if arrowsOptions == 'false' %}{% set arrows = 'false' %}{% else %}{% set arrows = 'true' %}{% endif %}
+                {% set arrowColour = row.advancedSettings[0].arrowColour ?? ' ' %}
+            {% endif %}
+            {% if row.advancedSettings[0].dots  is defined %}
+                {% set dots = row.advancedSettings[0].dots ? 'true' : 'false' %}
+            {% endif %}
+        {% else %}
+            {% set slider =  '' %}
+            {% set slidesToShow =  '' %}
+            {% set blockSize =  '' %}
+            {% set widthMod =  '' %}
+            {% set customCssClass =  '' %}
+            {% set arrowsOptions =  '' %}
+            {% set arrowColour =  '' %}
+            {% set arrows = 'false' %}
+            {% set dots =  'false' %}
+        {% endif %}
+
+
+        {# Switch on matrix layouts #}
+        {% switch row.type.handle %}
+
+            {# Grid Row #}
+        {% case 'gridRow' %}
+            <section id="{{ anchorLabel|kebab }}"
+                     class="grid-row {{ rowSpace }} {{ colour }} {{ paddingTop }} {{ paddingBottom }} {{ overlay }} {{ overlayType }} {{ opacity }} {{ blendMode }} {{ customCssClass ?? '' }}"
+                    {% if backgroundImage %} style="background-position:{{backgroundPosition}}; background-size:{{backgroundSize}}; background-repeat:{{backgroundRepeat}}; background-image:url('{{ backgroundImage }}')"{% endif %} >
+
+                <div class="grid {{ row.type.handle }} {{ rowLayout }} {{ width }} {{ widthMod ?? '' }} {{ gridGap }} {{ blockSize ?? '' }} {{ slider ?? '' }} {{ arrowsOptions ?? '' }} {{ arrowColour ?? '' }} {% for option in mediaQueries %}{{ option.value~' ' }}{% endfor %}"
+                    {% if slider == 'slider' %} id="slider-{{ rowKey }}" data-slick='{"slidesToShow": {{ slidesToShow|raw }}, "slidesToScroll": 1, "arrows":{{ arrows }},"dots":{{ dots }}, "responsive": [ { "breakpoint": 768, "settings": { "slidesToShow": 2 } }, { "breakpoint": 480, "settings": {"slidesToShow": 1 } }]}'{% endif %}>
+                    {% set repeater = row.blockRepeater.one().blocks %}
+
+                    {% for blockKey, block in repeater.all() %}
+                        {# Grid Blocks #}
+                        {% switch block.type.handle %}
+                        {% case 'attractionCard' %}
+                            {# if block type is attractionCard get a random attraction based on whether the attraction needs to be featured/category #}
+                            {% set query = {
+                                section: 'attractions',
+                                id: 'not '~usedAttractionIds|join(', ')
+                            } 
+                            %}
+                            {% if block.limitToFeatured %}
+                                {% set query = query|merge({'attraction_featured': 1}) %}
+                            {% endif %}
+                            {% if block.categoryFilter %}
+                                {% set query = query|merge({'attractionType': block.categoryFilter.one()}) %}
+                            {% endif %}
+
+                            {% set attraction = craft.entries(query).orderBy('RAND()').limit(1).one() %}
+                            {% if attraction is defined %}
+                                {% set usedAttractionIds = usedAttractionIds|merge([attraction.id]) %}
+                                {% include '_layouts/_grid-blocks/_'~ block.type.handle~'.twig' with {blockType:block.type.handle, attraction:attraction, subHeading:block.subHeading,isFeatured:block.limitToFeatured} %}
+                            {% endif %}
+                            
+                        {% default %}
+                            {% include '_layouts/_grid-blocks/_'~ block.type.handle~'.twig' with {blockType:block.type.handle} %}
+                        {% endswitch %}
+
+                    {% endfor %}
+                </div>
+            </section>
+
+            {# Channel Row #}
+        {% case 'channelRow' %}
+            {% set channelSelectionID = row.channelSelect ?? '0' %}
+            {% set section = craft.app.sections.getSectionById(channelSelectionID).handle ?? '' %}
+            {% set limit = row.limit ?? -1 %}
+            {% set popup = row.popup ?? 0 %}
+            {% set rowLayout = row.rowLayout ?? '' %}
+            {% set imageCrop = row.imageCrop ?? '' %}
+
+            {% set repeater = row.layouts.one() %}
+            {% set cardBgColour = repeater.cardBackgroundColour ?? '' %}
+            {% set order = repeater.order ?? '' %}
+            {% set buttonColour = repeater.buttonColour ?? '' %}
+            {% set buttonStyle = repeater.buttonStyle ?? '' %}
+            {% set hideButton = row.hideButtons ?? '' %}
+            {% set showPostDate = row.showPostDate ?? '' %}
+            {% set useExcerptLimit = row.useExcerptLimit ?? '' %}
+
+            {% for blockKey, block in repeater.layout.all() %}
+                {# Channel Blocks #}
+                {% include '_layouts/_channel-blocks/_'~ block.type.handle~'.twig' %}
+            {% endfor %}
+            {{ sprig.script }}
+
+            {# Social Row #}
+        {% case 'social' %}
+            {% set repeater = row.rowContent.one().block %}
+            {% if repeater %}
+                <div class="grid-row {{ master.masterRowSpacing }}">
+                    <div id="slider-{{ rowKey }}" class="grid {{ master.masterGridGap }} social-slider">
+                        {% for blockKey, block in repeater.all() %}
+                            {% include '_layouts/_social-blocks/_'~ block.type.handle~'.twig' with {gridGap:master.masterGridGap } %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+        {% endswitch %}
+
+    {% endfor %}
+    {# {% elseif entry.isEditable() %} #}
+    {# <div class="grid-row bg-primary"> #}
+    {# <div class="grid narrow" style="height: 100vh"> #}
+    {# <div class="centreCentre pad-400" style="flex-direction: column; display: inherit"> #}
+    {# <h1>Just add content</h1> #}
+    {# {% if entry.isEditable() %} #}
+    {# <a class="button primary" href="{{ entry.cpEditUrl }}">Edit entry</a> #}
+    {# {% endif %} #}
+    {# </div> #}
+    {# </div> #}
+    {# </div> #}
+{% endif %}

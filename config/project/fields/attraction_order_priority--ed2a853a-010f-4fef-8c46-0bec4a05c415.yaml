@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: integer(10)
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: attraction_order_priority
+instructions: ''
+name: 'Order Priority'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: null
+  prefix: null
+  previewCurrency: ''
+  previewFormat: none
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

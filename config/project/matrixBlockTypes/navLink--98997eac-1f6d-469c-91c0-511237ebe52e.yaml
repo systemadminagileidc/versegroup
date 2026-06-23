@@ -1,0 +1,102 @@
+field: 9f7faf69-8f32-4211-8554-c8d4b24dfe38 # Navigation
+fieldLayouts:
+  98f2d5bf-56b6-4a5a-a655-5c6e8ebc8724:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f7ed401d-3a16-40e3-8da3-441da093dabc # Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7139b555-aedc-48ff-8baa-cbee00f78f70 # Link Target
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 31649ee0-58ab-453b-98b9-0e288c4649b7 # Sub Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7139b555-aedc-48ff-8baa-cbee00f78f70: # Link Target
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkTarget
+    instructions: ''
+    name: 'Link Target'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  31649ee0-58ab-453b-98b9-0e288c4649b7: # Sub Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: subLink
+    instructions: ''
+    name: 'Sub Link'
+    searchable: false
+    settings:
+      contentTable: '{{%stc_sublink}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  f7ed401d-3a16-40e3-8da3-441da093dabc: # Link Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkText
+    instructions: ''
+    name: 'Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: navLink
+name: 'Nav Link'
+sortOrder: 1

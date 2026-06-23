@@ -1,0 +1,90 @@
+fieldLayouts:
+  4c3b6a3e-eded-4a66-8016-bcfe1a74ccdf:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2716f2c6-3ca2-457b-bce1-f31a138401de # Space Ratio
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: e681a6c8-8a07-470b-a592-8c968d83eaef # Master Grid Gap
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 4dd9a8c4-d4f3-4422-a0e9-ef1ab64737eb # Master Row Spacing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: 'Sizing / Spacing'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 3a7740ed-20bc-48ba-929a-d13e5044b80e # Image Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d326d49c-ce3f-4bd8-8fa8-b5db07e4be7c # Button Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ee582df6-fd33-4522-b913-7d5e9ef86854 # Card Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7105867a-b37d-4599-97aa-d8ee4e3125ef # Accordion Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Styling
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: adab5b40-dd05-4aa5-bfd7-c6f5aab3a908 # Stylesheet
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Stylesheet
+        sortOrder: 3
+handle: master
+name: Master
+sortOrder: 6

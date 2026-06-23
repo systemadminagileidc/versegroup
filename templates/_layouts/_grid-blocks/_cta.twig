@@ -1,0 +1,24 @@
+{% set blockColour = block.blockColour ?? '' %}
+{% set labelColour = block.labelColour ?? '' %}
+<div class="{{ block.type.handle }} {{ blockColour }}">
+    {% if block.label|length %}
+        <div class="label {{ labelColour }}">
+            {{ block.label }}
+        </div>
+    {% endif %}
+    <div class="text has-two-columns left-wide grid-gap-300 stack">
+        <div class="stack">
+            {% if block.text|length %}
+                {{ block.text }}
+            {% endif %}
+        </div>
+        {% if block.button is defined and block.button.getUrl() %}
+            <a class="button {{ block.buttonStyle ?? '' }} {{ block.buttonColour ?? '' }}" href="{{ block.button.getUrl() }}"
+               target="{{ block.button.getTarget() }}">{{ block.button.customText ? block.button.customText : block.button.defaultText }}</a>
+        {% endif %}
+        {% set embedCode = block.embedCode ?? '' %}
+        {% if embedCode|length %}
+            {{ embedCode|raw }}
+        {% endif %}
+    </div>
+</div>

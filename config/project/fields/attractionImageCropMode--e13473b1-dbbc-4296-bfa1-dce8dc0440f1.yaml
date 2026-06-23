@@ -1,0 +1,46 @@
+columnSuffix: eymchtym
+contentColumnType: string
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: attractionImageCropMode
+instructions: ''
+name: 'Attraction Image Crop Mode'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Crop
+        -
+          - value
+          - crop
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Fit
+        -
+          - value
+          - fit
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Stretch
+        -
+          - value
+          - stretch
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

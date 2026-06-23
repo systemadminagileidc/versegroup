@@ -1,0 +1,183 @@
+{% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+{% from _self import errorList %}
+<div class="stack">
+    {{ block.formTitle }}
+
+
+    {% if craft.app.session.hasFlash('notice') %}
+        <div class="notice-wrapper">
+            <p class="message notice">{{ craft.app.session.getFlash('notice') }}</p>
+        </div>
+        {% includejs %}
+            $(document).ready(function () {
+            $('html, body').animate({
+            scrollTop: $('#form').offset().top-110
+            }, 1000);
+            });
+        {% endincludejs %}
+    {% elseif craft.app.session.hasFlash('error') %}
+        <div class="notice-wrapper">
+            <p class="message error">{{ craft.app.session.getFlash('error') }}</p>
+        </div>
+        {% includejs %}
+            $(document).ready(function () {
+            $('html, body').animate({
+            scrollTop: $('#form').offset().top-110
+            }, 1000);
+            });
+        {% endincludejs %}
+    {% endif %}
+
+
+
+    {% set popUp = block.popup %}
+    {% set orientation = block.buttonOrientation ?? 'left' %}
+
+    {% if popUp|length %}
+        {% if popUp[0].popup %}
+            {% set fields = popUp[0] %}
+            <div class="button-wrap {{ orientation }}">
+                <a href="#form-{{ rowKey ~ '-' ~ blockKey }}"
+                   class="button {{ fields.buttonColour }} {{ fields.buttonStyle }} open-form-link">{{ fields.buttonText ? fields.buttonText : 'Open' }}</a>
+                {% include '_layouts/_block-partials/_button-repeater.twig' %}
+            </div>
+        {% else %}
+            {% include '_layouts/_block-partials/_button-repeater.twig' %}
+        {% endif %}
+    {% else %}
+        {% include '_layouts/_block-partials/_button-repeater.twig' %}
+    {% endif %}
+
+
+    {% if popUp|length %}
+    {% if popUp[0].popup %}
+    <div id="form-{{ rowKey ~ '-' ~ blockKey }}" class="card-popup mfp-hide">
+        {% endif %}
+        {% endif %}
+
+        <form id="form" method="post" action="" class="stack {{ block.hideLabels ? 'hideLabels' : 'showLabels' }}"
+              accept-charset="UTF-8">
+            {% set subject = block.subject ?? '' %}
+            {% set subjectLabel = block.subject.subjectFields[0].subjectLabel ?? 'Subject' %}
+            {% set subjectPlaceholder = block.subject.subjectFields[0].subjectPlaceholder ?? 'Select' %}
+            {% set recipient = block.subject.recipient ?? '' %}
+
+            {% set borderColour = block.formColour[0].borderColour ?? '' %}
+            {% set backgroundColour = block.formColour[0].inputBackgroundColour ?? '' %}
+            {% set nameLabel = block.defaultFields[0].nameFields[0].nameLabel ?? 'Your Name' %}
+            {% set namePlaceholder = block.defaultFields[0].nameFields[0].namePlaceholder ?? 'Enter Name' %}
+            {% set emailLabel = block.defaultFields[0].emailFields[0].emailLabel ?? 'Your Email' %}
+            {% set emailPlaceholder = block.defaultFields[0].emailFields[0].emailPlaceholder ?? 'Enter a valid email address' %}
+            {% set messageLabel = block.defaultFields[0].messageFields[0].messageLabel ?? 'Your Message' %}
+            {% set messagePlaceholder = block.defaultFields[0].messageFields[0].messagePlaceholder ?? 'Enter your message' %}
+
+            {{ csrfInput() }}
+            <input type="hidden" name="action" value="contact-form/send">
+
+            {% if recipient|length %}
+                <input id="toEmail" type="hidden" name="toEmail"
+                       value="{{ recipient[0].email|hash }}">
+            {% else %}
+                <input id="toEmail" type="hidden" name="toEmail"
+                       value="{{ alias('@email')|hash }}">
+            {% endif %}
+            {# {{ redirectInput('contact/#form') }} #}
+            <div class="stack stack-small">
+                <h5 class="label"><label for="from-name">{{ nameLabel }}</label></h5>
+                <input class="form-element {{ backgroundColour }} {{ borderColour }}" id="from-name" type="text"
+                       placeholder="{{ namePlaceholder }}"
+                       name="fromName"
+                       value="{{ message.fromName ?? '' }}">
+                {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+            </div>
+            <div class="stack stack-small">
+                <h5 class="label"><label for="from-email">{{ emailLabel }}</label></h5>
+                <input class="form-element {{ backgroundColour }} {{ borderColour }}" id="from-email" type="email"
+                       placeholder="{{ emailPlaceholder }}"
+                       name="fromEmail"
+                       value="{{ message.fromEmail ?? '' }}">
+                {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+            </div>
+            {% if subject|length %}
+                <div class="stack stack-small">
+                    {% if recipient|length %}
+                        <h5 class="label"><label>Subject</label></h5>
+                        <input type="hidden" id="subject" name="subject" value="{{ message.subject ?? '' }}">
+                        <select id="subjectId" class="form-element {{ backgroundColour }} {{ borderColour }}" required>
+                            <option value="" class="default" disabled selected hidden>{{ subjectPlaceholder }}</option>
+                            {% for key, recip in recipient %}
+                                <option value="{{ recip.email|hash }}"
+                                        label="{{ recip.label }}">{{ recip.label }}</option>
+                            {% endfor %}
+                        </select>
+                    {% elseif subject %}
+                        <h5 class="label"><label for="subject">{{ subjectLabel }}</label></h5>
+                        <input class="form-element {{ backgroundColour }} {{ borderColour }}" id="subject" type="text"
+                               name="subject" value="{{ message.subject ?? '' }}"
+                               placeholder="{{ subjectPlaceholder }}">
+                        {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {# Include extra fields and super extra fields #}
+            {% include '_layouts/_grid-blocks/_components/_extraFields.twig' with {fieldsBlock:block.extraFields} %}
+            {% include '_layouts/_grid-blocks/_components/_extraFields.twig' with {fieldsBlock:block.superExtraFields} %}
+
+            <div class="stack stack-small">
+                <h5 class="label"><label for="message">{{ messageLabel }}</label></h5>
+                <textarea class="form-element {{ backgroundColour }} {{ borderColour }}"
+                          placeholder="{{ messagePlaceholder }}"
+                          rows="10" cols="40" id="message"
+                          name="message[body]">{{ message.message.body ?? '' }}</textarea>
+                {{ message is defined and message ? errorList(message.getErrors('message')) }}
+            </div>
+            <div class="stack stack-small">
+                <input class="button primary {{ block.buttonColour ?? '' }}" type="submit" value="Send">
+                {{ craft.contactFormExtensions.recaptcha | raw }}
+            </div>
+        </form>
+
+        {% if popUp|length %}
+        {% if popUp[0].popup %}
+    </div>
+    {% endif %}
+    {% endif %}
+
+</div>
+
+{# Define vars for usage in script #}
+{% set showCaptcha = getenv('RECAPTCHA_SHOW_ICON')|lower %}
+
+<script>
+    // Get show captcha icon from env
+    const showCaptcha = '{{ showCaptcha }}';
+
+    // On window load
+    window.addEventListener('load', (event) => {
+        // get the captcha badge element
+        elementCaptcha = document.getElementsByClassName('grecaptcha-badge');
+
+        // if the captcha element exists, apply inline style
+        if (elementCaptcha.length > 0) {
+            // define visibility
+            let visibility = 'visible';
+
+            // If captcha is hidden then set visibility to hidden
+            if (showCaptcha == 'false') {
+                visibility = 'hidden';
+            }
+
+            // Apply inline style
+            elementCaptcha[0].style.visibility = visibility;
+        }
+    });
+</script>

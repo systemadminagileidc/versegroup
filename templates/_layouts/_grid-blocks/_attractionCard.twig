@@ -1,0 +1,28 @@
+{# Grid block for page builder system to add a random attraction card based on preview html from test site #}
+{% set img = attraction.attraction_image.one() %}
+{% set area = attraction.attraction_area.one() %}
+<div class="attractions-card bg-dark-main default attrCard">
+    <a class="imglink" href="{{attraction.getUrl()}}" target="">
+        <figure>{% if img %}<img srcset="{{img.getUrl('medium')}} 576w, {{img.getUrl('small')}} 384w, {{img.getUrl('medium')}} 2x" sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100%" src="{{img.getUrl('medium')}}" alt="">{% endif %}</figure>
+        <div class="description">
+            <h4 class="title">{{attraction.title}}{% if area and not isFeatured %}, {{area.title}}{% endif %}</h4>
+            <h5 class="subtitle">{{subHeading}}</h5>
+            {# Preventing summary getting too long, calling in other fields if summary not available #}
+            {% spaceless %}
+                <p>
+                    {% if attraction.attraction_summary is defined and attraction.attraction_summary|length > 0 %}
+                        {{attraction.attraction_summary|truncate(130,'...')}}
+                    {% elseif not attraction.attraction_review is null %}
+                        {{attraction.attraction_review|striptags|truncate(130,'...') }}
+                    {% elseif not attraction.attraction_description is null %}
+                        {{attraction.attraction_description|striptags|truncate(130,'...') }}
+                    {% endif %}
+                </p>
+            {% endspaceless %}
+
+            {# <div class="button-wrap default">
+                <a class="button secondary" href="{{attraction.getUrl()}}" target="">Read More</a>
+            </div> #}
+        </div>
+    </a>
+</div>

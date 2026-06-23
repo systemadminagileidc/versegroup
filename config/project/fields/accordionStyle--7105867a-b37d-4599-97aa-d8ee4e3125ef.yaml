@@ -1,0 +1,58 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 7265e9bc-b902-4d44-9d77-49c982028299 # Master
+handle: accordionStyle
+instructions: 'Use font awesome class name to set icons'
+name: 'Accordion Style'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Default Icon'
+            -
+              - handle
+              - defaultIcon
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Active Icon'
+            -
+              - handle
+              - activeIcon
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col2
+          - 'fas fa-plus'
+        -
+          - col1
+          - 'fa fa-minus'
+  maxRows: '1'
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

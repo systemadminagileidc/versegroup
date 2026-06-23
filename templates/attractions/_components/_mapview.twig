@@ -1,0 +1,209 @@
+{% set cats = craft.categories().group('attractionType').relatedTo(attractions).all() %}
+
+{# Output the map #}
+<section id="mapContainer" class="grid-row gap-top-400 default pad-top-000 pad-bottom-300 {% if not mapview %}hidden{% endif %}">
+    <div class="grid align-full-border gridRow ">
+    <div id="map" class="mapView"></div>
+    </div>
+</section>
+
+<script>
+    {# JS array of attraction data #}
+    var attractions = [
+        {% for attraction in attractionsData %}
+        {
+            lat: {{attraction.lat}},
+            lng: {{attraction.lon}},
+            title: {{attraction.title|json_encode|raw}},
+            types: {{attraction.types|json_encode|raw}},
+            img: {{attraction.img|json_encode|raw}},
+            summary: {{attraction.summary|json_encode|raw}},
+            url: {{attraction.url|json_encode|raw}}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ];
+
+    {# JS array of category data #}
+    var categories = {
+        {%- for cat in cats -%}
+        "{{cat.id}}": {
+            id:{{cat.id}},
+            title:{{cat.title|json_encode|raw}},
+            icon:{% if cat.attractionTypeIcon|length > 0 %}{{cat.attractionTypeIcon.one().getUrl()|json_encode|raw}}{% else %}null{% endif %},
+		marker:{% if cat.attractionTypeMarker|length > 0 %}{{cat.attractionTypeMarker.one().getUrl()|json_encode|raw}}{% else %}null{% endif %},
+            {# check the form variables to see if it should be enabled by default #}
+            active:{% if craft.app.request.queryParams|length > 0 and craft.app.request.queryParams["types"] is defined and cat.id in craft.app.request.queryParams["types"] %}true{% else %}false{% endif %}
+        }{% if not loop.last %},{% endif %}
+        {%- endfor -%}
+    }
+
+    // Callback function for when google maps has loaded
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById("map"));
+        var bounds = new google.maps.LatLngBounds();
+        var info = new google.maps.InfoWindow();
+        var infowindow;
+
+        // Create an array of markers for attractions and extend the bounds object used to get center and zoom needed to show all
+        var markers = attractions.map((location, i) => {
+            bounds.extend(location);
+            var opts = {
+                position: location,
+                title: location.title,
+                data: location
+            }
+            var cats = [];
+            for(var n in categories) {
+                var c = categories[n];
+                if(location.types.indexOf(c.id) > -1 && c.marker) {
+                    cats.push(c.marker);
+                }
+            }
+            if(cats.length == 1) {
+                opts.icon = cats[0];
+            } else {
+                // Using a custom default marker rather than google one
+                opts.icon = '/assets/MEDIA/IMG/attraction-icon.svg';
+            }
+            return new google.maps.Marker(opts);
+        });
+
+        // Add a function to when zoomed in and a cluster is clicked to open a combined info window
+        function clusterClick(cluster, markers) {
+            if(markers.markers.length <= 2) {
+                var clusterMarkers = markers.markers;
+
+                if(infowindow) {
+                    infowindow.close();
+                }
+
+                var c = '';
+                [].forEach.call(clusterMarkers, function(m) {
+                    var d = m.data;
+                    c += d.img?'<div style="background-position:center;background-size: cover;-o-background-size: cover;width:384px;height:216px;"><img style="width:100%;height:100%;object-fit:cover;" src="'+d.img+'" alt="'+m.title+'" /></div>':'';
+                    c += '<h4>'+d.title+'</h4>';
+                    c += '<p>'+d.summary+'</p>';
+                    c += '<p style="float:right;">';
+                    for(var n in categories) {
+                        var cat = categories[n];
+                        if(d.types.indexOf(cat.id) > -1 && cat.icon) {
+                            // Adding class to icons to display them inline
+                            c += '<img src="'+cat.icon+'" alt="'+cat.title+'" title="'+cat.title+'" class="mapInfoWindowIcon" width="30" height="30" /> ';
+                        }
+                    }
+                    c += '</p>';
+                    c += '<a class="button primary " href="'+d.url+'">Read More</a>';
+                });
+                infowindow = new google.maps.InfoWindow({ content:c });
+                infowindow.setPosition(cluster.latLng);
+                infowindow.open(map);
+            } else {
+                map.fitBounds(markers.bounds);
+            }
+        }
+
+        // function used to show and hide markers based on filters
+        var refreshMarkers = function() {
+            // improving marker clustering clearing
+            // clearing all markers and clustrers as this version doesn't have a destroy method for old set (as the old one did)
+            if(clusterer) {
+                for(var n in clusterer.clusters) {
+                    var c = clusterer.clusters[n];
+                    c.marker.setMap(null);
+                }
+                clusterer.clusters = [];
+
+                for(var n in clusterer.markers) {
+                    var m = clusterer.markers[n];
+                    m.setMap(null);
+                }
+                clusterer.markers = [];
+            }
+            var activeMarkers = [];
+            var activeCats = [];
+            for(var n in categories) {
+                var c = categories[n];
+                if(c.active) {
+                    activeCats.push(c);
+                }
+            };
+
+            if(activeCats.length > 0) {
+                [].forEach.call(markers, function(m) {
+                    var inActive = false;
+                    for(var n in activeCats) {
+                        var c = activeCats[n];
+                        if(m.data.types.indexOf(c.id) > -1 && !inActive) {
+                            inActive = true;
+                            activeMarkers.push(m);
+                        }
+                    };
+                });
+
+                // Updating to the new version of marker clusterer released this year
+                clusterer = new MarkerClusterer({ algorithm:superClusterAlgorithm, map:map, markers:activeMarkers, onClusterClick:clusterClick});
+            } else {
+                [].forEach.call(markers, function(m) {
+                    activeMarkers.push(m);
+                });
+                // Updating to the new version of marker clusterer released this year
+                clusterer = new MarkerClusterer({ algorithm:superClusterAlgorithm, map:map, markers:activeMarkers, onClusterClick:clusterClick});
+            }
+            // Adding event listener when a cluster is clicked
+        }
+
+        // Adds events for the category filter changes
+        for(id in categories) {
+            var n = document.getElementById('cat' + id);
+            if(n) {
+                n.dataset["id"] = id;
+                n.addEventListener('change', function(e) {
+                    categories[e.target.dataset["id"]].active = e.target.checked;
+                    refreshMarkers();
+                });
+                n.disabled = false;
+            }
+        };
+
+        // Adds event listeners to display the info window
+        [].forEach.call(markers, function(m) {
+            google.maps.event.addListener(m, 'click', function() {
+                if(infowindow) {
+                    infowindow.close();
+                }
+                var d = m.data;
+                // <div><img src="'+d.img+'" alt="'+m.title+'" width="384" height="216" /></div>
+                var c = d.img?'<div style="background-position:center;background-size: cover;-o-background-size: cover;width:384px;height:216px;"><img style="width:100%;height:100%;object-fit:cover;" src="'+d.img+'" alt="'+m.title+'" /></div>':'';
+                c += '<h4>'+d.title+'</h4>';
+                c += '<p>'+d.summary+'</p>';
+                c += '<p style="float:right;">';
+                for(var n in categories) {
+                    var cat = categories[n];
+                    if(d.types.indexOf(cat.id) > -1 && cat.icon) {
+                        // Adding class to icons to display them inline
+                        c += '<img src="'+cat.icon+'" alt="'+cat.title+'" title="'+cat.title+'" class="mapInfoWindowIcon" width="30" height="30" /> ';
+                    }
+                }
+                c += '</p>';
+                c += '<a class="button primary " href="'+d.url+'">Read More</a>';
+                infowindow = new google.maps.InfoWindow({ content:c });
+                infowindow.open(map,m);
+            });
+        });
+
+        // Set map placement and zooma nd engange marker clustering
+        map.setCenter(bounds.getCenter());
+        map.fitBounds(bounds);
+
+        // Updating to the new version of marker clusterer released this year
+        var MarkerClusterer = markerClusterer.MarkerClusterer;
+        var superClusterAlgorithm = new markerClusterer.SuperClusterAlgorithm({maxZoom:25});
+        var clusterer;
+
+        // Activate filters
+        refreshMarkers();
+    }
+
+</script>
+<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{getenv('MAPS_API')}}&callback=initMap" async ></script>

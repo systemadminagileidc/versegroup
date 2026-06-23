@@ -1,0 +1,19 @@
+{% if craft.embeddedAssets.get(block.videoAsset.one()) != null %}
+    {% set vid = craft.embeddedAssets.get(block.videoAsset.one()) %}
+    {% set url = vid.getVideoUrl(['autoplay=1', 'controls=0', 'mute=1', 'playsinline=1', 'loop=1']) %}
+    {% set providerName = vid.providerName %}
+{% endif %}
+<div class="video">
+    <iframe id="iframe"
+            src="{{ url }}"
+            allowtransparency
+            allow="autoplay"
+            title="{{ providerName }}"
+            width="100%"
+            height="800px"
+    ></iframe>
+</div>
+<div class="video-text stack {{ textColour }}">
+    {{ block.text }}
+    {% include '_layouts/_block-partials/_button.twig' with { button: block.button, orientation: 'center', class:'secondary' } %}
+</div>

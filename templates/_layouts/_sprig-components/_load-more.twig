@@ -1,0 +1,40 @@
+{% set offset = offset ?? 0 %}
+{% set limit = limit ?? -1 %}
+
+{% set allowedSectionHandles = [section] %}
+{% set allowedSections = allowedSectionHandles|map(handle=> craft.app.sections.sectionByHandle(handle)) %}
+{% set section = section in allowedSectionHandles ? section : allowedSectionHandles|join(',') %}
+{#{% dd order %}#}
+{% set entryQuery = craft.entries({
+    section: section,
+    orderBy:order,
+    limit: limit,
+    offset: offset,
+    with:[
+        ['image',{
+            withTransforms:['medium']
+        }]
+    ]
+}) %}
+
+{% set entries = entryQuery.all() %}
+{% if entries is empty %}
+    <p style="flex: 0 0 100px; border: 1px solid white;"
+       class="no-entries">
+        No More Entries Found</p>
+{% else %}
+    {% for entry in entries %}
+        {% include "_layouts/_block-partials/_entry-card.twig" %}
+    {% endfor %}
+    {% if limit > -1 %}
+        <div id="replace" style="grid-column: 1/-1;">
+            <input type="hidden" name="offset" value="{{ offset + limit }}">
+            <button class="button primary full-width gap-top-200"
+                    sprig
+                    s-target="#replace"
+                    s-swap="outerHTML">Load more
+            </button>
+        </div>
+    {% endif %}
+{% endif %}
+

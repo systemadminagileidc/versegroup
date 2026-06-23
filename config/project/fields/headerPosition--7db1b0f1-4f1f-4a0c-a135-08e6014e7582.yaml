@@ -1,0 +1,46 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: d2c32663-a4c9-41e8-aba4-8e9ff3e0a643 # Page Builder
+handle: headerPosition
+instructions: ''
+name: 'Header Position'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - default
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Sticky
+        -
+          - value
+          - sticky
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Fixed
+        -
+          - value
+          - fixed
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

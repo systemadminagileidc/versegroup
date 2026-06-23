@@ -1,0 +1,78 @@
+{% if block.image|length > 0 %}
+    {% for image in block.image.all() %}
+        {% if block.crop is defined %}
+            {% switch block.crop %}
+            {% case 'original' %}
+                {% set imageMedium = image.url() ?? '' %}
+                {% set imageSmall = image.url() ?? '' %}
+            {% case 'extraLarge' %}
+                {% set imageMedium = image.getUrl('extraLarge') ?? '' %}
+                {% set imageSmall = image.getUrl('large') ?? '' %}
+            {% case 'letterbox' %}
+                {% set imageMedium = image.getUrl('letterbox') ?? '' %}
+                {% set imageSmall = image.getUrl('smallLetterbox') ?? '' %}
+            {% case 'smallLetterbox' %}
+                {% set imageMedium = image.getUrl('smallLetterbox') ?? '' %}
+                {% set imageSmall = image.getUrl('smallLetterbox') ?? '' %}
+            {% case 'mediumLarge' %}
+                {% set imageMedium = image.getUrl('mediumLarge') ?? '' %}
+                {% set imageSmall = image.getUrl('medium') ?? '' %}
+            {% case 'medium' %}
+                {% set imageMedium = image.getUrl('medium') ?? '' %}
+                {% set imageSmall = image.getUrl('small') ?? '' %}
+            {% case 'portrait' %}
+                {% set imageMedium = image.getUrl('portrait') ?? '' %}
+                {% set imageSmall = image.getUrl('portrait') ?? '' %}
+            {% case 'square' %}
+                {% set imageMedium = image.getUrl('square') ?? '' %}
+                {% set imageSmall = image.getUrl('square') ?? '' %}
+            {% case 'largeSquare' %}
+                {% set imageMedium = image.getUrl('largeSquare') ?? '' %}
+                {% set imageSmall = image.getUrl('square') ?? '' %}
+            {% case 'fourThree' %}
+                {% set imageMedium = image.getUrl('fourThree') ?? '' %}
+                {% set imageSmall = image.getUrl('fourThree')?? '' %}
+            {% case 'small' %}
+                {% set imageMedium = image.getUrl('small') ?? '' %}
+                {% set imageSmall = image.getUrl('tiny') ?? '' %}
+            {% case 'tiny' %}
+                {% set imageMedium = image.getUrl('tiny') ?? '' %}
+                {% set imageSmall = image.getUrl('tiny') ?? '' %}
+            {% default %}
+                {% set imageMedium = image.getUrl('medium') ?? '' %}
+                {% set imageSmall = image.getUrl('small') ?? '' %}
+            {% endswitch %}
+        {% else %}
+            {% set imageMedium = image.getUrl('medium') ?? '' %}
+            {% set imageSmall = image.getUrl('small') ?? '' %}
+        {% endif %}
+
+        {% if block.lightbox %}
+            <a class="gallery-item mfp-fade" href="{{ image.url() }}">
+        {% endif %}
+
+        {% if imageMedium %}
+            <figure class="{{ block.type.handle }}
+                            {{ block.blockColour ?? '' }}
+                            {{ block.blockPadding[0].paddingTop  ?? '' }}
+                            {{ block.blockPadding[0].paddingBottom ?? '' }}
+                            {{ block.blockPadding[0].paddingLeft ?? '' }}
+                            {{ block.blockPadding[0].paddingRight  ?? '' }}
+                            {{ block.orientation }}">
+                <img srcset="{{ imageMedium }} 576w, {{ imageSmall }} 384w"
+                     sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                     src="{{ imageMedium }}" alt="{{ image.plainText ?? '' }}"/>
+                {% if image.text %}
+                    <figcaption>
+                        {{ image.text }}
+                    </figcaption>
+                {% endif %}
+            </figure>
+        {% endif %}
+
+        {% if block.lightbox %}
+            </a>
+        {% endif %}
+
+    {% endfor %}
+{% endif %}

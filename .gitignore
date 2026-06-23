@@ -1,0 +1,14 @@
+/.env
+/.idea
+/vendor
+.DS_Store
+/node_modules
+/wiki
+.rnd
+
+
+## Prevent to .sql files (added by fortrabbit/craft-copy)
+#*.sql
+/tmp/
+/storage/instagram
+/web/uploads/

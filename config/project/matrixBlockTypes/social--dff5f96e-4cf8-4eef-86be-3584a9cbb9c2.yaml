@@ -1,0 +1,129 @@
+field: 8a590f78-5665-4cd9-8319-23d44655c436 # Page Builder
+fieldLayouts:
+  58d6cea7-87a5-4468-bb5b-a5c19a6b7e93:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 60d0322d-0e15-47e2-9264-1af965de01d8 # Row Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 7f891241-2545-4800-867f-ca1fdb73db1f # __blank__
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7f891241-2545-4800-867f-ca1fdb73db1f: # __blank__
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: rowContent
+    instructions: ''
+    name: __blank__
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - f84c6085-0286-492d-8dff-d22297f82023 # Block
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_100_rowcontent}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  60d0322d-0e15-47e2-9264-1af965de01d8: # Row Width
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: rowWidth
+    instructions: ''
+    name: 'Row Width'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Narrowest
+            -
+              - value
+              - narrowest
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Wide
+            -
+              - value
+              - align-wide
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Full
+            -
+              - value
+              - align-full
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: social
+name: Social
+sortOrder: 3

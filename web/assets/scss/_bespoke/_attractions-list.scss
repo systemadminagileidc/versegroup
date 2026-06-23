@@ -1,0 +1,15 @@
+@use '../_utilities/_mixins/media-query' as *;
+@use '../_utilities/_mixins/family-mixin' as *;
+
+.attractionList .card {
+  padding: 0;
+  word-break: break-word;
+  
+  @include mq-min(tablet) {
+    max-width: 476px;
+  }
+}
+.attractionList.grid-row:not(#hero) div.card {
+  padding: 0;
+}
+

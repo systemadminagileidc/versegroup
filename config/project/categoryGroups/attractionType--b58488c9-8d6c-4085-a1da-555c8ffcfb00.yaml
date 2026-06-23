@@ -1,0 +1,90 @@
+defaultPlacement: end
+fieldLayouts:
+  b0707ca4-54e2-4dd2-ad77-1b1baecf1e3f:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: b777a6c8-900b-4046-9333-a87fe921a1dc # Attraction Type Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3adb811e-2379-4c7d-a9ea-f5a207f57aa8 # Attraction Type Marker
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a97ceae2-adec-4238-9b3b-4d9c74c30aac # Attraction Hidden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4237837c-59b1-471b-a0ed-62fe762a74c5 # Attraction Hide Search Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            style: warning
+            tip: 'Do not amend the below values'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: ed11c925-354f-4061-9b85-a46ab5b85651 # Old Attraction Type Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: attractionType
+name: 'Attraction Type'
+siteSettings:
+  bfee3748-6727-406a-b769-74430862086f: # $SITE_NAME
+    hasUrls: true
+    template: null
+    uriFormat: 'attraction-type/{slug}'
+structure:
+  maxLevels: null
+  uid: d84d201a-9da0-43ba-8314-01197441b52f

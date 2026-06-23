@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: areas
+name: Areas
+propagationMethod: all
+siteSettings:
+  bfee3748-6727-406a-b769-74430862086f: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: true
+    template: attractions/_area
+    uriFormat: 'attractions/area/{slug}'
+structure:
+  maxLevels: null
+  uid: 0ca6624d-3412-4f8d-937f-ad2784436dc5
+type: structure

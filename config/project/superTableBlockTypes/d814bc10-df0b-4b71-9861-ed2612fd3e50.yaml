@@ -1,0 +1,35 @@
+field: 7f891241-2545-4800-867f-ca1fdb73db1f # __blank__
+fieldLayouts:
+  60bcc260-a2d6-4c49-9915-c98da2648a3d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f84c6085-0286-492d-8dff-d22297f82023 # Block
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  f84c6085-0286-492d-8dff-d22297f82023: # Block
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: block
+    instructions: ''
+    name: Block
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_block_3}}'
+      maxBlocks: '1'
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

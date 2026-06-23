@@ -1,0 +1,34 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: fe73f07f-bb89-49f8-887c-958a2abf069d # Common
+handle: location
+instructions: 'This location is used for SEO'
+name: Location
+searchable: false
+settings:
+  boundary: '""'
+  boundaryRestrictionNELat: null
+  boundaryRestrictionNELng: null
+  boundaryRestrictionSWLat: null
+  boundaryRestrictionSWLng: null
+  country: null
+  countryRestriction: null
+  height: null
+  hideAddress: ''
+  hideLatLng: null
+  hideMap: ''
+  hideSearch: ''
+  lat: 51.272154
+  lng: 0.514951
+  maxZoom: '18'
+  minZoom: '3'
+  showCurrentLocation: ''
+  showLatLng: ''
+  showW3WField: false
+  showW3WGrid: false
+  size: normal
+  typeRestriction: null
+  zoom: 15
+translationKeyFormat: null
+translationMethod: none
+type: ether\simplemap\fields\MapField

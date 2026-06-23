@@ -1,0 +1,345 @@
+field: c2525dff-4e5c-4e3f-8072-ae3a6fd14f15 # Block
+fieldLayouts:
+  58ea103d-991a-4798-9685-3247f7dae6cf:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 6abedd81-cd9a-4ce7-8f5e-390f9c71d008 # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 20f68707-7ef0-4c87-b793-3ebdc6e11e3c # Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: ef54894a-67be-4abd-9386-c7ebfc9709b5 # Icons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 37c387e4-a61b-45aa-96e3-a7577b94c799 # Mobile Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  6abedd81-cd9a-4ce7-8f5e-390f9c71d008: # Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: socialTitle
+    instructions: ''
+    name: Title
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  20f68707-7ef0-4c87-b793-3ebdc6e11e3c: # Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: orientation
+    instructions: ''
+    name: Orientation
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Left'
+            -
+              - value
+              - topLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Centre'
+            -
+              - value
+              - topCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Right'
+            -
+              - value
+              - topRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Left'
+            -
+              - value
+              - centreLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Centre'
+            -
+              - value
+              - centreCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Right'
+            -
+              - value
+              - centreRight
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Left'
+            -
+              - value
+              - bottomLeft
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Centre'
+            -
+              - value
+              - bottomCentre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Right'
+            -
+              - value
+              - bottomRight
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  37c387e4-a61b-45aa-96e3-a7577b94c799: # Mobile Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mobileOrientation
+    instructions: ''
+    name: 'Mobile Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Left'
+            -
+              - value
+              - topLeftMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Centre'
+            -
+              - value
+              - topCentreMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Top Right'
+            -
+              - value
+              - topRightMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Left'
+            -
+              - value
+              - centreLeftMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Centre'
+            -
+              - value
+              - centreCentreMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Centre Right'
+            -
+              - value
+              - centreRightMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Left'
+            -
+              - value
+              - bottomLeftMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Centre'
+            -
+              - value
+              - bottomCentreMobile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bottom Right'
+            -
+              - value
+              - bottomRightMobile
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  ef54894a-67be-4abd-9386-c7ebfc9709b5: # Icons
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: icons
+    instructions: ''
+    name: Icons
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - aff546ce-4150-4a57-b4d7-14610419407c # Url
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 31b4f333-e9d8-4957-a44c-31b1d51746e9 # Social Type
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - aebed9fd-6754-461f-a024-5d8a671eddc4 # Icon Style
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 1a8238bc-2c67-4bb0-9568-70a2ff6cdd6b # Icon Colour
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_87_icons}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: iconsBlock
+name: Icons
+sortOrder: 5

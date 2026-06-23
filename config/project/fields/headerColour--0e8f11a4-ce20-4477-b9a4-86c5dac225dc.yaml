@@ -1,0 +1,90 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: d2c32663-a4c9-41e8-aba4-8e9ff3e0a643 # Page Builder
+handle: headerColour
+instructions: ''
+name: 'Header Colour'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - default
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Light
+        -
+          - value
+          - bg-light-main
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Dark
+        -
+          - value
+          - bg-dark-main
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Primary
+        -
+          - value
+          - bg-primary-main
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Secondary
+        -
+          - value
+          - bg-secondary-main
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Tertiary
+        -
+          - value
+          - bg-tertiary-main
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Quaternary
+        -
+          - value
+          - bg-quaternary-main
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

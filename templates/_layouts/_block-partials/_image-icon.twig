@@ -1,0 +1,18 @@
+{% for image in imageAll %}
+    {% if image.extension == 'svg' %}
+        {% set iconColour = block.iconColour ?? '' %}
+        <figure class="{{ iconColour }}">
+            {{ svg(image) }}
+        </figure>
+    {% else %}
+        {% set crop = crop ?? 'original' %}
+        {% if crop != 'original' %}
+            {% set imageUrl = image.getUrl(crop) %}
+        {% else %}
+            {% set imageUrl = image.url() %}
+        {% endif %}
+        <figure>
+            <img src="{{ imageUrl }}" alt=""/>
+        </figure>
+    {% endif %}
+{% endfor %}

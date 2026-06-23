@@ -1,0 +1,79 @@
+{% if block.slidesRepeater|length > 0 %}
+    {# {% set slidesToShow = block.sliderSettings[0].slidesToShow ?? 1 %} #}
+    {% set arrowsOptions = block.sliderSettings[0].arrows ?? ' ' %}
+    {% set navigation = block.sliderSettings[0].navigation ?? '' %}
+    {% set crop = block.sliderSettings[0].imageCrop ?? '' %}
+    {% set orientation = block.orientation ?? '' %}
+    {# {% dd arrowsOptions %} #}
+    {% if navigation == 'false' %}{% set dots = 'false' %}{% else %}{% set dots = 'true' %}{% endif %}
+    {% if arrowsOptions == 'false' %}{% set arrows = 'false' %}{% else %}{% set arrows = 'true' %}{% endif %}
+
+    <div class="block {{ orientation }}">
+        <div class="slidesBlock {{ navigation }} {{ arrowsOptions }}" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "arrows":{{ arrows }},"dots":{{ dots }} }'>
+            {% set slides = block.slidesRepeater.all() %}
+
+            {% for slide in slides %}
+                {% if crop is defined %}
+                    {% switch crop %}
+                    {% case 'original' %}
+                        {% set imageMedium = slide.slideImage.one().url() ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().url() ?? '' %}
+                    {% case 'extraLarge' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('extraLarge') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('large') ?? '' %}
+                    {% case 'letterbox' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('letterbox') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('smallLetterbox') ?? '' %}
+                    {% case 'smallLetterbox' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('smallLetterbox') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('smallLetterbox') ?? '' %}
+                    {% case 'mediumLarge' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('mediumLarge') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('medium') ?? '' %}
+                    {% case 'medium' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('medium') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('small') ?? '' %}
+                    {% case 'portrait' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('portrait') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('portrait') ?? '' %}
+                    {% case 'largeSquare' %}
+                        {% set imageMedium = image.getUrl('largeSquare') ?? '' %}
+                        {% set imageSmall = image.getUrl('square') ?? '' %}
+                    {% case 'square' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('square') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('square') ?? '' %}
+                    {% case 'fourThree' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('fourThree') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('fourThree')?? '' %}
+                    {% case 'small' %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('small') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('small') ?? '' %}
+                    {% default %}
+                        {% set imageMedium = slide.slideImage.one().getUrl('medium') ?? '' %}
+                        {% set imageSmall = slide.slideImage.one().getUrl('small') ?? '' %}
+                    {% endswitch %}
+                {% else %}
+                    {% set imageMedium = slide.slideImage.getUrl('medium') ?? '' %}
+                    {% set imageSmall = slide.slideImage.getUrl('small') ?? '' %}
+                {% endif %}
+
+
+                {% if imageMedium %}
+                    <figure class="{{ block.imageFit }}" title="{{ slide.tabTitle }}">
+                        <img srcset="{{ imageMedium }} 576w, {{ imageSmall }} 384w"
+                             sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                             src="{{ imageMedium }}" alt=""/>
+                        {% if slide.slideLabel %}
+                            <figcaption>{{ slide.slideLabel }}</figcaption>
+                        {% endif %}
+                        {% if slide.slideText %}
+                            <div class="slide-text">
+                                {{ slide.slideText }}
+                            </div>
+                        {% endif %}
+                    </figure>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

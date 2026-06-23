@@ -1,0 +1,46 @@
+columnSuffix: tiiuxjvi
+contentColumnType: string
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: attractionFormDisplay
+instructions: ''
+name: 'Attraction Form Display'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Overlap Header'
+        -
+          - value
+          - overlapHeader
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'In Header'
+        -
+          - value
+          - inHeader
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

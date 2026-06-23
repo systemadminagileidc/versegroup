@@ -1,0 +1,56 @@
+{% set allowedSectionHandles = [section] %}
+{% set allowedSections = allowedSectionHandles|map(handle=> craft.app.sections.sectionByHandle(handle)) %}
+{% set section = section in allowedSectionHandles ? section : allowedSectionHandles|join(',') %}
+{% set page = page ?? 1 %}
+
+{% set entryQuery = craft.entries(({
+    section: section,
+    limit:limit,
+    with:[
+        ['image',{
+            withTransforms:['medium']
+        }]
+    ]
+})) %}
+
+{% set pageInfo = sprig.paginate(entryQuery, page) %}
+
+{% set entries = pageInfo.pageResults %}
+
+{% if entries is empty %}
+    <h3 style="flex: 0 0 100px; border: 1px solid white;"
+        class="bg-primary align-center color-light pad-300">
+        No Entries Found</h3>
+{% else %}
+    {% for entry in entries %}
+        {% include "_layouts/_block-partials/_entry-card.twig" %}
+    {% endfor %}
+{% endif %}
+<div class="pagination stack">
+{#    <div>#}
+{#        Showing#}
+{#        {{ pageInfo.first }} -#}
+{#        {{ pageInfo.last }} of#}
+{#        {{ pageInfo.total }}#}
+{#    </div>#}
+{#    <div>#}
+{#        Page#}
+{#        {{ pageInfo.currentPage }}#}
+{#        of#}
+{#        {{ pageInfo.totalPages }}#}
+{#    </div>#}
+    <hr>
+    <div>
+        <button sprig s-val:page="{{ page > 1 ? page - 1 : 1 }}">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        {% for pageNumber in pageInfo.dynamicRange(5) %}
+            <button sprig s-val:page="{{ pageNumber }}" class="{{ pageNumber == page ? 'weight-bold' : '' }}">
+                {{ pageNumber }}
+            </button>
+        {% endfor %}
+        <button sprig s-val:page="{{ page < pageInfo.totalPages ? page + 1 : pageInfo.totalPages }}">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>

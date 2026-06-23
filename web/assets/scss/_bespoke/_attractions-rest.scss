@@ -1,0 +1,176 @@
+@use "../_utilities/_mixins/media-query" as *;
+
+.TA_certificateOfExcellence {
+  max-width: 150px;
+}
+
+.stack > * + a.selectBox {
+  margin: 0;
+}
+
+.selectBox-options li a {
+  padding: 3px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.selectBox-options li {
+  font-size: 0.8em;
+
+  &.hasIcon a:before {
+    display: inline-block;
+    content: " ";
+    vertical-align: middle;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: relative;
+  }
+
+  &.noIcon a {
+    padding-left: 30px;
+  }
+}
+
+.bg-light-main-selectBox-dropdown-menu li.hasIcon a:before {
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+
+.selectBox-options li.attrsub {
+  position: relative;
+
+  &:before {
+    content: " ";
+    border-color: var(--secondary-main);
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    position: absolute;
+    left: 14px;
+    top: -14px;
+    height: 31px;
+    width: 10px;
+  }
+
+  &.hasIcon a {
+    padding-left: 26px;
+  }
+}
+
+.grid-row:not(#hero) div.card.attrCard[class*="bg"] {
+  @include mq(tablet) {
+    padding: 0;
+  }
+}
+
+.attractionTypeIcon {
+  max-width: 40px;
+  max-height: 40px;
+  display: inline-block;
+
+  .attractionTypeIcons & {
+    margin-right: 10px;
+  }
+}
+
+.stretch img.attractionTypeIcon {
+  display: inline-block;
+}
+
+.attractionFormHolder {
+  overflow: visible;
+  z-index: 18;
+  > .grid {
+    position: relative;
+  }
+}
+
+.suggestions {
+  position: absolute;
+  cursor: pointer;
+  text-align: left;
+  z-index: 20;
+
+  .suggestList {
+    margin-top: -2px;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    border-top: 0;
+    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .2);
+
+    > div:hover {
+      background: #f7f7f7;
+      border-radius: 0 0 4px 4px;
+    }
+
+    > div {
+      color: var(--base-body);
+      padding: 10px;
+
+      &.hovered {
+        background: #f7f7f7;
+      }
+
+      &:before {
+        content: " ";
+        background-image: url(MEDIA/IMG/flagsprite.png);
+        margin-right: 5px;
+        display: inline-block;
+        width: 25px;
+        height: 15px;
+      }
+
+      &.britishisles:before {
+        background-position: -75px 0;
+      }
+      &.northernireland:before {
+        background-position: -25px 0;
+      }
+      &.islandofireland:before {
+        background-position: -50px 0;
+      }
+      &.republicofireland:before {
+        background-position: -100px 0;
+      }
+      &.wales:before {
+        background-position: -125px 0;
+      }
+      &.england:before {
+        background-position: -150px 0;
+      }
+    }
+  }
+}
+
+.color-secondary-highlight {
+  color: var(--secondary-highlight);
+}
+
+.attractionImg {
+  border-bottom: 10px solid #fabf33;
+  padding-bottom:56.248%;
+
+  img {
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%; 
+  }
+}
+
+footer {
+  .grid-row {
+    .grid {
+      nav {
+        h4,
+        .h4 {
+          color: var(--dark-highlight);
+        }
+      }
+    }
+  }
+}

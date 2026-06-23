@@ -1,0 +1,214 @@
+field: c2525dff-4e5c-4e3f-8072-ae3a6fd14f15 # Block
+fieldLayouts:
+  bc7c989a-6da8-42a5-bd44-46402faf373e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7a03aa90-1a9e-42c2-885a-2a306b982295 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3f965d53-bfea-49c2-95eb-e16ef30ca03b # Block Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f2977454-dd2b-45b3-8676-a55b00bcedbf # Block Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3f965d53-bfea-49c2-95eb-e16ef30ca03b: # Block Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockColour
+    instructions: ''
+    name: 'Block Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - 'bg-light-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - 'bg-dark-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - 'bg-primary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - 'bg-secondary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - 'bg-tertiary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - 'bg-quaternary-main pad-400'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  7a03aa90-1a9e-42c2-885a-2a306b982295: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  f2977454-dd2b-45b3-8676-a55b00bcedbf: # Block Padding
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockPadding
+    instructions: ''
+    name: 'Block Padding'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - a937c129-9c47-405b-ad82-7577b42bc164 # Padding Top
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - e1bf351b-5521-420c-afb7-235ea64efb3a # Padding Bottom
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 20556a54-2e16-46f1-9cae-d4f3913a37b5 # Padding Left
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - cd3d39f8-edaf-4ad2-a4d5-1a27ec8b3c57 # Padding Right
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_105_blockpadding}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: '0'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: image
+name: Image
+sortOrder: 8

@@ -1,0 +1,11 @@
+<section class="grid-row {{ rowSpace }} {{ colour }} {{ paddingTop }} {{ paddingBottom }}">
+    <div class="grid {{ rowLayout }} {{ width }} {{ gridGap }} {{ blockSize ?? ''  }}"
+    {{ sprig('_layouts/_sprig-components/_paginate',{
+        'limit': limit,
+        'section': section,
+        'popup': popup,
+        'buttonStyle': buttonStyle.value,
+        'showPostDate': showPostDate,
+    }) }}
+    </div>
+</section>

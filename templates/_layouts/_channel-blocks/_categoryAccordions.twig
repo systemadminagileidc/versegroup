@@ -1,0 +1,58 @@
+{% set categories = craft.categories() %}
+
+<section class="grid-row cat-row accordion
+        {{ rowSpace }}
+        {{ colour }}
+        {{ paddingTop }}
+        {{ paddingBottom }}">
+    {% for category in categories %}
+        {# {% dd order.value %} #}
+        {% set entries = craft.entries()
+            .section(section)
+            .orderBy(order.value)
+            .relatedTo(category) %}
+        {# {% set catEntries = craft.entries.relatedTo(category) %} #}
+        {% if entries|length %}
+            <div class="grid has-one-column {{ width }}">
+                <div class="stack accordion-block
+                        {{ block.accordionBackground ?? '' }}
+                        {{ block.activeAccordionBackground ?? '' }}
+                        {{ block.activeUiColour ?? '' }}
+                        {{ block.uiColour ?? '' }}
+                        ">
+                    <div class="trigger stack">
+                        <h3 id="{{ category.title|kebab }}">{{ category.title }}</h3>
+                        {% if category.excerpt %}
+                            <p>{{ category.excerpt }}</p>
+                        {% endif %}
+                        <i class="fas fa-plus icon-default"></i>
+                        <i class="fa fa-minus icon-active"></i>
+                    </div>
+                    <div class="has-three-columns draw {{ gridGap }}">
+                        {% for entry in entries.all() %}
+                            {% include '_layouts/_block-partials/_entry-card.twig' %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+</section>
+
+{# <div class="grid cat-title accordion-block {{ width }} {{ gridGap }} {{ blockSize ?? '' }} #}
+
+{# {{ block.accordionBackground ?? '' }} #}
+{# {{ block.activeUiColour ?? '' }}"> #}
+{# <div class="channel-trigger"> #}
+{# <h3 class="{{ block.uiColour ?? '' }}" id="{{ category.title|kebab }}">{{ category.title }}</h3> #}
+{# {% if category.excerpt %} #}
+{# <p>{{ category.excerpt }}</p> #}
+{# {% endif %} #}
+{# </div> #}
+{# </div> #}
+{# <div class="grid cat-content {{ rowLayout }} {{ width }} {{ gridGap }} {{ blockSize ?? '' }}"> #}
+{# {% for entry in entries.all() %} #}
+{# {% include '_layouts/_block-partials/_entry-card.twig' %} #}
+{# {% endfor %} #}
+{# </div> #}

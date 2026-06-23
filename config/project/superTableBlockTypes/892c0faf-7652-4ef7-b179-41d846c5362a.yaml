@@ -1,0 +1,213 @@
+field: 4b789a8d-5c49-4c9a-85f2-869305e06c75 # Default Fields
+fieldLayouts:
+  572b13d0-778f-4b36-afa6-97c907633a03:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 86b1bda0-c395-4636-8864-e2e8903cb9c8 # Name Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 36f0dc01-ef12-49e0-9360-0c6b753ad9c8 # Email Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9abd5ac0-51c5-451b-85ca-75cf554b4bd0 # Meassage Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9abd5ac0-51c5-451b-85ca-75cf554b4bd0: # Meassage Fields
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: meassageFields
+    instructions: ''
+    name: 'Meassage Fields'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Message Label'
+                -
+                  - handle
+                  - messageLabel
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Message Placeholder'
+                -
+                  - handle
+                  - messagePlaceholder
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - Message
+            -
+              - col2
+              - 'Enter Your Message'
+      maxRows: '1'
+      minRows: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  36f0dc01-ef12-49e0-9360-0c6b753ad9c8: # Email Fields
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: emailFields
+    instructions: ''
+    name: 'Email Fields'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Email Label'
+                -
+                  - handle
+                  - emailLabel
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Email Placeholder'
+                -
+                  - handle
+                  - emailPlaceholder
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - 'Your Email'
+            -
+              - col2
+              - 'Enter a valid email address'
+      maxRows: '1'
+      minRows: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  86b1bda0-c395-4636-8864-e2e8903cb9c8: # Name Fields
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: nameFields
+    instructions: ''
+    name: 'Name Fields'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Name Label'
+                -
+                  - handle
+                  - nameLabel
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Name Placeholder'
+                -
+                  - handle
+                  - namePlaceholder
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - 'Your Name'
+            -
+              - col2
+              - 'Enter Name'
+      maxRows: '1'
+      minRows: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table

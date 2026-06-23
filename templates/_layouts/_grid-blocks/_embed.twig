@@ -1,0 +1,13 @@
+<div class="{{ block.type.handle }}
+{{ block.blockColour ?? '' }}
+{{ block.blockPadding[0].paddingTop  ?? '' }}
+{{ block.blockPadding[0].paddingBottom ?? '' }}
+{{ block.blockPadding[0].paddingLeft ?? '' }}
+{{ block.blockPadding[0].paddingRight  ?? '' }}">
+    <div class="stack">
+        {% set embedCode = block.embedCode ?? '' %}
+        {% if embedCode|length %}
+                {{ embedCode|raw }}
+        {% endif %}
+    </div>
+</div>

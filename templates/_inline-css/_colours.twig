@@ -1,0 +1,66 @@
+<style name="colours">
+    /* In this file we are overriding the CSS variables for colours */
+    :root {
+    /* Colours can be set in the admin, either at a global level or per entry */
+    {% set siteColours = siteColours.colours.one() %}/* Global Colour */
+    {% set pageColours = entry.colours.one() ?? null %} /* Entry Colour */
+    {% if siteColours %}
+        /* These CSS variables have been generated in _abstracts/_colours.scss & _utilities/_generator/_colour-utility.scss  */
+        --primary-main: {{ pageColours.primary[0].main ?? siteColours.primary[0].main }};
+        --primary-highlight: {{ pageColours.primary[0].highlight ?? siteColours.primary[0].highlight }};
+        --primary-invert: {{ pageColours.primary[0].invert ?? siteColours.primary[0].invert  }};
+
+        --secondary-main: {{ pageColours.secondary[0].main ?? siteColours.secondary[0].main }};
+        --secondary-highlight: {{ pageColours.secondary[0].highlight ?? siteColours.secondary[0].highlight }};
+        --secondary-invert: {{ pageColours.secondary[0].invert ?? siteColours.secondary[0].invert }};
+
+        --tertiary-main: {{ pageColours.tertiary[0].main ?? siteColours.tertiary[0].main }};
+        --tertiary-highlight: {{ pageColours.tertiary[0].highlight ?? siteColours.tertiary[0].highlight }};
+        --tertiary-invert: {{ pageColours.tertiary[0].invert ?? siteColours.tertiary[0].invert  }};
+
+        --quaternary-main: {{ pageColours.quaternary[0].main ?? siteColours.quaternary[0].main }};
+        --quaternary-highlight: {{ pageColours.quaternary[0].highlight ?? siteColours.quaternary[0].highlight }};
+        --quaternary-invert: {{ pageColours.quaternary[0].invert ?? siteColours.quaternary[0].invert }};
+
+        --light-main: {{ pageColours.light[0].main ?? siteColours.light[0].main }};
+        --light-highlight: {{ pageColours.light[0].highlight ?? siteColours.light[0].highlight }};
+        --light-invert:{{ pageColours.light[0].invert ?? siteColours.light[0].invert }} ;
+
+        --dark-main: {{ pageColours.dark[0].main ?? siteColours.dark[0].main }};
+        --dark-highlight: {{ pageColours.dark[0].highlight ?? siteColours.dark[0].highlight }};
+        --dark-invert: {{ pageColours.dark[0].invert ?? siteColours.dark[0].invert }};
+
+        --base-background: {{ pageColours.background[0].background ?? siteColours.background[0].background }};
+        --base-heading: {{ pageColours.font[0].headingFont ?? siteColours.font[0].headingFont }};
+        --base-body: {{ pageColours.font[0].bodyFont ?? siteColours.font[0].bodyFont }};
+        --base-link-colour:  {{ pageColours.font[0].link ?? siteColours.font[0].link }};
+
+        --base-green:  {{ pageColours.baseColours[0].green ?? siteColours.baseColours[0].green }};
+        --base-orange:  {{ pageColours.baseColours[0].orange ?? siteColours.baseColours[0].orange }};
+        --base-red:  {{ pageColours.baseColours[0].red ?? siteColours.baseColours[0].red }};
+
+
+    {% set buttonSettings = master.buttonSettings[0] %}
+
+        /* Master Button Settings */
+        /* These set button colours in _components/_buttons.scss/*/
+        --link-radius: {{ buttonSettings.buttonStyle }};
+
+        --base-button-background: {{ siteColours.button[0].backgroundColour }};
+        --base-button-hover: {{ siteColours.button[0].hoverBackgroundColour }};
+        --base-button-text: {{ siteColours.button[0].textColour }};
+
+        --base-button-hover-text: {{ siteColours.button[0].hoverTextColour }};
+        --base-button-border-color: {{ siteColours.button[0].borderColour }};
+        --base-button-hover-border-color: {{ siteColours.button[0].hoverBorderColour }};
+        --base-button-border-weight: {{ buttonSettings.borderWeight }};
+
+    {% endif %}
+    {% set imageSettings = master.imageSettings[0] %}
+        --image-border-radius: {{ imageSettings.borderRadius ?? '0px' }};
+        --hover-scale: {{ imageSettings.hoverEffect ?? '1' }};
+        --link-weight: 400;
+        --spacing-ratio: {{ master.spaceRatio }};
+    }
+
+</style>

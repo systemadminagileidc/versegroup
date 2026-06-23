@@ -1,0 +1,95 @@
+{% extends "_base-layouts/generic-page-layout.twig" %}
+{#
+    _area.twig
+        Template and query data created in _plugins/top100/src/controllers/AreaController.php
+            'searchTerm' => Entered search term
+            'mapview' => Map view is selected
+            'types' => Attraction types on the search term,
+            'attractions' => results from attraction search query,
+            'attractionsData' => results from attraction search query - limited data,
+            'area' => Found area from the search,
+            'query' => Query builder to be used for pagination
+#}
+
+{# Set the entry to the attractionSearch single #}
+{% set entry = craft.entries.section("attractionSearch").one() %}
+
+{# Set the search title #}
+{% if types is defined and types|length > 0 %}
+    {% set attrType = craft.categories().group('attractionType').id(types).one() %}
+{% else %}
+    {% set attrType = {title:"results"} %}
+{% endif %}
+{% set pageTitle = "Search for " ~ attrType.title ~ " near " ~ searchTerm %}
+{% if area %}
+    {% set pageTitle = attrType.title ~ " in " ~ area.title %}
+{% endif %}
+
+{# SEOmate data #}
+{% set seomate = {
+    element: entry,
+    meta: {
+        title:pageTitle | capitalize
+    }
+} %}
+
+{# Run query for grid view, we do this hear so we can paginate #}
+{% paginate query.limit(18) as pageInfo, attractions %}
+{% set page = pageInfo.currentPage %}
+
+{# Output meta description #}
+{% block headMeta %}
+<meta name="description" content="A list and map of our top {{attrType.title|lower}} {% if area %}in{% else %}near{% endif %} {{searchTerm}}" />
+{% endblock headMeta %}
+
+{# Output the content block #}
+{% block content %}
+    {% if attractions| length > 0 %}
+        {% set searchType = 'search' %}
+    {% else %}
+        {% set searchType = '' %}
+    {% endif %}
+
+    {# Check if area has header image #}
+    {% if area and area.headerImage and area.headerImage|length > 0 %}
+        {% set headerImage = area.headerImage.one() %}
+        <section id="hero" class="grid-row"><div class="grid hero-content static auto small grid-gap-000 pad-top-400 pad-bottom-400 "></div><div class="grid hero-media static align-full small o-05 default multiply pad-top-400 pad-bottom-400"><img class="hero-banner" srcset="{{headerImage.getUrl("extraLarge")}} 1920w, {{headerImage.getUrl("large")}} 1536w, {{headerImage.getUrl("mediumLarge")}} 768w, {{headerImage.getUrl("medium")}} 576w, {{headerImage.getUrl("small")}} 384w" sizes="100vw" src="{{headerImage.getUrl("large")}}" alt="{{headerImage.title}}"></div></section>
+
+		{# Display attractions search form #}
+		{% include 'attractions/_components/_attractions-form' with { searchType: searchType } %}
+    {% else %}
+        {# Adding default hero ability #}
+        {% include "_layouts/_hero.twig" with { searchType: searchType } %}
+    {% endif %}
+
+    {# Display the page content #}
+    <article>
+    <section class="grid-row gap-top-000 default pad-top-600 pad-bottom-000">
+        <div class="grid align-full-border gridRow">
+            <div class="textBlock start">
+                <div class="stack">
+						<h1>{{pageTitle}}</h1>
+                    {% if area %}
+                        {{area.description}}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Check for attractions #}
+    {% if attractions| length > 0 %}
+        {% include 'attractions/_components/_attractions-filter-bar' %}
+
+        {# Display map view #}
+        {% include 'attractions/_components/_mapview' with { attractions:attractions } %}
+
+        {# Display grid view #}
+        {% include 'attractions/_components/_attraction_list' with { pageInfo:pageInfo, attractions:attractions } %}
+
+    {% else %}
+        {# No results message #}
+			<section class="grid-row gap-top-400 default pad-top-000 pad-bottom-000"><div class="grid gridRow"><div class="textBlock start"><div class="stack"><p>No attractions matched your search</p><br /></div></div></div></section>
+    {% endif %}
+    </article>
+{% endblock %}

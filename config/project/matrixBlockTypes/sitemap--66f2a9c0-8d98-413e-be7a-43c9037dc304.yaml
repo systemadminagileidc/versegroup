@@ -1,0 +1,35 @@
+field: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+fieldLayouts:
+  dc0dfaa2-c429-457f-a77f-22c9bdc6ac56:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d38ac818-9fef-47cf-82d7-4d109c1f8d62 # Channels
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  d38ac818-9fef-47cf-82d7-4d109c1f8d62: # Channels
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: channels
+    instructions: ''
+    name: Channels
+    searchable: false
+    settings:
+      allowMultiple: false
+      someAttribute: 'Some Default'
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\upgrademodule\fields\SectionSelect
+handle: sitemap
+name: Sitemap
+sortOrder: 18

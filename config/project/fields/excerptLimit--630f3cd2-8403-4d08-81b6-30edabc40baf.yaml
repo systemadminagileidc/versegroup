@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: integer(10)
+fieldGroup: fe73f07f-bb89-49f8-887c-958a2abf069d # Common
+handle: excerptLimit
+instructions: ''
+name: 'Excerpt Limit'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 300
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: Characters
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

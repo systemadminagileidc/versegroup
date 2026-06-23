@@ -1,0 +1,369 @@
+field: b46266d2-f901-4e33-95b1-db6ab3ffeee6 # __blank__
+fieldLayouts:
+  35fb5020-16a8-4943-b0cf-fc9ac1458bd5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: be5bd8dd-f88a-46c9-a06b-ed14f231b657 # Card Background Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 95bb36b6-74f1-4265-82ae-f414f1087e92 # Order
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 18fa28a9-ce20-4b0d-9aee-435801614d38 # Button Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 70306175-3266-45e9-9631-61b9d326934f # Button Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c02ef64e-5db0-4199-a0aa-477805ddcf6e # Layout
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  18fa28a9-ce20-4b0d-9aee-435801614d38: # Button Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonColour
+    instructions: ''
+    name: 'Button Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Master
+            -
+              - value
+              - master
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Inherit
+            -
+              - value
+              - ''
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - bg-light-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - bg-dark-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - bg-primary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - bg-secondary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - bg-tertiary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quarternary
+            -
+              - value
+              - bg-quarternary-main
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  95bb36b6-74f1-4265-82ae-f414f1087e92: # Order
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: order
+    instructions: ''
+    name: Order
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Menu Order'
+            -
+              - value
+              - ''
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Newest First'
+            -
+              - value
+              - 'postDate desc'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Oldest First'
+            -
+              - value
+              - 'postDate asc'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  70306175-3266-45e9-9631-61b9d326934f: # Button Style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonStyle
+    instructions: ''
+    name: 'Button Style'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - primary
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Ghost
+            -
+              - value
+              - ghost
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - secondary
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Full Width'
+            -
+              - value
+              - 'primary full-width'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  be5bd8dd-f88a-46c9-a06b-ed14f231b657: # Card Background Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cardBackgroundColour
+    instructions: ''
+    name: 'Card Background Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - bg-light-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - bg-dark-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - bg-primary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - bg-secondary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - bg-tertiary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - bg-quaternary-main
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  c02ef64e-5db0-4199-a0aa-477805ddcf6e: # Layout
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: layout
+    instructions: 'Select a layout option to display the selected entry type.'
+    name: Layout
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_layout}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

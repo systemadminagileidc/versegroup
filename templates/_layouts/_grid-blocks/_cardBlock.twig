@@ -1,0 +1,135 @@
+{% set popup = block.popup ?? '' %}
+{% set cardLinkClass = 'imglink' %}
+{% set cardOverrideLink = '' %}
+
+{% set imageBlock %}
+    {% if block.cardImage.one()|length > 0 %}
+        {# Building the class value for the link, based on whether it should trigger popup system #}
+        {% if block.cardLink %}
+            {% set targetUrl = block.cardLink.getUrl() %}
+
+            {% if 'youtube' in targetUrl or 'vimeo' in targetUrl or 'video.php' in targetUrl %}
+                {% set cardLinkClass = cardLinkClass ~ ' popup-video' %}
+            {% endif %}
+        {% endif %}
+
+        {# Build a url from the selected card #}
+        {% if block.cardEntry %}
+            {% set cardEntry = block.cardEntry.one() %}
+
+            {% if cardEntry is defined and cardEntry|length > 0 %}
+                {% if cardEntry.section.handle == 'areas' %}
+                    {% set targetUrl = '/attractions/area/' ~ cardEntry.slug %}
+                {% else %}
+                    {% set targetUrl = cardEntry.url %}
+                {% endif %}
+
+                {% if 'youtube' in targetUrl or 'vimeo' in targetUrl or 'video.php' in targetUrl %}
+                    {% set cardLinkClass = cardLinkClass ~ ' popup-video' %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+        {% if block.cardCustomLink is defined and block.cardCustomLink %}
+            {% set cardOverrideLink = block.cardCustomLink %}
+            {% if 'youtube' in cardOverrideLink or 'vimeo' in cardOverrideLink or 'video.php' in cardOverrideLink %}
+                {% set cardLinkClass = cardLinkClass ~ ' popup-video' %}
+            {% endif %}
+        {% endif %}
+
+        {% set imageUrl = block.cardImage.one() %}
+        {% if block.imageCrop is defined %}
+            {% switch block.imageCrop %}
+            {% case 'medium' %}
+                {% set imageMedium = imageUrl.getUrl('medium') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('small') ?? '' %}
+            {% case 'portrait' %}
+                {% set imageMedium = imageUrl.getUrl('portrait') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('portrait') ?? '' %}
+            {% case 'largeSquare' %}
+                {% set imageMedium = image.getUrl('largeSquare') ?? '' %}
+                {% set imageSmall = image.getUrl('square') ?? '' %}
+            {% case 'square' %}
+                {% set imageMedium = imageUrl.getUrl('square') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('square') ?? '' %}
+            {% case 'fourThree' %}
+                {% set imageMedium = imageUrl.getUrl('fourThree') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('fourThree')?? '' %}
+            {% default %}
+                {% set imageMedium = imageUrl.getUrl('medium') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('small') ?? '' %}
+            {% endswitch %}
+        {% else %}
+            {% set imageMedium = imageUrl.getUrl('medium') ?? '' %}
+            {% set imageSmall = imageUrl.getUrl('small') ?? '' %}
+        {% endif %}
+
+        {% if imageMedium %}
+            <figure>
+                <img srcset="{{ imageMedium }} 576w, {{ imageSmall }} 384w"
+                    sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                    src="{{ imageMedium }}" alt=""/>
+            </figure>
+        {% endif %}
+    {% endif %}
+{% endset %}
+
+{% set contentBlock %}
+    <div class="content">
+        <div>
+            {% if block.cardTitle|length %}
+                <h4>{{ block.cardTitle }}</h4>
+            {% endif %}
+            {% if block.cardText|length %}
+                {{ block.cardText }}
+            {% endif %}
+        </div>
+
+        {% if popup is defined and popup == 1 %}
+            <div id="popup-{{ rowKey ~ '-' ~ blockKey }}" class="card-popup mfp-hide">
+                <img srcset="{{ imageMedium }} 576w, {{ imageSmall }} 384w"
+                    sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                    src="{{ imageMedium }}" alt=""/>
+                <div>
+                    <h4>{{ block.cardTitle }}</h4>
+                    {{ block.cardText }}
+                </div>
+            </div>
+        {% elseif block.embed|length%}
+            {{ block.embed[0].embedCode|raw }}
+        {% endif %}
+    </div>
+{% endset %}
+
+{# =========== #}
+{# Card output #}
+{# =========== #}
+<div class="card {% spaceless %}
+{{ block.cardContentOrder }}
+{% if block.cardContentOrder == 'contentFirst' %}bottomLeft{% endif %}
+{{ block.cardBackgroundColour ?? '' }}
+{{ master.cardSettings[0].borderRadius ?? '' }}
+{{ block.mobileOptions ?? '' }}
+{% endspaceless %}
+">
+    {# link or popup #}
+    {% if popup is defined and popup == 1 %}
+        <a href="#popup-{{ rowKey ~ '-' ~ blockKey }}" class="{{- cardLinkClass -}} open-card-popup">
+    {% elseif block.cardLink is defined and (block.cardLink.getUrl() or cardOverrideLink or block.cardEntry is defined) %}
+        <a class="{{cardLinkClass}}" href="{% if cardOverrideLink != '' %}{{ cardOverrideLink }}{% else %}{{ targetUrl }}{% endif %}" {% if block.cardLink is defined %}target="{{ block.cardLink.getTarget() }}{% endif %}">
+    {% endif %}
+
+    {# Content #}
+    {% if block.cardContentOrder == 'contentFirst' %}
+        {{contentBlock}}
+        {{imageBlock}}
+    {% else %}
+        {{imageBlock}}
+        {{contentBlock}}
+    {% endif %}
+
+    {# END link or popup #}
+    {% if popup is defined and popup == 1 or block.cardLink is defined and block.cardLink.getUrl() %}
+        </a>
+    {% endif %}
+</div>

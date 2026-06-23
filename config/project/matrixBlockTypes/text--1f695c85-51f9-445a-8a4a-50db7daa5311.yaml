@@ -1,0 +1,407 @@
+field: 44ebe5b2-8f14-48b9-a466-427f7b21a552 # Hero Block
+fieldLayouts:
+  aaea4bd9-f131-4bf9-9e9a-ee7de436b1b1:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0a625c96-6659-45f3-af33-12950bf84692 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c0d7e196-f41f-4f73-83a0-46dcef0f2600 # Block Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: b6d60bda-f37a-4268-b51d-1f291a15c6f8 # Text Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1bbc7c4a-6c98-4d88-ad04-31b04c7ef194 # Button Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1d730c22-d462-4268-9c57-b1647e95ec6c # Button Repeater
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: befa2684-fe20-4a12-a212-04049bf28030 # Block Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0a625c96-6659-45f3-af33-12950bf84692: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  1bbc7c4a-6c98-4d88-ad04-31b04c7ef194: # Button Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonOrientation
+    instructions: ''
+    name: 'Button Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Evenly'
+            -
+              - value
+              - space-evenly
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Even Stretch'
+            -
+              - value
+              - evenStretch
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  1d730c22-d462-4268-9c57-b1647e95ec6c: # Button Repeater
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonRepeater
+    instructions: ''
+    name: 'Button Repeater'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 13dcd964-04d4-4e96-b3cb-fba20b009354 # Button
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 4ab60343-d4ba-40d7-90b2-09a8a9c607c3 # Button Style
+            -
+              __assoc__:
+                -
+                  - width
+                  - 25%
+          -
+            - 4e991255-aef6-40ed-ade7-deca9b20b015 # Button Colour
+            -
+              __assoc__:
+                -
+                  - width
+                  - 25%
+      contentTable: '{{%stc_72_buttonrepeater}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a button'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  b6d60bda-f37a-4268-b51d-1f291a15c6f8: # Text Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: textOrientation
+    instructions: ''
+    name: 'Text Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - start
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - end
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Stretch
+            -
+              - value
+              - stretch
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  befa2684-fe20-4a12-a212-04049bf28030: # Block Padding
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockPadding
+    instructions: ''
+    name: 'Block Padding'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 7a3f65fb-3554-4f3f-b79a-7077137e4cd1 # Padding Top
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - eb64d905-de20-4c73-8786-bdbcc448cb8f # Padding Bottom
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - cd4d31c6-e857-4372-baa4-cc00ed90db22 # Padding Left
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 2b97d88b-d400-42c7-9c91-fcdc45f5622f # Padding Right
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_72_blockpadding}}'
+      fieldLayout: table
+      maxRows: '1'
+      minRows: '0'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add Padding'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  c0d7e196-f41f-4f73-83a0-46dcef0f2600: # Block Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockColour
+    instructions: ''
+    name: 'Block Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - 'bg-light-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - 'bg-dark-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - 'bg-primary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - 'bg-secondary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - 'bg-tertiary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - 'bg-quaternary-main pad-400'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: text
+name: Text
+sortOrder: 1

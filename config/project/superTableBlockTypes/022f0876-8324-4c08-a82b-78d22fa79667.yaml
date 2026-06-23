@@ -1,0 +1,363 @@
+field: 58f8a913-49d5-4f41-af07-7fd72348d2ea # Background Image
+fieldLayouts:
+  1f162281-8f31-415a-bac4-d2df2d37b5bc:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2e325e2f-27f5-4b27-8318-9124d84fd272 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d59ebe40-09aa-492a-afd0-3e01d06605ad # Overlay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8a1d664a-8625-463c-94eb-2f9df2a533c4 # Overlay Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8c6c472b-4e97-4c46-ac9e-bc7c0adebabe # Opacity
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ea17003c-9894-4a7a-8ce4-faa3ed15eebc # Blend Mode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2e325e2f-27f5-4b27-8318-9124d84fd272: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  8a1d664a-8625-463c-94eb-2f9df2a533c4: # Overlay Type
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: overlayType
+    instructions: ''
+    name: 'Overlay Type'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Radial
+            -
+              - value
+              - radial
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  8c6c472b-4e97-4c46-ac9e-bc7c0adebabe: # Opacity
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: opacity
+    instructions: ''
+    name: Opacity
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '0.1'
+            -
+              - value
+              - o-01
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '0.2'
+            -
+              - value
+              - o-02
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '0.3'
+            -
+              - value
+              - o-03
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '0.4'
+            -
+              - value
+              - o-04
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '0.5'
+            -
+              - value
+              - o-05
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - '0.6'
+            -
+              - value
+              - o-06
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '0.7'
+            -
+              - value
+              - o-07
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '0.8'
+            -
+              - value
+              - o-08
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '0.9'
+            -
+              - value
+              - o-09
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  d59ebe40-09aa-492a-afd0-3e01d06605ad: # Overlay
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: overlay
+    instructions: ''
+    name: Overlay
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - 'overlay bg-light-main'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - 'overlay bg-dark-main '
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - 'overlay bg-primary-main '
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - 'overlay bg-secondary-main '
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - 'overlay bg-tertiary-main '
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - 'overlay bg-quaternary-main '
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  ea17003c-9894-4a7a-8ce4-faa3ed15eebc: # Blend Mode
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blendMode
+    instructions: ''
+    name: 'Blend Mode'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Multiply
+            -
+              - value
+              - multiply
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Overlay
+            -
+              - value
+              - overlay
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown

@@ -1,0 +1,14 @@
+columnSuffix: rwyhikru
+contentColumnType: boolean
+fieldGroup: af775646-00cc-418c-8deb-b1a621f2126f # Blog Posts
+handle: displayBlogIntroAndCard
+instructions: ''
+name: 'Display Blog Intro and Card'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

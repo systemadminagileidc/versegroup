@@ -1,0 +1,34 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Dashboard Widget module for Craft CMS
+ *
+ * Welcome Widget Settings
+ *
+ * @author    Verse
+ * @copyright Copyright (c) 2021 Verse
+ * @link      Verse.co.uk
+ * @package   DashboardWidgetModule
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("modules\\dashboardwidgetmodule\\assetbundles\\dashboardwidgetmodule\\DashboardWidgetModuleAsset") %}
+
+{{ forms.textArea({
+    label: 'Message',
+    instructions: 'Enter a message here.',
+    id: 'message',
+    name: 'message',
+    value: widget['message']})
+}}
+
+{{ forms.textField({
+    label: 'Iframe',
+    instructions: 'Enter a Iframe.',
+    id: 'iframe',
+    name: 'iframe',
+    value: widget['iframe']})
+}}

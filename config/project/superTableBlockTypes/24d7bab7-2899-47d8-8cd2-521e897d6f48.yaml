@@ -1,0 +1,38 @@
+field: aec06d6a-cab2-420b-b12c-4c435b5520bf # Embed
+fieldLayouts:
+  1c0537ae-01be-4cbd-b97f-097386d1bd73:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 6d21d0ba-a934-4e41-9246-e34a3ed6ec30 # Embed Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  6d21d0ba-a934-4e41-9246-e34a3ed6ec30: # Embed Code
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: embedCode
+    instructions: ''
+    name: 'Embed Code'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

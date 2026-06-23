@@ -1,0 +1,69 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/andrewmpage-verse/image-resizer"
+        },
+        {
+            "type": "path",
+            "url": "_plugins/top100"
+        }
+    ],
+    "require": {
+        "carlcs/craft-redactorcustomstyles": "3.0.4",
+        "codemonauts/craft-instagram-feed": "1.1.8",
+        "craftcms/aws-s3": "^1.3",
+        "craftcms/cms": "^3.9.0",
+        "craftcms/contact-form": "2.5.1",
+        "craftcms/element-api": "^2.8",
+        "craftcms/feed-me": "4.5.3",
+        "craftcms/redactor": "2.10.9",
+        "dolphiq/redirect": "1.1.1",
+        "dolphiq/sitemap": "1.3.2",
+        "ether/simplemap": "3.9.3",
+        "hybridinteractive/craft-contact-form-extensions": "1.3.2",
+        "nystudio107/craft-minify": "1.2.11",
+        "putyourlightson/craft-sendgrid": "1.2.3",
+        "putyourlightson/craft-sprig": "1.13.0",
+        "sebastianlenz/linkfield": "1.0.25",
+        "spatie/schema-org": "^2.8",
+        "spicyweb/craft-embedded-assets": "2.11.2",
+        "ssplugin/ss-twitter-feed": "1.0.8",
+        "vaersaagod/matrixmate": "1.4.4",
+        "vaersaagod/seomate": "1.1.13",
+        "verbb/image-resizer": "dev-verse-fork",
+        "verbb/super-table": "2.7.2",
+        "verse/top100": "^1.0",
+        "vlucas/phpdotenv": "^3.4.0",
+        "wbrowar/adminbar": "^3.1"
+    },
+    "require-dev": {
+        "nystudio107/craft-autocomplete": "^1.0",
+        "yiisoft/yii2-shell": "^2.0.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "modules\\upgrademodule\\": "modules/upgrademodule/src/",
+            "modules\\dashboardwidgetmodule\\": "modules/dashboardwidgetmodule/src/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "7.4.26"
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        },
+        "audit": {
+            "block-insecure": false
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    }
+}

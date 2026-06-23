@@ -1,0 +1,101 @@
+field: c2525dff-4e5c-4e3f-8072-ae3a6fd14f15 # Block
+fieldLayouts:
+  9d975a0d-a164-4b4f-ba9e-f880d39ef8ca:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1c30a54a-26eb-48d8-9f50-2f7ea7e45bfa # Line Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1c30a54a-26eb-48d8-9f50-2f7ea7e45bfa: # Line Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: lineColour
+    instructions: ''
+    name: 'Line Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - border-light-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - border-dark-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - border-primary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - border-secondary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - border-tertiary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - border-quaternary-main
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: horizontalLine
+name: 'Horizontal Line'
+sortOrder: 4

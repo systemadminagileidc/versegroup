@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: app
+name: App
+propagationMethod: all
+siteSettings:
+  bfee3748-6727-406a-b769-74430862086f: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: true
+    template: app/_entry
+    uriFormat: 'app/{slug}'
+type: channel

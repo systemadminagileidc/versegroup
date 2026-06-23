@@ -1,0 +1,29 @@
+<div class="{{ block.type.handle ?? '' }}
+            {{ block.blockColour ?? '' }}
+            {{ block.blockPadding[0].paddingTop  ?? '' }}
+            {{ block.blockPadding[0].paddingBottom ?? '' }}
+            {{ block.blockPadding[0].paddingLeft ?? '' }}
+            {{ block.blockPadding[0].paddingRight  ?? '' }}
+            {{ block.orientation }}
+            {{ block.mobileOrder ?? '' }}
+            ">
+    <div class="stack">
+        {% if block.text|length %}
+            {{ block.text }}
+        {% endif %}
+        {% set buttonOrientation = block.buttonOrientation ?? '' %}
+        {% set buttonRepeater = block.buttonRepeater.all() ?? '' %}
+        {% if buttonRepeater %}
+            <div class="button-wrap {{ buttonOrientation }} {{ master.buttonSettings[0].mobileOptions ?? '' }}">
+                {% for buttonBlock in buttonRepeater %}
+                    {% if buttonBlock.button is defined and buttonBlock.button.getUrl() %}
+                        {% set buttonStyle = buttonBlock.buttonStyle ?? '' %}
+                        {% set buttonColour = buttonBlock.buttonColour ?? '' %}
+                        <a class="button {{ buttonStyle }} {{ buttonColour }}" href="{{ buttonBlock.button.getUrl() }}"
+                           target="{{ buttonBlock.button.getTarget() }}">{{ buttonBlock.button.customText ? buttonBlock.button.customText : buttonBlock.button.defaultText }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>

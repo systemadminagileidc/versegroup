@@ -1,0 +1,99 @@
+field: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+fieldLayouts:
+  9d548154-a660-49c3-ae98-bab492d89072:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1178f5eb-00d1-4b3f-be1f-4137effb22f0 # Limit to Featured
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 49d09932-8a8e-4e50-a0bf-817a403455b6 # Sub Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d0e4d7de-5d87-4252-847e-6b2871e961d6 # Category Filter
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  49d09932-8a8e-4e50-a0bf-817a403455b6: # Sub Heading
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: subHeading
+    instructions: ''
+    name: 'Sub Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1178f5eb-00d1-4b3f-be1f-4137effb22f0: # Limit to Featured
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: limitToFeatured
+    instructions: ''
+    name: 'Limit to Featured'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  d0e4d7de-5d87-4252-847e-6b2871e961d6: # Category Filter
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: categoryFilter
+    instructions: ''
+    name: 'Category Filter'
+    searchable: false
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: '1'
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:b58488c9-8d6c-4085-a1da-555c8ffcfb00' # Attraction Type
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+handle: attractionCard
+name: 'Attraction Card'
+sortOrder: 17

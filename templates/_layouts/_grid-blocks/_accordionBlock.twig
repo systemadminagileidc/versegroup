@@ -1,0 +1,39 @@
+<div class="{{ block.type.handle }}
+{{ block.blockColour ?? '' }}
+{{ block.blockPadding[0].paddingTop  ?? '' }}
+{{ block.blockPadding[0].paddingBottom ?? '' }}
+{{ block.blockPadding[0].paddingLeft ?? '' }}
+{{ block.blockPadding[0].paddingRight  ?? '' }}
+{{ block.orientation }}">
+    <div class="accordion">
+        {% for accordion in block.accordion.all() %}
+            <div class="stack accordion-block
+                        {{ block.accordionBackground ?? '' }}
+                        {{ block.activeAccordionBackground ?? '' }}
+                        {{ block.activeUiColour ?? '' }}
+                        {{ block.uiColour ?? '' }}
+                        ">
+                <div class="trigger stack">
+                    {{ accordion.accordionTitle }}
+                    <i class="fas fa-plus icon-default"></i>
+                    <i class="fa fa-minus icon-active"></i>
+                </div>
+                <div class="draw stack stack-small">
+                    {% set accordionContent = accordion.accordionContent.all() %}
+                    {% if accordionContent|length %}
+                        {% for content in accordionContent %}
+                            {% switch content.type.handle %}
+                            {% case 'text' %}
+                                {{ content.textContent }}
+                            {% case 'file' %}
+                                {% for asset in content.fileContent.all() %}
+                                    <a class="far fa-file-alt" href="{{ asset.url }}" target="_blank"> <span>  {{ content.linkText ?? asset.title }}</span></a>
+                                {% endfor %}
+                            {% endswitch %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

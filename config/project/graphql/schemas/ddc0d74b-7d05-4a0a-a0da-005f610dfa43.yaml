@@ -1,0 +1,8 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'sections.0960630a-2291-48ab-bb3f-6810d82a4c12:read' # Pages
+  - 'entrytypes.2c47424b-0a4e-4913-b075-1c00a505c486:read' # Page
+  - 'elements.drafts:read'
+  - 'elements.revisions:read'
+  - 'elements.inactive:read'

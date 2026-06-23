@@ -1,0 +1,34 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 7c4961a4-381e-494b-b2dd-bf0b6a8c1898 # Area
+handle: area_position
+instructions: ''
+name: Position
+searchable: false
+settings:
+  boundary: '""'
+  boundaryRestrictionNELat: null
+  boundaryRestrictionNELng: null
+  boundaryRestrictionSWLat: null
+  boundaryRestrictionSWLng: null
+  country: null
+  countryRestriction: null
+  height: null
+  hideAddress: ''
+  hideLatLng: null
+  hideMap: ''
+  hideSearch: ''
+  lat: 51.272154
+  lng: 0.514951
+  maxZoom: '18'
+  minZoom: '3'
+  showCurrentLocation: ''
+  showLatLng: '1'
+  showW3WField: false
+  showW3WGrid: false
+  size: normal
+  typeRestriction: null
+  zoom: 15
+translationKeyFormat: null
+translationMethod: none
+type: ether\simplemap\fields\MapField

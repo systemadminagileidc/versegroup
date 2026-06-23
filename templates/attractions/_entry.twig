@@ -1,0 +1,366 @@
+
+
+{% extends "_base-layouts/generic-page-layout.twig" %}
+
+{% set rowSpace = master.masterRowSpacing %}
+{% set gridGap = master.masterGridGap %}
+{% set transformMode = 'crop' %}
+{% if entry.attractionImageCropMode and entry.attractionImageCropMode|length > 0 %}
+    {% set transformMode = entry.attractionImageCropMode %}
+{% endif %}
+{% set transformPosition = 'center-center' %}
+{% if entry.attractionImageFocalPoint is defined and entry.attractionImageFocalPoint|length > 0 %}
+    {% set transformPosition = entry.attractionImageFocalPoint %}
+{% endif %}
+
+{# Output meta description #}
+{% block headMeta %}
+<meta name="description" content="{{entry.attraction_summary}}" />
+{% endblock headMeta %}
+
+{% block content %}
+    {% set image = entry.attraction_image.one %}
+    {% set attractionTypes = entry.attractionType.all() %}
+    {# Hero #}
+    {% if image %}
+        <section id="hero" class="grid-row">
+            <div class="grid hero-content static auto small grid-gap-000 pad-top-400 pad-bottom-400 attraction-entry">
+                <div class="text stack stack-extra-large color-light-main none" style=" align-self: center">
+                    <h1 style="text-align: center">{{ entry.title }}</h1>
+                    <h2 style="text-align: center">{% for type in attractionTypes %}{{ type.title }}{% if not loop.last %}, {% endif %}{% endfor %}
+                        in {{ entry.attraction_town }}</h2>
+                </div>
+            </div>
+            <div class="grid hero-media static align-full small overlay bg-secondary-main o-06 default multiply pad-top-400 pad-bottom-400 ">
+                <img class="hero-banner {% if 't' == transformPosition|first %}hero-banner-top{% elseif 'b' == transformPosition|first %}hero-banner-bottom{% endif %}"
+                     srcset="{{ image.getUrl({transform:'extraLarge', position:transformPosition, mode:transformMode }) }} 1920w, {{ image.getUrl({transform:'large', position:transformPosition, mode:transformMode }) }} 1536w, {{ image.getUrl({transform:'mediumLarge', position:transformPosition, mode:transformMode }) }} 768w, {{ image.getUrl({transform:'medium', position:transformPosition, mode:transformMode }) }} 576w, {{ image.getUrl({transform:'small', position:transformPosition, mode:transformMode }) }} 384w" style="object-fit:{% switch(transformMode) %}{% case 'fit' %}contain{% case 'stretch' %}fill{% default %}cover{% endswitch %}" sizes="100vw" src="{{ image.getUrl({transform:'large', position:transformPosition, mode:transformMode }) }}" alt="{{ image.title }}"/></div>
+        </section>
+    {% endif %}
+
+    <article>
+        <section id="" class="grid-row gap-top-500 default pad-top-000 pad-bottom-000    ">
+            <div class="grid gridRow has-two-columns right-stack  align-wide  grid-gap-400     ">
+                <div class="textBlock stretch default ">
+                    <div class="stack">
+                        <h2>{{ entry.title }}</h2>
+                        {# Adding attraction type icons #}
+                        {% if attractionTypes|length > 0 %}
+                            <div class="attractionTypeIcons">{% for type in attractionTypes %}{% if type.attractionTypeIcon|length > 0 %}
+                            <img src="{{ type.attractionTypeIcon.one().getUrl() }}" alt="{{ type.title }}"
+                                 title="{{ type.title }}" class="attractionTypeIcon" />{% endif %}{% endfor %}
+                            </div>{% endif %}
+
+                        {% if entry.attraction_description == '' and entry.attraction_review == '' %}
+                            <p>{{ entry.attraction_summary }}</p>
+                        {% endif %}
+
+                        {% if entry.attraction_description %}
+                            {{ entry.attraction_description }}
+                        {% endif %}
+
+                        {% if entry.attraction_review %}
+                            <h3>Review</h3>
+                            {{ entry.attraction_review }} <em>- Top 100 Review</em>
+                        {% endif %}
+
+                        {# Check the attraction website to make sure links if they don't feature http/s to make links work #}
+                        {% if entry.attraction_website %}
+                            <div class="button-wrap left default"><a class="button primary master"
+                                                                     href="{% if 'http' not in entry.attraction_website %}//{% endif %}{{ entry.attraction_website }}"
+                                                                     target="_blank">View Website</a></div>{% endif %}
+                    </div>
+                </div>
+                <div class="card bg-secondary-main default">
+                    {% if image %}
+                        <figure><img srcset="{{ image.getUrl({transform:'medium', position:transformPosition, mode:transformMode }) }} 576w, {{ image.getUrl({transform:'small', position:transformPosition, mode:transformMode }) }} 384w"
+                                     sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                                     src="{{ image.getUrl({transform:'medium', position:transformPosition, mode:transformMode }) }}" alt="{{ image.title }}"/></figure>{% endif %}
+                    <div class="content">
+                        <h4>Contact Us</h4>
+                        <p>{% if entry.attraction_address %}{{ entry.attraction_address }}
+                            , {% endif %}{% if entry.attraction_address2 %}{{ entry.attraction_address2 }},{% endif %}
+                            <br/>{% if entry.attraction_town %}{{ entry.attraction_town }}, {% endif %}{% if entry.attraction_county %}{{ entry.attraction_county }}
+                            , {% endif %}{{ entry.attraction_postcode }}</p>
+                        {% if entry.attraction_phone %}<p><a
+                                    href="tel:{{ entry.attraction_phone|replace({' ':''}) }}">{{ entry.attraction_phone }}</a>
+                            </p>{% endif %}
+                        {% if entry.attraction_website %}<p><a href="{% if 'http' not in entry.attraction_website %}//{% endif %}{{ entry.attraction_website }}" target="_blank"
+                                                               rel="noreferrer noopener">{{ entry.attraction_website }}</a>
+                            </p>{% endif %}
+                        {% if entry.attraction_email %}<p><a href="mailto:{{ entry.attraction_email }}"
+                                                             title="{{ entry.attraction_email }}">{{ entry.attraction_email }}</a>
+                            </p>{% endif %}
+                        <div class="button-wrap default iconSpace">
+                            {% if entry.attraction_facebook %}<p><a href="{{ entry.attraction_facebook }}"
+                                                                    target="_blank" rel="noreferrer noopener"><img
+                                            src="/assets/MEDIA/IMG/facebook.svg" alt="Facebook" width="30" height="30"/></a>
+                                </p>{% endif %}
+                            {% if entry.attraction_twitter %}<p><a href="{{ entry.attraction_twitter }}" target="_blank"
+                                                                   rel="noreferrer noopener"><img
+                                            src="/assets/MEDIA/IMG/twitter.svg" alt="Twitter" width="30"
+                                            height="30"/></a></p>{% endif %}
+                            {% if entry.attraction_instagram %}<p><a href="{{ entry.attraction_instagram }}"
+                                                                     target="_blank" rel="noreferrer noopener"><img
+                                            src="/assets/MEDIA/IMG/instagram.svg" alt="Instagram" width="30"
+                                            height="30"/></a></p>{% endif %}
+                        </div>
+                    </div>
+                </div>
+                {# Adding the popup video link #}
+                {% if entry.attraction_video_code %}
+                    <a href="{{ entry.attraction_video_code }}" class="videolink popup-video">{{ entry.title }}
+                        Video</a>
+                {% endif %}
+                {% if entry.attraction_bookingcode %}
+                    <div class="embed none">
+                        <div class="stack">{{ entry.attraction_bookingcode|raw }}</div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+        {# Tiquets #}
+        {% if entry.tiqetsEmbedCode %}
+            <section id="" class="grid-row gap-top-400 default pad-top-000 pad-bottom-000">
+                <div class="grid gridRow auto align-wide  grid-gap-400">
+                    <div class="textBlock stretch default">
+                        <div class="stack">
+                            <div class="embed none">
+                                <div class="stack">
+                                    {{ entry.tiqetsEmbedCode|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+
+        {# Gallery #}
+        {% if entry.photos|length > 0 %}
+            <section id="" class="grid-row gap-top-400 default pad-top-000 pad-bottom-000">
+                <div class="grid gridRow auto align-wide  grid-gap-400">
+                    <div class="textBlock stretch default">
+                        <div class="stack">
+                            <h2>Image Gallery</h2>
+                            <h4>Click on a photograph to view in a larger format</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="" class="grid-row gap-top-400 default pad-top-000 pad-bottom-000">
+                <div class="grid gridRow auto align-wide  grid-gap-400">
+                    {% set photos = entry.photos.all() %}
+                    {%- for photo in photos -%}
+                        <a class="gallery-item mfp-fade" href="{{ photo.getUrl() }}">
+                            <figure class="imageBlock stretch"><img src="{{ photo.getUrl('fourThree') }}"
+                                                                    alt="{{ photo.title }}"/></figure>
+                        </a>
+                    {%- endfor -%}
+                </div>
+            </section>
+        {% endif %}
+
+        {# Location #}
+        <section id="" class="grid-row gap-top-400 default pad-top-000 pad-bottom-000">
+            <div class="grid gridRow has-one-column align-wide  grid-gap-400">
+                <div class="textBlock stretch default ">
+                    <div class="stack">
+                        <h2>Location</h2>
+                        <h4>View the map below to see where we are and to get directions.</h4>
+                    </div>
+                </div>
+                <div class="map-wrapper medium">
+                    <div class="map" id="map">
+                        {{ entry.attraction_location.address }}
+                    </div>
+                </div>
+                <script>
+                    var data = {
+                        lat: {{ entry.attraction_location.lat }},
+                        lng: {{ entry.attraction_location.lng }},
+                        title: {{ entry.title|json_encode|raw }},
+                        types: [{% for category in attractionTypes %}{% if category.level == 1 %}{{ category.id }}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}],
+                        img: {% if entry.attraction_image|length > 0 %}'{{ entry.attraction_image.one().getUrl('small') }}'
+                        {% else %}null{% endif %},
+                        summary: {{ entry.attraction_summary|json_encode|raw }},
+                        url: {{ entry.getUrl()|json_encode|raw }}
+                    }
+                    var categories = {
+                        {%- for cat in attractionTypes -%}
+                        "{{ cat.id }}": {
+                            id:{{ cat.id }},
+                            title:{{ cat.title|json_encode|raw }},
+                            icon: {% if cat.attractionTypeIcon|length > 0 %}{{ cat.attractionTypeIcon.one().getUrl()|json_encode|raw }}{% else %}null{% endif %},
+                            marker: {% if cat.attractionTypeMarker|length > 0 %}{{ cat.attractionTypeMarker.one().getUrl()|json_encode|raw }}{% else %}null{% endif %},
+                            active: false
+                        }{% if not loop.last %},{% endif %}
+                        {%- endfor -%}
+                    }
+                    {# Adding directions search variables #}
+                    var directionsService;
+                    var directionsRenderer;
+
+                    function initMap() {
+                        var map = new google.maps.Map(document.getElementById("map"));
+
+                        {# Function to get the directions from Google api #}
+                        function getDirections(e) {
+                            e.preventDefault();
+                            var inp = document.getElementById('searchField');
+                            if (inp.value.length > 0) {
+                                if (!directionsService) {
+                                    directionsService = new google.maps.DirectionsService();
+                                }
+                                if (!directionsRenderer) {
+                                    var directionsElement = document.getElementById('directions');
+                                    directionsRenderer = new google.maps.DirectionsRenderer();
+                                    directionsRenderer.setMap(map);
+                                    directionsRenderer.setPanel(directionsElement);
+                                    {# Adding clear directions button #}
+                                    var clearDirection = document.getElementById('clearDirections');
+                                    clearDirection.innerHTML = '<button class="button primary master bg-secondary-main">Clear</button>';
+                                    clearDirection.children[0].addEventListener('click', function () {
+                                        directionsRenderer.setMap(null);
+                                        directionsRenderer.setPanel(null);
+                                        directionsService = null;
+                                        directionsRenderer = null;
+                                        clearDirection.innerHTML = '';
+                                        directionsElement.innerHTML = '';
+                                    });
+                                }
+                                directionsService.route({
+                                    origin: inp.value,
+                                    destination: marker.position,
+                                    travelMode: 'DRIVING'
+                                }, function (result, status) {
+                                    if (status == 'OK') {
+                                        directionsRenderer.setDirections(result);
+                                    }
+                                });
+                            } else {
+                                alert('Please enter where you would be coming from');
+                            }
+                            return false;
+                        }
+
+                        {# Dynamically render a form for user to add the location they are coming from #}
+                        var sform = '<form id="mapsearch"><label for="search">Get Directions from</label><input type="text" name="search" id="searchField" /><button class="button primary master">Search</button></form>';
+
+                        var sf = document.getElementById('directionsform');
+                        sf.innerHTML = sform;
+                        sf.querySelector('#mapsearch').addEventListener('submit', getDirections);
+
+                        var opts = {
+                            position: data,
+                            title: data.title,
+                            data: data
+                        }
+                        var cats = [];
+                        for (var n in categories) {
+                            var c = categories[n];
+                            if (data.types.indexOf(c.id) > -1 && c.marker) {
+                                cats.push(c.marker);
+                            }
+                        }
+                        if (cats.length == 1) {
+                            opts.icon = cats[0];
+                        } else {
+                            opts.icon = '/assets/MEDIA/IMG/attraction-icon.svg';
+                        }
+                        var marker = new google.maps.Marker(opts);
+                        marker.setMap(map);
+
+                        map.setCenter(data);
+                        map.setZoom(12);
+
+
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key={{ getenv('MAPS_API') }}&callback=initMap"
+                        async></script>
+            </div>
+        </section>
+
+        {# Directions Form #}
+        <section id="" class="grid-row gap-top-000 default">
+            {# Red section to match map width #}
+            <div class="grid gridRow has-one-column align-wide grid-gap-000 pad-top-200 pad-bottom-200 pad-left-200 pad-right-200 bg-primary-main">
+                <div id="directionsform"></div>
+            </div>
+        </section>
+        <section id="" class="grid-row gap-top-000 default pad-top-000 pad-bottom-000">
+            <div class="grid gridRow has-one-column align-wide grid-gap-000">
+                <div id="directions"></div>
+                {# Position of clear directions button #}
+                <div id="clearDirections"></div>
+            </div>
+        </section>
+
+        {% set topAttractionTypes = craft.categories().group('attractionType').level(1).all() %}
+        {% set nottypeids = [] %}
+        {% set notids = [entry.id] %}
+        {% set notids = notids|merge(entry.excludeAttractions.limit(null).ids()) %}
+        {% set nearby = craft.entries.section("attractions").attraction_location({ location: entry.attraction_location, radius: 20, unit: "mi" }) %}
+        {%- if attractionTypes|length > 0 -%}
+            {%- for type in attractionTypes -%}
+                {%- set nottypeids = nottypeids|merge([type.id]) -%}
+
+{%- set notids = notids|merge(clone(nearby).relatedTo(type).limit(null).ids()) -%}
+
+                {%- if type.parent -%}
+                    {%- set nottypeids = nottypeids|merge([type.parent.id]) -%}
+
+{%- set notids = notids|merge(clone(nearby).relatedTo(type.parent).limit(null).ids()) -%}
+                {%- endif -%}
+            {%- endfor -%}
+        {%- endif -%}
+        {% for attrType in topAttractionTypes %}
+            {% if attrType.id not in nottypeids %}
+                {% set rel = entry.related.attractionType(attrType.id) %}
+                {% if rel|length == 0 %}
+
+{% set query = clone(nearby).id(['not']|merge(notids)).attractionType(attrType.id).orderBy('distance').limit(3) %}
+
+                    {% set rel = query.all() %}
+                {% endif %}
+                {% if rel|length > 0 and not attrType.attractionHidden %}
+                    <section class="grid-row gap-top-400 default pad-top-000 pad-bottom-000">
+                        <div class="grid gridRow has-one-column align-wide grid-gap-400">
+                            <div class="textBlock stretch default ">
+                                <div class="stack">
+                                    <h2>Nearby {{ attrType.title }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="grid-row gap-top-400 default pad-top-000 pad-bottom-400 attractionList">
+                        <div class="grid gridRow auto align-wide grid-gap-300">
+                            {% for attr in rel %}
+                                {% set img = attr.attraction_image.one() %}
+                                <div class="stack card bg-primary-main default">
+                                    <a class="imglink" href="{{ attr.getUrl() }}" target="">
+                                        <figure>
+                                            {% if img %}<img
+                                                srcset="{{ img.getUrl('medium') }} 576w, {{ img.getUrl('small') }} 384w"
+                                                sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                                                src="{{ img.getUrl('medium') }}" alt="{{ img.title }}" />{% endif %}
+                                        </figure>
+                                    </a>
+                                    <div class="content">
+                                        <h4>{{ attr.title }}</h4>
+                                        <p>{{ attr.attraction_summary }}</p>
+                                        <div class="button-wrap default"><a class="button secondary"
+                                                                            href="{{ attr.getUrl() }}" target="">Full
+                                                Details</a></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </section>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </article>
+{% endblock %}

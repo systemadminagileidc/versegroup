@@ -1,0 +1,74 @@
+{% extends "_base-layouts/generic-page-layout.twig" %}
+
+{% set rowSpace = master.masterRowSpacing %}
+{% set gridGap = master.masterGridGap %}
+
+{# {% set authors = entry.author.all() %} #}
+{% set entries = craft.entries()
+    .section('posts')
+    .orderBy('RAND()')
+    .limit(3)
+    .id ('not ' ~ entry.id)
+    .all() %}
+
+{% set categoryQuery = craft.categories()
+    .group('category')
+    .relatedTo(entry.id) %}
+
+{% set width = entry.rowWidth ?? '' %}
+
+{% block content %}
+    {% include "_layouts/_hero.twig" %}
+    {% if entry.displayBlogIntroAndCard and (entry.blogIntro.text or entry.blogIntro.sidebarImage|length or entry.blogIntro.sidebarTitle or entry.blogIntro.textArea) %}
+        <section class="grid-row {{ rowSpace }}">
+            <div class="grid {{ width }} {{ gridGap }} has-two-columns left-wide">
+                {% if entry.blogIntro.text %}
+                    <div>
+                        {{ entry.blogIntro.text }}
+                    </div>
+                {% endif %}
+                <div class="{{ entry.blogIntro.sidebarColour ?? '' }} topLeft">
+                    {% if entry.blogIntro.sidebarImage|length %}
+                        <img alt="" class="pad-bottom-300"
+                             src="{{ entry.blogIntro.sidebarImage.one().getUrl('medium') }}">
+                    {% endif %}
+                    {% if entry.blogIntro.sidebarTitle %}
+                        <h4>{{ entry.blogIntro.sidebarTitle }}</h4>
+                    {% endif %}
+                    {% if categoryQuery|length %}
+                        <hr>
+                        <p>
+                            <strong>
+                                {% for key, category in categoryQuery.all() %}
+                                    {{ category.title }}
+                                {% endfor %}
+                            </strong>
+                        </p>
+                    {% endif %}
+                    <h6>{{ entry.postDate | date("M d, Y") }}</h6>
+                    {% if entry.blogIntro.textArea %}
+                        {{ entry.blogIntro.textArea }}
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% include "_layouts/_page-content.twig" with {pageBuilder:entry.pageBuilder} %}
+
+    <section class="grid-row gap-top-500">
+        <div class="grid narrow center">
+            <div>
+                {{ entry.text ?? '<h2 style="text-align: center;">Events and News</h2>' }}
+            </div>
+        </div>
+    </section>
+    <section class="grid-row {{ entry.text ? 'gap-top-200': rowSpace }} gap-bottom-400">
+        <div class="grid has-three-columns {{ width }} {{ gridGap }} ">
+            {% if entries %}
+                {% for entry in entries %}
+                    {% include "_layouts/_block-partials/_entry-card.twig" with { buttonStyle:'secondary'} %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,407 @@
+field: f5ef695a-41f7-4438-98f1-6b23eb8ac2bc # Slide Content
+fieldLayouts:
+  8751a701-337f-4fb2-8b25-8735cd0f6ab8:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 42f8506d-100f-43cd-a2d9-a60e0b466327 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 97013c2b-3a93-463d-a796-d4ab7b127333 # Block Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 61fc6c5e-e1d4-4145-9a60-80d1d36f7299 # Text Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 663dbe6a-f159-4527-a5bc-fb122c00c85e # Button Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 897bfff6-c7bf-4563-830e-72aaee559edc # Button Repeater
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 74c51f77-ab75-4cce-8ce7-352fd188aaa8 # Block Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  42f8506d-100f-43cd-a2d9-a60e0b466327: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  61fc6c5e-e1d4-4145-9a60-80d1d36f7299: # Text Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: textOrientation
+    instructions: ''
+    name: 'Text Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - start
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - end
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Stretch
+            -
+              - value
+              - stretch
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  74c51f77-ab75-4cce-8ce7-352fd188aaa8: # Block Padding
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockPadding
+    instructions: ''
+    name: 'Block Padding'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 2b46bac5-d65d-4430-8c70-e5f37d75440c # Padding Top
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 443d0186-8231-451d-85c9-b88daff3774f # Padding Bottom
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 7d88ced8-47bd-467b-a723-b92a476b214f # Padding Left
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 2498de96-42ec-4f5c-a42d-f5a11b31d6cd # Padding Right
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_97_blockpadding}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: '0'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add Padding'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  663dbe6a-f159-4527-a5bc-fb122c00c85e: # Button Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonOrientation
+    instructions: ''
+    name: 'Button Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Evenly'
+            -
+              - value
+              - space-evenly
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Even Space'
+            -
+              - value
+              - evenStretch
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  897bfff6-c7bf-4563-830e-72aaee559edc: # Button Repeater
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonRepeater
+    instructions: ''
+    name: 'Button Repeater'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 7a5062d1-d2a0-429f-b4a1-614469350044 # Button
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 5d4e152e-2a40-4c1e-9dd9-3e8cd41a60ee # Button Style
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 1c8a2c40-4475-4830-8fc1-2e79ba75ab0a # Button Colour
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_97_buttonrepeater}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  97013c2b-3a93-463d-a796-d4ab7b127333: # Block Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockColour
+    instructions: ''
+    name: 'Block Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - 'bg-light-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - 'bg-dark-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - 'bg-primary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - 'bg-secondary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - 'bg-tertiary-main pad-400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - 'bg-quaternary-main pad-400'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: text
+name: Text
+sortOrder: 1

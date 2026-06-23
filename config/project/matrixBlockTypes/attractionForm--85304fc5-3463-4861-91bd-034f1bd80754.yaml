@@ -1,0 +1,65 @@
+field: 44ebe5b2-8f14-48b9-a466-427f7b21a552 # Hero Block
+fieldLayouts:
+  7d5c6c48-7871-4c75-8111-0cd06704ed46:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 98a64446-f510-48fa-9e6c-d891db77ae50 # Overlap
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fe7921b6-eca7-434a-84b2-bd10a7abd5f8 # Attraction Form Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  98a64446-f510-48fa-9e6c-d891db77ae50: # Overlap
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: overlap
+    instructions: ''
+    name: Overlap
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  fe7921b6-eca7-434a-84b2-bd10a7abd5f8: # Attraction Form Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: attractionFormLabel
+    instructions: ''
+    name: 'Attraction Form Label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: attractionForm
+name: 'Attractions Form Block'
+sortOrder: 4

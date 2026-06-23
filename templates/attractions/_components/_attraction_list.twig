@@ -1,0 +1,56 @@
+<section id="gridContainer" class="grid-row  gap-top-000 default pad-top-000 pad-bottom-000 attractionList {% if mapview %}hidden{% endif %} ">
+	<div class="grid align-full-border auto grid-gap-400 card-blocks">
+		{# Attraction cards #}
+		{% for attraction in attractions %}
+			<div class="stack card none body-font">
+				<a href="{{attraction.getUrl()}}">
+					{% if attraction.attraction_image %}
+						{% set image = attraction.attraction_image[0] %}
+						{% set transformMode = 'crop' %}
+						{% if attraction.attractionImageCropMode and attraction.attractionImageCropMode|length > 0 %}
+						    {% set transformMode = attraction.attractionImageCropMode %}
+						{% endif %}
+						{% set transformPosition = 'center-center' %}
+						{% if attraction.attractionImageFocalPoint is defined and attraction.attractionImageFocalPoint|length > 0 %}
+						    {% set transformPosition = attraction.attractionImageFocalPoint %}
+						{% endif %}
+						{% if image %}
+							<figure class="imageBlock centreCentre attractionImg"><img srcset="{{image.getUrl({transform:'medium', position:transformPosition, mode:transformMode }) }} 576w, {{image.getUrl({transform:'small', position:transformPosition, mode:transformMode })}} 384w" sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw" src="{{image.getUrl({transform:'large', position:transformPosition, mode:transformMode })}}" alt="{{attraction.title}}" style="object-fit:{% switch(transformMode) %}{% case 'fit' %}contain{% case 'stretch' %}fill{% default %}cover{% endswitch %}" loading="lazy"></figure>
+						{% endif %}
+					{% endif %}
+
+					<div class="content">
+						<h4>{{attraction.title}}</h4>
+						{# Preventing summary getting too long, calling in other fields if summary not available #}
+						<p>{% if attraction.attraction_summary is defined and attraction.attraction_summary|length > 0 %}{{attraction.attraction_summary|truncate(130,'...')}}{% elseif not attraction.attraction_review is null %}{{attraction.attraction_review|striptags|truncate(130,'...') }}{% elseif not attraction.attraction_description is null %}{{attraction.attraction_description|striptags|truncate(130,'...') }}{% endif %}</p>
+						<div class="button primary" href="{{attraction.getUrl()}}">Read More</div>
+					</div>
+				</a>
+				{# <div class="content"> #}
+				{# </div> #}
+			</div>
+		{% endfor %}
+
+		{# Pagination #}
+		{% if pageInfo is defined %}
+			<div class="pagination stack">
+				<hr>
+				<div>
+						{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}"><button><i class="fas fa-chevron-left"></i></button>{% endif %}
+
+						{% for page, url in pageInfo.getPrevUrls(5) %}
+								<a href="{{ url }}"><button>{{ page }}</button></a>
+						{% endfor %}
+						<button class="weight-bold">{{ page }}</button>
+					{% for page, url in pageInfo.getNextUrls(5) %}
+								<a href="{{ url }}"><button>{{ page }}</button></a>
+						{% endfor %}
+
+						{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}"><button sprig s-val:page="{{ page < pageInfo.totalPages ? page + 1 : pageInfo.totalPages }}">
+								<i class="fas fa-chevron-right"></i>
+						</button></a>{% endif %}
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</section>

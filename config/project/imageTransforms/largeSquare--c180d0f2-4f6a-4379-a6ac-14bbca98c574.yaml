@@ -1,0 +1,9 @@
+format: null
+handle: largeSquare
+height: 1000
+interlace: none
+mode: crop
+name: 'Large Square'
+position: center-center
+quality: null
+width: 1000

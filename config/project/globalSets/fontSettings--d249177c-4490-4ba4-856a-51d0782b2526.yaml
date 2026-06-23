@@ -1,0 +1,90 @@
+fieldLayouts:
+  3657f7f4-5cb5-475d-9c00-228ba3e92295:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 43666939-bd85-4efd-aa7b-1a8b1d8e8567 # Font Import
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2529c78c-7cc0-4475-9b05-8203eebad5c0 # Heading Font
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 23fb75f9-04b7-40f8-903f-bbd9bb6f496d # Body Font
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Font Selection'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: f766402d-5e15-4ac0-8067-f42e32449413 # Max Line Length
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 630f3cd2-8403-4d08-81b6-30edabc40baf # Excerpt Limit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 4264acbf-5f36-4935-9e50-67aa95aa8c07 # Testimonial Limit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: 'Character Limit'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 781f269c-5665-405d-ba73-55668a237b75 # Font Ratio
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 05cc0781-f669-4a0b-8a50-bc4540292509 # Font Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Font Size'
+        sortOrder: 3
+handle: fontSettings
+name: 'Font Settings'
+sortOrder: 3

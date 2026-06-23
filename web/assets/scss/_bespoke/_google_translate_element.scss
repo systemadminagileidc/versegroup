@@ -1,0 +1,194 @@
+@use "../_utilities/_mixins/media-query" as *;
+
+#google_translate_element {
+    display: flex;
+    align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+	flex-basis: 100%;
+    height: 100%;
+    justify-content: flex-end;
+
+	@include mq-min(mobile) {
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	@include mq-min(large-tablet) {
+		flex-wrap: nowrap;
+		align-items: flex-end;
+	}
+
+	.goog-te-combo {
+		vertical-align: middle;
+		width: 100%;
+		margin: 5px 0;
+
+		@include mq-min(mobile) {
+			margin-right:10px;
+			width:200px;
+		}
+	}
+}
+
+.goog-te-banner-frame {
+	z-index:18!important;
+}
+
+.selectBox.goog-te-combo, select.goog-te-combo {
+	background:url(MEDIA/IMG/select-arrow.png) 95% center no-repeat #29315c;
+	color:#fff!important; 
+	border:0;
+	box-shadow:none;
+
+	.selectBox-label {
+		width:auto!important; 
+		color:#fff; 
+	}
+
+	.selectBox-arrow {
+		border:0;
+		background:none;
+	}
+}
+
+.selectBox-options.goog-te-combo-selectBox-dropdown-menu {
+	background-color:#29315c;
+	color:#fff;
+	border:0;
+
+	a {
+		color:var(--secondary-invert);
+
+		&:hover {
+			background-color: #3c4575;
+			color: var(--secondary-invert);
+		}
+	}
+
+	li.selectBox-selected {
+		a {
+			background-color: #3f4878;
+		}
+	}
+}
+
+.goog-te-combo-selectBox-dropdown-menu {
+	li a:before { content:" "; width:25px; height:15px; background:url(MEDIA/IMG/translateflagsprite.png) top left no-repeat; }
+	.sq a:before {background-position: -25px 0}
+	.hy a:before {background-position: -50px 0}
+	.az a:before {background-position: -75px 0}
+	.bg a:before {background-position: -100px 0}
+	.be a:before {background-position: -125px 0}
+	.zh-CN a:before, .zh-TW a:before {background-position: -150px 0}
+	.cs a:before {background-position: 0 -15px}
+	.de a:before {background-position: -25px -15px}
+	.da a:before {background-position: -50px -15px}
+	.et a:before {background-position: -75px -15px}
+	.es a:before {background-position: -100px -15px}
+	.fi a:before {background-position: -125px -15px}
+	.fr a:before {background-position: -150px -15px}
+	.gb a:before, .en a:before {background-position: 0 -30px}
+	.ka a:before {background-position: -25px -30px}
+	.el a:before {background-position: -50px -30px}
+	.hr a:before {background-position: -75px -30px}
+	.ht a:before {background-position: -100px -30px}
+	.hu a:before {background-position: -125px -30px}
+	.id a:before {background-position: -150px -30px}
+	.ga a:before {background-position: 0 -45px}
+	.hi a:before {background-position: -25px -45px}
+	.is a:before {background-position: -50px -45px}
+	.it a:before {background-position: -75px -45px}
+	.ja a:before {background-position: -100px -45px}
+	.ko a:before {background-position: -125px -45px}
+	.lt a:before {background-position: -150px -45px}
+	.lv a:before {background-position: 0 -60px}
+	.mk a:before {background-position: -25px -60px}
+	.mt a:before {background-position: -50px -60px}
+	.ms a:before {background-position: -75px -60px}
+	.nl a:before {background-position: -100px -60px}
+	.no a:before {background-position: -125px -60px}
+	.tl a:before {background-position: -150px -60px}
+	.pl a:before {background-position: 0 -75px}
+	.pt a:before {background-position: -25px -75px}
+	.ro a:before {background-position: -50px -75px}
+	.sr a:before {background-position: -75px -75px}
+	.sv a:before {background-position: -100px -75px}
+	.sl a:before {background-position: -125px -75px}
+	.sk a:before {background-position: -150px -75px}
+	.th a:before {background-position: 0 -90px}
+	.tr a:before {background-position: -25px -90px}
+	.uk a:before {background-position: -50px -90px}
+	.vi a:before {background-position: -75px -90px}
+	.cy a:before {background-position: -100px -90px}
+	.ru a:before {background-position: -125px -90px}
+	.eg a:before {background-position: -150px -90px}
+	.sc a:before {background-position: 0px -105px}
+	.ni a:before {background-position: -25px -105px}
+	.ii a:before {background-position: -50px -105px}
+	.isleofman a:before { background:url(Flag_of_the_Isle_of_Mann.svg); background-size:contain; }
+}
+
+.selectBox.goog-te-combo .selectBox-label {
+	&:before {
+		content:" ";
+		width:25px;
+		height:15px;
+		background:url(MEDIA/IMG/translateflagsprite.png) top left no-repeat;
+		display:inline-block;
+		vertical-align:middle;
+		margin-right:5px;
+	}
+
+	&.sq:before {background-position: -25px 0}
+	&.hy:before {background-position: -50px 0}
+	&.az:before {background-position: -75px 0}
+	&.bg:before {background-position: -100px 0}
+	&.be:before {background-position: -125px 0}
+	&.zh-CN:before, &.zh-TW:before {background-position: -150px 0}
+	&.cs:before {background-position: 0 -15px}
+	&.de:before {background-position: -25px -15px}
+	&.da:before {background-position: -50px -15px}
+	&.et:before {background-position: -75px -15px}
+	&.es:before {background-position: -100px -15px}
+	&.fi:before {background-position: -125px -15px}
+	&.fr:before {background-position: -150px -15px}
+	&.gb:before, &.en:before {background-position: 0 -30px}
+	&.ka:before {background-position: -25px -30px}
+	&.el:before {background-position: -50px -30px}
+	&.hr:before {background-position: -75px -30px}
+	&.ht:before {background-position: -100px -30px}
+	&.hu:before {background-position: -125px -30px}
+	&.id:before {background-position: -150px -30px}
+	&.ga:before {background-position: 0 -45px}
+	&.hi:before {background-position: -25px -45px}
+	&.is:before {background-position: -50px -45px}
+	&.it:before {background-position: -75px -45px}
+	&.ja:before {background-position: -100px -45px}
+	&.ko:before {background-position: -125px -45px}
+	&.lt:before {background-position: -150px -45px}
+	&.lv:before {background-position: 0 -60px}
+	&.mk:before {background-position: -25px -60px}
+	&.mt:before {background-position: -50px -60px}
+	&.ms:before {background-position: -75px -60px}
+	&.nl:before {background-position: -100px -60px}
+	&.no:before {background-position: -125px -60px}
+	&.tl:before {background-position: -150px -60px}
+	&.pl:before {background-position: 0 -75px}
+	&.pt:before {background-position: -25px -75px}
+	&.ro:before {background-position: -50px -75px}
+	&.sr:before {background-position: -75px -75px}
+	&.sv:before {background-position: -100px -75px}
+	&.sl:before {background-position: -125px -75px}
+	&.sk:before {background-position: -150px -75px}
+	&.th:before {background-position: 0 -90px}
+	&.tr:before {background-position: -25px -90px}
+	&.uk:before {background-position: -50px -90px}
+	&.vi:before {background-position: -75px -90px}
+	&.cy:before {background-position: -100px -90px}
+	&.ru:before {background-position: -125px -90px}
+	&.eg:before {background-position: -150px -90px}
+	&.sc:before {background-position: 0px -105px}
+	&.ni:before {background-position: -25px -105px}
+	&.ii:before {background-position: -50px -105px}	
+}

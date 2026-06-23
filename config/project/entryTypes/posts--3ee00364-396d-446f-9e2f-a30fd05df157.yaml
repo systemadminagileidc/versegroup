@@ -1,0 +1,167 @@
+fieldLayouts:
+  82a918cc-05b2-4965-9ce1-ea7ee8413317:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5e15abf8-4312-47f5-b85d-390a03cf8c74 # Display Blog Intro and Card
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c2ec863d-1c2e-47a4-a928-1d6d54b3989f # Blog Intro
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8a590f78-5665-4cd9-8319-23d44655c436 # Page Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 871c9ea9-13cc-4937-be65-0b2af3a80a12 # Text
+            instructions: ''
+            label: 'Title For Related Posts'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a70e2e58-f8b7-4161-86bc-d854cb907a0e # Hero Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Hero
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: b74c2ea3-c134-4b37-ab0d-b341a539085b # Thumbnail
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1d63db27-ae09-4003-b04d-d0a7ac37b501 # Category
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 4ae2014b-9fdf-4d09-977e-03d2a8b9795d # Excerpt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 961df376-6fa9-4b26-b1c6-ade1f716d7eb # SEO Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Page Meta'
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: 0e8f11a4-ce20-4477-b9a4-86c5dac225dc # Header Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 7db1b0f1-4f1f-4a0c-a135-08e6014e7582 # Header Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: ebf7a9f8-2506-4212-9ab9-b47c66f9e807 # Logo
+            instructions: ''
+            label: 'Alternative Logo'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 58420e26-1c78-4017-a65e-c041d47c974f # Colours
+            instructions: ''
+            label: 'Colour Overrides'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Page Theme'
+        sortOrder: 4
+handle: posts
+hasTitleField: true
+name: Posts
+section: 5c0c9d61-a7b0-4ac2-94a9-1d585788ae16 # Posts
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

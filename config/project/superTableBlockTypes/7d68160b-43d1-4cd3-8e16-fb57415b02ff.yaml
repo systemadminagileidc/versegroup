@@ -1,0 +1,458 @@
+field: 23f399c9-9be6-40ff-820a-79b1c378043c # Header Builder
+fieldLayouts:
+  051d4573-44f4-41bd-a2ab-d179762eb8b2:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8c391b9e-5a66-493c-bcbe-0ac0d498e298 # Header Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 67c7c51f-2f9c-4a68-bdcb-41ffdb733a15 # Header Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  8c391b9e-5a66-493c-bcbe-0ac0d498e298: # Header Settings
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: headerSettings
+    instructions: ''
+    name: 'Header Settings'
+    searchable: false
+    settings:
+      addRowLabel: ''
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Header Width'
+                -
+                  - handle
+                  - headerWidth
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Narrowest
+                        -
+                          - value
+                          - narrowest
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Narrow
+                        -
+                          - value
+                          - narrow
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Default
+                        -
+                          - value
+                          - ''
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Align Wide'
+                        -
+                          - value
+                          - align-wide
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Align Full'
+                        -
+                          - value
+                          - align-full
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Align Full Width'
+                        -
+                          - value
+                          - align-fullwidth
+                        -
+                          - default
+                          - false
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Header Colour'
+                -
+                  - handle
+                  - headerColour
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Light
+                        -
+                          - value
+                          - bg-light-main
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Dark
+                        -
+                          - value
+                          - bg-dark-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Primary
+                        -
+                          - value
+                          - bg-primary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Secondary
+                        -
+                          - value
+                          - bg-secondary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Tertiary
+                        -
+                          - value
+                          - bg-tertiary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Quaternary
+                        -
+                          - value
+                          - bg-quaternary-main
+                        -
+                          - default
+                          - false
+          -
+            - col6
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Mobile Navigation'
+                -
+                  - handle
+                  - mobileNavigation
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Large
+                        -
+                          - value
+                          - '1300'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Medium Large (1100px)'
+                        -
+                          - value
+                          - '1100'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Medium (1000px)'
+                        -
+                          - value
+                          - '1000'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Large Tablet (920px)'
+                        -
+                          - value
+                          - '920'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Tablet (767px)'
+                        -
+                          - value
+                          - '767'
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Phablet (575px)'
+                        -
+                          - value
+                          - '575'
+                        -
+                          - default
+                          - false
+          -
+            - col7
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Gap
+                -
+                  - handle
+                  - gap
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - None
+                        -
+                          - value
+                          - flex-gap-000
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Small'
+                        -
+                          - value
+                          - flex-gap-100
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Small'
+                        -
+                          - value
+                          - flex-gap-200
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Small
+                        -
+                          - value
+                          - flex-gap-300
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Medium
+                        -
+                          - value
+                          - flex-gap-400
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Large
+                        -
+                          - value
+                          - flex-gap-500
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'X Large'
+                        -
+                          - value
+                          - flex-gap-600
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'XX Large'
+                        -
+                          - value
+                          - flex-gap-700
+                        -
+                          - default
+                          - false
+          -
+            - col8
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Mobile Contact'
+                -
+                  - handle
+                  - mobileContact
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - lightswitch
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - bg-light-main
+            -
+              - col6
+              - '920'
+            -
+              - col7
+              - flex-gap-000
+            -
+              - col8
+              - ''
+      maxRows: '1'
+      minRows: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  67c7c51f-2f9c-4a68-bdcb-41ffdb733a15: # Header Content
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: headerContent
+    instructions: ''
+    name: 'Header Content'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_headercontent}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

@@ -1,0 +1,147 @@
+field: 520d7dbc-30a1-4a8d-b4fc-493935a7c499 # Slides
+fieldLayouts:
+  8c09cb96-d7e4-4393-9577-1988a0836e08:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fd100cc4-9fc8-4ba5-b3b9-062bc461dfeb # Slide Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 267ddb9c-0c50-4a7f-9f96-617f9c1303d0 # Tab Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 23f9752d-d2df-4247-94d6-378168490d5c # Slide Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d4cb63e6-88e8-4767-ab6f-6c8f52c9cb22 # Slide Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  23f9752d-d2df-4247-94d6-378168490d5c: # Slide Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: slideLabel
+    instructions: ''
+    name: 'Slide Label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  267ddb9c-0c50-4a7f-9f96-617f9c1303d0: # Tab Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: tabTitle
+    instructions: ''
+    name: 'Tab Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d4cb63e6-88e8-4767-ab6f-6c8f52c9cb22: # Slide Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: slideText
+    instructions: ''
+    name: 'Slide Text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  fd100cc4-9fc8-4ba5-b3b9-062bc461dfeb: # Slide Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: slideImage
+    instructions: ''
+    name: 'Slide Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: thumbs
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets

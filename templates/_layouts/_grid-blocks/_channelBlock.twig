@@ -1,0 +1,17 @@
+{% set limit = block.limit ?? -1 %}
+{% set channelSelectionID = block.channelSelect ?? '0' %}
+{% set section = craft.app.sections.getSectionById(channelSelectionID).handle ?? '' %}
+{% set popup = block.popup ?? '' %}
+{% set buttonStyle = block.buttonStyle %}
+{% set cardBgColour = block.cardBackgroundColour %}
+{% set useExcerptLimit = block.useExcerptLimit ?? '' %}
+
+{% set entries = craft.entries({
+    section:section,
+    limit:limit
+}) %}
+{% if entries|length %}
+ {% for entry in entries.all() %}
+     {% include '_layouts/_block-partials/_entry-card.twig' %}
+ {% endfor %}
+{% endif %}

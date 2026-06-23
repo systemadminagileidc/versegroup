@@ -1,0 +1,35 @@
+{% set entries = craft.entries({
+    section:section,
+    limit:limit,
+}) %}
+
+{% set slidesToShow = block.sliderSettings[0].slidesToShow ?? 3 %}
+{% set arrows = block.sliderSettings[0].arrows  ? 'true' : 'false' %}
+{% set dots = block.sliderSettings[0].dots  ? 'true' : 'false' %}
+
+{% if entries|length %}
+    <section class="grid-row {{ rowSpace }} {{ colour }} {{ paddingTop }} {{ paddingBottom }}">
+        <div class="grid {{ width }} {{ gridGap }} {{ blockSize  ?? '' }} entries-slider"
+             data-slick='{"slidesToShow": {{ slidesToShow }}, "slidesToScroll": 1, "arrows":{{ arrows }},"dots":{{ dots }},
+              "responsive": [
+                {
+                  "breakpoint": 768,
+                  "settings": {
+                    "slidesToShow": 2
+                  }
+                },
+                {
+                  "breakpoint": 480,
+                  "settings": {
+
+                    "slidesToShow": 1
+                  }
+                }
+            ]
+            }'>
+            {% for entry in entries.all() %}
+                {% include '_layouts/_block-partials/_entry-card.twig' %}
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}

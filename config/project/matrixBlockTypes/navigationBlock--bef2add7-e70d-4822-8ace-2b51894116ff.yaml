@@ -1,0 +1,249 @@
+field: c2525dff-4e5c-4e3f-8072-ae3a6fd14f15 # Block
+fieldLayouts:
+  46000754-fc62-4412-99ed-6ebfbe9ebe7b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4231d867-04d4-41a9-8a40-3e6145e0af69 # Navigation Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: fb17161f-daae-4ec5-ad65-799e0377247e # Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1263e948-a2b1-4e5a-917e-76324d5d6743 # Link Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: d9f9833a-2072-4483-8b6f-f938029c672d # Display Cookie
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 978f9e16-6ec6-44d8-b080-bd4e834ff898 # Navigation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  978f9e16-6ec6-44d8-b080-bd4e834ff898: # Navigation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: navigation
+    instructions: ''
+    name: Navigation
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 0d7c0da2-090b-43d3-aa01-6cc0cd59be31 # Footer Link
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_83_navigation}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  1263e948-a2b1-4e5a-917e-76324d5d6743: # Link Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkColour
+    instructions: ''
+    name: 'Link Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - color-light-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - color-dark-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - color-primary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - color-secondary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - color-tertiary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - color-quaternary-main
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  4231d867-04d4-41a9-8a40-3e6145e0af69: # Navigation Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: navigationTitle
+    instructions: ''
+    name: 'Navigation Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d9f9833a-2072-4483-8b6f-f938029c672d: # Display Cookie
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: displayCookie
+    instructions: 'This option will show or hide the "manage cookie button"'
+    name: 'Display Cookie'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  fb17161f-daae-4ec5-ad65-799e0377247e: # Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: orientation
+    instructions: ''
+    name: Orientation
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Vertical
+            -
+              - value
+              - vertical
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Horizontal
+            -
+              - value
+              - horizontal
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: navigationBlock
+name: 'Navigation Block'
+sortOrder: 1

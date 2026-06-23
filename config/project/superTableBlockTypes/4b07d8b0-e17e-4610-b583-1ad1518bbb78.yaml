@@ -1,0 +1,283 @@
+field: ef54894a-67be-4abd-9386-c7ebfc9709b5 # Icons
+fieldLayouts:
+  1c803008-4b1a-4974-9ec9-1c9ec0457b9f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: aff546ce-4150-4a57-b4d7-14610419407c # Url
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 31b4f333-e9d8-4957-a44c-31b1d51746e9 # Social Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: aebed9fd-6754-461f-a024-5d8a671eddc4 # Icon Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1a8238bc-2c67-4bb0-9568-70a2ff6cdd6b # Icon Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1a8238bc-2c67-4bb0-9568-70a2ff6cdd6b: # Icon Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: iconColour
+    instructions: ''
+    name: 'Icon Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - color-light-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - color-dark-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - color-primary-main
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - color-secondary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - color-tertiary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quaternary
+            -
+              - value
+              - color-quaternary-main
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  31b4f333-e9d8-4957-a44c-31b1d51746e9: # Social Type
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: socialType
+    instructions: ''
+    name: 'Social Type'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Facebook
+            -
+              - value
+              - facebook
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Linkedin
+            -
+              - value
+              - linkedin
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Twitter
+            -
+              - value
+              - twitter
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Instagram
+            -
+              - value
+              - instagram
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Pinterest
+            -
+              - value
+              - pinterest
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Envelope
+            -
+              - value
+              - envelope
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Phone
+            -
+              - value
+              - phone
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  aebed9fd-6754-461f-a024-5d8a671eddc4: # Icon Style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: iconStyle
+    instructions: ''
+    name: 'Icon Style'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Icon
+            -
+              - value
+              - icon
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Square
+            -
+              - value
+              - square
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Circle
+            -
+              - value
+              - circle
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  aff546ce-4150-4a57-b4d7-14610419407c: # Url
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: socialUrl
+    instructions: ''
+    name: Url
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

@@ -1,0 +1,29 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Dashboard Widget module for Craft CMS
+ *
+ * Welcome Widget Body
+ *
+ * @author    Verse
+ * @copyright Copyright (c) 2021 Verse
+ * @link      Verse.co.uk
+ * @package   DashboardWidgetModule
+ * @since     1.0.0
+ */
+#}
+
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@modules/dashboardwidgetmodule/assetbundles/welcomewidget/dist', true) ~ '/img/logo.svg' %}
+
+<div class="welcome">
+    <div class="stack">
+        {{ message|markdown }}
+    </div>
+    {{ iframe|raw }}
+    <div class="logo">
+        <p>Site built by</p>
+        <a href="https://verse.co.uk/" target="_blank">
+        <img src="{{ iconUrl }}" height="64" width="64"/>
+        </a>
+    </div>
+</div>

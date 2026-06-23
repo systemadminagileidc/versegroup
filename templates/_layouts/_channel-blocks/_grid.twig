@@ -1,0 +1,22 @@
+{% if order.value == 'menu' %}
+    {% set entries = craft.entries()
+        .section(section)
+        .limit(limit)
+    %}
+{% else %}
+    {% set entries = craft.entries()
+        .section(section)
+        .orderBy(order.value)
+        .limit(limit)
+    %}
+{% endif %}
+
+<section class="grid-row {{ rowSpace }} {{ colour }} {{ paddingTop }} {{ paddingBottom }}">
+    <div class="grid {{ rowLayout }} {{ width }} {{ gridGap }} {{ blockSize ?? '' }}">
+        {% if entries|length %}
+            {% for entry in entries.all() %}
+                {% include '_layouts/_block-partials/_entry-card.twig' %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>

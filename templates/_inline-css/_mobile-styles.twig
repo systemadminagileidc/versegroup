@@ -1,0 +1,10 @@
+<!-- Set mobile breakpoint for styles and scripts -->
+{% set mobileBreakpoint = header.headerBuilder.one().headerSettings[0].mobileNavigation ?? '' %}
+{% set position = entry.headerPosition  %}
+{% if position == 'default' %}
+    {% set position = header.headerPosition %}
+{% endif %}
+<script type="text/javascript">
+    var mobileBreakpoint = '{{ mobileBreakpoint ?? 767 }} ';
+    var headerPosition = '{{ position ?? '' }} ';
+</script>

@@ -1,0 +1,55 @@
+field: f5ef695a-41f7-4438-98f1-6b23eb8ac2bc # Slide Content
+fieldLayouts:
+  6cbb6268-0bb4-4c44-9916-1f0a85e37555:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2ed2ab43-b4d2-452a-a213-4f77ffadc278 # Video Asset
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2ed2ab43-b4d2-452a-a213-4f77ffadc278: # Video Asset
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: videoAsset
+    instructions: ''
+    name: 'Video Asset'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - video
+      defaultUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:abfe2548-e0eb-46f4-b4f8-b5a54a315752' # Uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: video
+name: Video
+sortOrder: 3

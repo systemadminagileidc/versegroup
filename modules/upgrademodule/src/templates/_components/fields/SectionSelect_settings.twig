@@ -1,0 +1,33 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Custom Fields module for Craft CMS
+ *
+ * SectionField Field Settings
+ *
+ * @author    George Hawthorne
+ * @copyright Copyright (c) 2021 George Hawthorne
+ * @link      seguin.com
+ * @package   CustomFieldsModule
+ * @since     1.0.0
+ */
+#}
+
+{% import '_includes/forms' as forms %}
+
+{#{{ forms.checkboxGroupField({#}
+{#    label : 'Allowed Sections' | t('section-field'),#}
+{#    instructions : 'The sections that may be chosen for this field.' | t('section-field'),#}
+{#    id : 'whitelistedSections',#}
+{#    name : 'whitelistedSections',#}
+{#    values: field.whitelistedSections,#}
+{#    options : sections#}
+{#}) }}#}
+
+{#{{ forms.checkboxField({#}
+{#    label : 'Allow Multiple' | t('section-field'),#}
+{#    instructions : 'If checked, the user can select multiple sections, otherwise they can only select one.' | t('section-field'),#}
+{#    id : 'allowMultiple',#}
+{#    name : 'allowMultiple',#}
+{#    checked: field.allowMultiple#}
+{#}) }}#}

@@ -1,0 +1,35 @@
+field: 9ea9879a-93ba-4a51-936f-1eaf62a152e6 # __blank__
+fieldLayouts:
+  8d9681e7-4588-4935-b663-462f67d9610d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7308fede-1fa5-44c4-9ef0-c470e247147e: # Blocks
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blocks
+    instructions: 'Blocks are used to display different content within a row'
+    name: Blocks
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_blocks}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

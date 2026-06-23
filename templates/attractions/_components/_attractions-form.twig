@@ -1,0 +1,23 @@
+<div id="attractions-form-block" class="attractionsFormOverlap">
+
+	{# Show form title on the home page #}
+	{% if entry.getSection().handle == 'home' %}
+		<div class="attractions-form-title h2">{{- entry.inHeaderAttractionFormTitle|length ? entry.inHeaderAttractionFormTitle : attractionsGlobal.inHeaderAttractionFormTitle -}}</div>
+	{% endif %}
+
+	<button class="mobileAltSearch button primary master">Start Your Search</button>
+	<form id="attractions-form" action="/attractions/area" class="attractions-form">
+
+		{# Only show form label if a field exists in the entry or in globals - Falls back to global form label #}
+		{% if not entry.isFieldEmpty('attractionsFormLabel') or not attractionsGlobal.isFieldEmpty('attractionsFormLabel') %}
+			<div class="form-top">{{- entry.attractionsFormLabel|length ? entry.attractionsFormLabel : attractionsGlobal.attractionsFormLabel -}}</div>
+		{% endif %}
+
+		<div class="form-bottom grid gridRow bg-primary-main small-blocks default">
+			{% if searchType is not defined %}
+				{% set searchType = '' %}
+			{% endif %}
+			{% include 'attractions/_components/_attractions-form-block.twig' with { searchType: searchType } %}
+		</div>
+	</form>
+</div>

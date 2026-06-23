@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: d2c32663-a4c9-41e8-aba4-8e9ff3e0a643 # Page Builder
+handle: footerBuilder
+instructions: ''
+name: 'Footer Builder'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_footerbuilder}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,66 @@
+{
+  "buttons": [
+    "html",
+    "formatting",
+    "bold",
+    "italic",
+    "underline",
+    "unorderedlist",
+    "orderedlist",
+    "link",
+    "blockquote",
+    "image"
+
+  ],
+  "plugins": [
+    "alignment",
+    "customstyles"
+  ],
+  "allowedTags": ["input", "form"],
+  "linkNewTab": true,
+  "toolbarFixed": true,
+  "customStyles": {
+    "customStyles": {
+      "dropdown": {
+        "primaryButton": {
+          "args": {
+            "tag": "span",
+            "class": "button primary",
+            "type": "toggle"
+          }
+        },
+        "secondaryButton": {
+          "args": {
+            "tag": "span",
+            "class": "button secondary",
+            "type": "toggle"
+          }
+        },
+        "ghostButton": {
+          "args": {
+            "tag": "span",
+            "class": "button ghost",
+            "type": "toggle"
+          }
+        },
+        "headingFont": {
+          "args": {
+            "tag": "span",
+            "class": "heading-font",
+            "type": "toggle"
+          }
+        },
+        "bodyFont": {
+          "args": {
+            "tag": "span",
+            "class": "body-font",
+            "type": "toggle"
+          }
+        },
+        "clearStyles": {
+          "api": "module.inline.clearformat"
+        }
+      }
+    }
+  }
+}

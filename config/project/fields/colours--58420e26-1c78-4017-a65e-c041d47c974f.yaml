@@ -1,0 +1,92 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 7265e9bc-b902-4d44-9d77-49c982028299 # Master
+handle: colours
+instructions: ''
+name: Colours
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 4aff2cd4-277b-4ee8-8071-a0b8c0ade528 # Primary
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - bc8c5ea3-afe0-4e66-9244-5afd47071ea9 # Secondary
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6778d19e-249a-4d7c-9614-d6595acfc919 # Tertiary
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 2de458df-96c8-4d90-b167-59bb489aa66d # Quaternary
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - a0061a5b-7056-4a6c-adc8-549fdd532c7d # Light
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 9e00dda4-d283-4cb8-8bb9-71966417011f # Dark
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 9f02989b-41f0-494b-b847-7e0c5556fb2e # Background
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 9f3165c5-7658-4ba4-914a-3637feda0be0 # Font
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 454de498-c08e-4680-b637-f7fa032c1d0e # Button
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 5f2a9fbd-7e93-43ee-b56a-4caedf26d33f # Base Colours
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_colours}}'
+  fieldLayout: matrix
+  maxRows: '1'
+  minRows: '0'
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

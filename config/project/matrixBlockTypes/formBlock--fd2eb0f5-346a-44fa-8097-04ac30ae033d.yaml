@@ -1,0 +1,1077 @@
+field: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+fieldLayouts:
+  86cd8eb9-8ed4-48fd-a8d6-33b33fe7d32b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1be6c37e-6741-421b-a0f1-4bfce1a80e3a # Form Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4b789a8d-5c49-4c9a-85f2-869305e06c75 # Default Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5dffcfac-6661-4f14-9656-fcaf1653d78a # Subject
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 14abd435-8b6e-4db5-bc26-646d8c9f2860 # Button Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1a0ce971-7962-48e3-916e-08e95a9f039f # Hide labels
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 215d5f59-3488-4fc7-a855-118048b36170 # Extra Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d4dabe48-1706-44bb-91ea-1bb972146d63 # Super Extra Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4afb5604-52ce-47f0-9ae7-db670f600899 # Form Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bbb464dc-b504-46d0-932b-d169268dd13d # Popup
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 153e1a0e-502a-488c-be20-60644652f798 # Button Repeater
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 75
+          -
+            fieldUid: e5654a86-9e64-4a81-9d4c-ffc871642571 # Button Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  1a0ce971-7962-48e3-916e-08e95a9f039f: # Hide labels
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideLabels
+    instructions: 'Remove labels from display'
+    name: 'Hide labels'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  1be6c37e-6741-421b-a0f1-4bfce1a80e3a: # Form Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: formTitle
+    instructions: 'Appears above the form within the same block'
+    name: 'Form Title'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  4afb5604-52ce-47f0-9ae7-db670f600899: # Form Colour
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: formColour
+    instructions: 'Set the form colours'
+    name: 'Form Colour'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a custom colour'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Border Colour'
+                -
+                  - handle
+                  - borderColour
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Default
+                        -
+                          - value
+                          - default
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Light
+                        -
+                          - value
+                          - border-light-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Dark
+                        -
+                          - value
+                          - border-dark-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Primary
+                        -
+                          - value
+                          - border-primary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Secondary
+                        -
+                          - value
+                          - border-secondary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Tertiary
+                        -
+                          - value
+                          - border-tertiary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Quaternary
+                        -
+                          - value
+                          - border-quaternary-main
+                        -
+                          - default
+                          - false
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Input Background Colour'
+                -
+                  - handle
+                  - inputBackgroundColour
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Default
+                        -
+                          - value
+                          - default
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Light
+                        -
+                          - value
+                          - bg-light-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Dark
+                        -
+                          - value
+                          - bg-dark-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Primary
+                        -
+                          - value
+                          - bg-primary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Secondary
+                        -
+                          - value
+                          - bg-secondary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Tertiary
+                        -
+                          - value
+                          - bg-tertiary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Quaternary
+                        -
+                          - value
+                          - bg-quaternary-main
+                        -
+                          - default
+                          - false
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  4b789a8d-5c49-4c9a-85f2-869305e06c75: # Default Fields
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: defaultFields
+    instructions: 'Set the values of the default fields'
+    name: 'Default Fields'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 86b1bda0-c395-4636-8864-e2e8903cb9c8 # Name Fields
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 36f0dc01-ef12-49e0-9360-0c6b753ad9c8 # Email Fields
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 9abd5ac0-51c5-451b-85ca-75cf554b4bd0 # Meassage Fields
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_68_defaultfields}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  5dffcfac-6661-4f14-9656-fcaf1653d78a: # Subject
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: subject
+    instructions: 'Add a subject field'
+    name: Subject
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - f7d2f17d-eed0-4df2-b1bb-914cf4925d1e # Subject Fields
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - d91f9a2d-70fa-4a29-b195-4ba2ad903657 # Recipient
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_68_subject}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add Subject'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  14abd435-8b6e-4db5-bc26-646d8c9f2860: # Button Colour
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonColour
+    instructions: 'Submission button colour'
+    name: 'Button Colour'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Master
+            -
+              - value
+              - master
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Inherit
+            -
+              - value
+              - ''
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - bg-light-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - bg-dark-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Primary
+            -
+              - value
+              - bg-primary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Secondary
+            -
+              - value
+              - bg-secondary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Tertiary
+            -
+              - value
+              - bg-tertiary-main
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Quarternary
+            -
+              - value
+              - bg-quarternary-main
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  153e1a0e-502a-488c-be20-60644652f798: # Button Repeater
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonRepeater
+    instructions: 'Add buttons to the block'
+    name: 'Button Repeater'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 5370d126-53e9-49e7-8bab-4dcc1744d068 # Button
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 8f7557b3-3e50-4a3b-a2bb-531a8cdb20dc # Button Style
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - e3284b61-2631-49e9-83f0-98dc392782ea # Button Colour
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_68_buttonrepeater}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a Button'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  215d5f59-3488-4fc7-a855-118048b36170: # Extra Fields
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: extraFields
+    instructions: 'Used to add extra input fields to the form.'
+    name: 'Extra Fields'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a Input Field'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Label
+                -
+                  - handle
+                  - label
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Placeholder
+                -
+                  - handle
+                  - placeholder
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Input Type'
+                -
+                  - handle
+                  - inputType
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Text
+                        -
+                          - value
+                          - text
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Phone
+                        -
+                          - value
+                          - phone
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Date Picker'
+                        -
+                          - value
+                          - datePicker
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Date Range'
+                        -
+                          - value
+                          - dateRange
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Number
+                        -
+                          - value
+                          - number
+                        -
+                          - default
+                          - false
+      maxRows: ''
+      minRows: '0'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  bbb464dc-b504-46d0-932b-d169268dd13d: # Popup
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: popup
+    instructions: 'Access the form in a popup via a button.'
+    name: Popup
+    searchable: false
+    settings:
+      addRowLabel: 'Display in Popup'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Popup
+                -
+                  - handle
+                  - popup
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - lightswitch
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Button Text'
+                -
+                  - handle
+                  - buttonText
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Button Style'
+                -
+                  - handle
+                  - buttonStyle
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Primary
+                        -
+                          - value
+                          - primary
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Ghost
+                        -
+                          - value
+                          - ghost
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Secondary
+                        -
+                          - value
+                          - secondary
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Full Width'
+                        -
+                          - value
+                          - full-width
+                        -
+                          - default
+                          - false
+          -
+            - col4
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Button Colour'
+                -
+                  - handle
+                  - buttonColour
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Master
+                        -
+                          - value
+                          - master
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Inherit
+                        -
+                          - value
+                          - inherit
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Light
+                        -
+                          - value
+                          - bg-light-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Dark
+                        -
+                          - value
+                          - bg-dark-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Primary
+                        -
+                          - value
+                          - bg-primary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Secondary
+                        -
+                          - value
+                          - bg-secondary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Tertiary
+                        -
+                          - value
+                          - bg-tertiary-main
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Quaternary
+                        -
+                          - value
+                          - bg-quaternary-main
+                        -
+                          - default
+                          - false
+      maxRows: '1'
+      minRows: '0'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  d4dabe48-1706-44bb-91ea-1bb972146d63: # Super Extra Fields
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: superExtraFields
+    instructions: 'Extra fields with more options including dropdown boxes'
+    name: 'Super Extra Fields'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - d9dbec60-79bf-494e-bddc-17b897b59639 # Label
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - b59ef47c-8f3c-491f-8843-840cdb8d6c49 # Placeholder
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 5e68bba9-943b-4ba2-9210-490dd336f082 # Input Type
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 55e1f715-1b0b-4e93-a948-8aa5710b458e # Options
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_68_superextrafields}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: '0'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  e5654a86-9e64-4a81-9d4c-ffc871642571: # Button Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonOrientation
+    instructions: ''
+    name: 'Button Orientation'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Centre
+            -
+              - value
+              - center
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Around'
+            -
+              - value
+              - space-around
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Between'
+            -
+              - value
+              - space-between
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Space Evenly'
+            -
+              - value
+              - space-evenly
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Even Stretch'
+            -
+              - value
+              - evenStretch
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: formBlock
+name: Form
+sortOrder: 11

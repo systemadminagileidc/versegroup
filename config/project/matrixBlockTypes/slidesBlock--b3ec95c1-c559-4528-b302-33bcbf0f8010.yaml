@@ -1,0 +1,411 @@
+field: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+fieldLayouts:
+  9a6f7a7d-3e5f-4d8a-8fd6-f3e249b8bfa8:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 875a612d-8a61-4b58-befb-b7c399328b77 # Orientation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: f87fcc9c-1e8d-467b-9103-f429cf07d0f3 # Slider Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 520d7dbc-30a1-4a8d-b4fc-493935a7c499 # Slides
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  520d7dbc-30a1-4a8d-b4fc-493935a7c499: # Slides
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: slidesRepeater
+    instructions: ''
+    name: Slides
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - fd100cc4-9fc8-4ba5-b3b9-062bc461dfeb # Slide Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - 25%
+          -
+            - 267ddb9c-0c50-4a7f-9f96-617f9c1303d0 # Tab Title
+            -
+              __assoc__:
+                -
+                  - width
+                  - 25%
+          -
+            - 23f9752d-d2df-4247-94d6-378168490d5c # Slide Label
+            -
+              __assoc__:
+                -
+                  - width
+                  - 25%
+          -
+            - d4cb63e6-88e8-4767-ab6f-6c8f52c9cb22 # Slide Text
+            -
+              __assoc__:
+                -
+                  - width
+                  - 100%
+      contentTable: '{{%stc_50_slidesrepeater}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a Slide'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  875a612d-8a61-4b58-befb-b7c399328b77: # Orientation
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: orientation
+    instructions: ''
+    name: Orientation
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Centre
+            -
+              - value
+              - centre
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - bottom
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  f87fcc9c-1e8d-467b-9103-f429cf07d0f3: # Slider Settings
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: sliderSettings
+    instructions: ''
+    name: 'Slider Settings'
+    searchable: false
+    settings:
+      addRowLabel: ''
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Arrows
+                -
+                  - handle
+                  - arrows
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'False'
+                        -
+                          - value
+                          - 'false'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Default
+                        -
+                          - value
+                          - default
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Corner
+                        -
+                          - value
+                          - corner
+                        -
+                          - default
+                          - false
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Navigation
+                -
+                  - handle
+                  - navigation
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'False'
+                        -
+                          - value
+                          - 'false'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Dots
+                        -
+                          - value
+                          - dots
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Tabs
+                        -
+                          - value
+                          - tabs
+                        -
+                          - default
+                          - false
+          -
+            - col4
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image Crop'
+                -
+                  - handle
+                  - imageCrop
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Extra Large (1920 Ã— 1080)'
+                        -
+                          - value
+                          - extraLarge
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Large (1536 Ã— 864)'
+                        -
+                          - value
+                          - large
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Letter-box (1920 x 800)'
+                        -
+                          - value
+                          - letterbox
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Small Letter-box (1920 x 600)'
+                        -
+                          - value
+                          - smallLetterbox1
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Larger (768 x 432)'
+                        -
+                          - value
+                          - larger
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Portrait (450 Ã— 600)'
+                        -
+                          - value
+                          - portrait
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - '4:3 (600 Ã— 450)'
+                        -
+                          - value
+                          - fourThree
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Medium (576 Ã— 324)'
+                        -
+                          - value
+                          - medium
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Large Square (1000x1000)'
+                        -
+                          - value
+                          - largeSquare
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Square( 500 Ã— 500)'
+                        -
+                          - value
+                          - square
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Small (384 Ã— 216)'
+                        -
+                          - value
+                          - small
+                        -
+                          - default
+                          - false
+      defaults:
+        -
+          __assoc__:
+            -
+              - col2
+              - 'false'
+            -
+              - col3
+              - 'false'
+            -
+              - col4
+              - medium
+      maxRows: '1'
+      minRows: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+handle: slidesBlock
+name: Slides
+sortOrder: 7

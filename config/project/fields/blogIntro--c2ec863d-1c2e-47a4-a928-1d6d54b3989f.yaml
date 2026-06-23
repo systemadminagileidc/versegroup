@@ -1,0 +1,57 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: af775646-00cc-418c-8deb-b1a621f2126f # Blog Posts
+handle: blogIntro
+instructions: ''
+name: 'Blog Intro'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 57d7fb75-9f65-4cb3-8af1-872b184c442c # Text
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 4d745e29-a2e8-47b5-a584-510330af7397 # Sidebar Image
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 58ac5a7f-03a6-4058-a3ea-97165e94a9fe # Sidebar Title
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - ef9f9772-7ef7-46f7-bbd0-7a557f0231a5 # Text Area
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - c1a37b8b-5f57-4916-b9ed-c866017975de # Sidebar Colour
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_blogintro}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

@@ -1,0 +1,19 @@
+columnSuffix: ydsxufai
+contentColumnType: text
+fieldGroup: 7c4961a4-381e-494b-b2dd-bf0b6a8c1898 # Area
+handle: oldAreaId
+instructions: ''
+name: 'Old Area Id'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

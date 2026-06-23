@@ -1,0 +1,19 @@
+fieldLayouts:
+  1b82d9a8-3d35-49c0-ad01-74fb0b79c421:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 58420e26-1c78-4017-a65e-c041d47c974f # Colours
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Colours
+        sortOrder: 1
+handle: siteColours
+name: Colours
+sortOrder: 2

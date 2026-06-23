@@ -1,0 +1,47 @@
+{# -- Layout template for HTML pages -- #}
+{% extends "_boilerplate/_layouts/base-html-layout.twig" %}
+
+{# -- Any <meta> tags that should be included in the <head> #}
+{% block headMeta %}
+
+{% endblock headMeta %}
+
+{# -- Any <link> tags that should be included in the <head> #}
+{% block headLinks %}
+
+    {# Site Styles #}
+    <link rel="stylesheet" href="{{ siteUrl }}assets/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.1/dist/css/splide.min.css">
+
+
+{% endblock headLinks %}
+
+{# -- Any CSS that should be included before </head> -- #}
+{% block headCss %}
+{#    {% include "_inline-css/site-fonts.css" %}#}
+{% endblock headCss %}
+
+{# -- Page body -- #}
+{% block bodyHtml %}
+
+    {# -- Info header, including _navbar.twig -- #}
+    {% include "_layouts/_header.twig" %}
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+    {# -- Content that appears below the primary content block -- #}
+    {% block subcontent %}
+    {% endblock %}
+
+    {# -- HTML Footer -- #}
+    {% include "_layouts/_footer.twig" %}
+
+    {# Site Scripts #}
+    <script src="{{ siteUrl }}assets/scripts.min.js"></script>
+    <script src="{{ siteUrl }}assets/main.min.js"></script>
+
+{% endblock bodyHtml %}

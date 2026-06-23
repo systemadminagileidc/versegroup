@@ -1,0 +1,245 @@
+<footer>
+
+    {% if footer.footerBuilder|length %}
+
+        {% for rowKey, row in footer.footerBuilder.all() %}
+
+            {% set rowSpace = row.spaceTop %}
+            {% if rowSpace == 'default' %}
+                {% set rowSpace = master.masterRowSpacing %}
+            {% endif %}
+
+            {% set gridGap = row.gridGap %}
+            {% if gridGap == 'default' %}
+                {% set gridGap = master.masterGridGap %}
+            {% endif %}
+            {% set width = row.rowWidth ?? '' %}
+            {% set rowColumns = row.rowLayout ?? '' %}
+            {% set colour = row.rowColour ?? '' %}
+            {% set paddingTop = row.paddingTop ?? '' %}
+            {% set paddingBottom = row.paddingBottom ?? '' %}
+            {% set mediaQueries = row.mediaQueries ?? '' %}
+            {% set mediaQueries = row.mediaQueries ?? '' %}
+
+
+
+            {% set backgroundImage = row.backgroundImage[0].image.one().getUrl('large') ?? '' %}
+            {% set overlay = row.backgroundImage[0].overlay ?? '' %}
+            {% set overlayType = row.backgroundImage[0].overlayType ?? '' %}
+            {% set opacity = row.backgroundImage[0].opacity ?? '' %}
+            {% set blendMode = row.backgroundImage[0].blendMode ?? '' %}
+            {% if row.rowContent|length %}
+                {% switch row.type.handle %}
+
+                {% case 'blocks' %}
+                {% if row.mobileExpandLabel and row.mobileExpandLabel != '' %}
+                <div class="accordion-block {{ colour }} pad-top-100 pad-left-100 pad-right-100 pad-bottom-100">
+                    <div class="trigger mobiletrigger button primary tertiary bg-tertiary-main master">{{row.mobileExpandLabel}}</div>
+                    <div class="draw mobiledraw">
+                {% endif %}
+                    <section class="grid-row
+                        {{ rowSpace }}
+                        {{ colour }}
+                        {{ paddingTop }}
+                        {{ paddingBottom }}
+                        {{ overlay }}
+                        {{ overlayType }}
+                        {{ opacity }}
+                        {{ blendMode }}
+                        "
+                            {% if backgroundImage %}
+                                style="background: url({{ backgroundImage }}) center center/cover no-repeat"
+                            {% endif %}
+                    >
+                        
+                        <div class="grid {{ rowColumns }} {{ width }} {{ gridGap }}
+                            {% for option in mediaQueries %}
+                                 {{ option.value~' ' }}
+                            {% endfor %}
+                            ">
+                            {% set repeater = row.rowContent.one().block %}
+                            {% for blockKey, block in repeater.all() %}
+                                {% switch block.type.handle %}
+                                {% case 'navigationBlock' %}
+                                    <nav class="stack">
+                                        {% if block.navigationTitle %}
+                                            <h4>{{ block.navigationTitle }}</h4>
+                                        {% endif %}
+                                        <ul class="stack stack-small {{ block.orientation }}">
+                                            {% for navBlock in block.navigation.all() %}
+                                                <li>
+                                                    {% if navBlock.footerLink.getUrl() %}
+                                                        <a class="{{ block.linkColour }} {{ navBlock.footerLink.getUrl() }}"
+                                                           href="{{ navBlock.footerLink.getUrl() }}">
+                                                            {{ navBlock.footerLink.getText() }}
+                                                        </a>
+                                                    {% else %}
+                                                        <p>{{ navBlock.footerLink.getText() }}</p>
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                            {% if block.displayCookie %}
+                                                <li>
+                                                    <a href="javascript:void(0)"
+                                                       class="{{ block.linkColour }} button-cookie">Manage Cookies</a>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </nav>
+                                {% case 'affiliateBlock' %}
+                                    <div class="affiliate">
+                                        {% if block.affiliateLink.getUrl() %}
+                                            <a class="abs" href="{{ block.affiliateLink.getUrl() }}"
+                                               target="{{ block.affiliateLink.getTarget() }}"></a>
+                                        {% endif %}
+
+                                        {% if block.affiliateLogo|length > 0 %}
+                                            {% include '_layouts/_block-partials/_image-icon.twig' with { imageAll: block.affiliateLogo.all(), crop: block.imageCrop.value } %}
+                                        {% endif %}
+                                    </div>
+                                {% case 'addressBlock' %}
+                                    {% set map = block.map.parts %}
+                                    <div class="address stack">
+                                        {% if block.locationTitle %}
+                                            <h4>{{ block.locationTitle }}</h4>
+                                        {% endif %}
+                                        {% if block.text %}
+                                            {{ block.text }}
+                                        {% endif %}
+                                        <address class="stack stack-tiny">
+                                            {{ map.number }} {{ map.address }},</p>
+                                            {{ map.city }},</br>
+                                            {{ map.county }},</br>
+                                            {{ map.postcode }},</br>
+                                            {{ map.country }}</br>
+                                            <a target="_blank"
+                                               href="http://maps.google.com/?q={{ map.number ~ ' ' ~ map.address }}">Get
+                                                Directions</a>
+
+                                        </address>
+                                    </div>
+                                {% case 'horizontalLine' %}
+                                    <hr class="{{ block.lineColour }}">
+                                {% case 'iconsBlock' %}
+                                    {% set icon = '' %}
+                                    {% if block.icons is defined %}
+                                        <div class="social {{ block.orientation }} {{ block.mobileOrientation ?? '' }}">
+                                            {% if block.socialTitle %}
+                                                <h4>{{ block.socialTitle }}</h4>
+                                            {% endif %}
+                                            {% for link in block.icons.all() %}
+                                                {% switch link.socialType.value %}
+                                                {% case 'facebook' %}
+                                                    {% switch link.iconStyle.value %}
+                                                    {% case 'icon' %}
+                                                        {% set icon = link.socialType.value~'-f' ?? '' %}
+                                                    {% case 'square' %}
+                                                        {% set icon = link.socialType.value~'-square' ?? '' %}
+                                                    {% case 'circle' %}
+                                                        {% set icon = link.socialType.value ?? '' %}
+                                                    {% endswitch %}
+                                                    <a href="{{ link.socialUrl }}" target="_blank"><i
+                                                                class="{{ link.iconColour }} {{ 'fab fa-'~icon }}"></i></a>
+                                                {% case 'pinterest' %}
+                                                    {% switch link.iconStyle.value %}
+                                                    {% case 'icon' %}
+                                                        {% set icon = link.socialType.value~'-p' ?? '' %}
+                                                    {% case 'square' %}
+                                                        {% set icon = link.socialType.value~'-square' ?? '' %}
+                                                    {% case 'circle' %}
+                                                        {% set icon = link.socialType.value ?? '' %}
+                                                    {% endswitch %}
+                                                    <a href="{{ link.socialUrl }}" target="_blank"><i
+                                                                class="{{ link.iconColour }} {{ 'fab fa-'~icon }}"></i></a>
+                                                {% case 'linkedin' %}
+                                                    {% switch link.iconStyle.value %}
+                                                    {% case 'icon' %}
+                                                        {% set icon = link.socialType.value~'-in' ?? '' %}
+                                                    {% case 'square' or 'circle' %}
+                                                        {% set icon = link.socialType.value ?? '' %}
+                                                    {% endswitch %}
+                                                    <a href="{{ link.socialUrl }}" target="_blank"><i
+                                                                class="{{ link.iconColour }} {{ 'fab fa-'~icon }}"></i></a>
+                                                {% case 'twitter' or  'instagram' %}
+                                                    {% switch link.iconStyle.value %}
+                                                    {% case 'icon' %}
+                                                        {% set icon = link.socialType.value ?? '' %}
+                                                    {% case 'square' or 'circle' %}
+                                                        {% set icon = link.socialType.value~'-square' ?? '' %}
+                                                    {% endswitch %}
+                                                    <a href="{{ link.socialUrl }}" target="_blank"><i
+                                                                class="{{ link.iconColour }} {{ 'fab fa-'~icon }}"></i></a>
+                                                {% case 'envelope' or 'phone' %}
+                                                    {% switch link.iconStyle.value %}
+                                                    {% case 'icon' %}
+                                                        {% set icon = link.socialType.value ?? '' %}
+                                                    {% case 'square' or 'circle' %}
+                                                        {% set icon = link.socialType.value~'-square' ?? '' %}
+                                                    {% endswitch %}
+                                                    <a href="{{ link.socialUrl }}" target="_blank"><i
+                                                                class="{{ link.iconColour }} {{ 'fas fa-'~icon }}"></i></a>
+                                                {% default %}
+                                                {% endswitch %}
+
+                                            {% endfor %}
+
+                                        </div>
+                                    {% endif %}
+                                {% case 'spacer' %}
+                                    <div class="spacer {{ 'col-'~block.columnSpan }}"></div>
+                                {% case 'text' %}
+                                    <div class="textBlock
+                                        {{ block.blockColour ?? '' }}
+                                        {{ block.blockPadding[0].paddingTop  ?? '' }}
+                                        {{ block.blockPadding[0].paddingBottom ?? '' }}
+                                        {{ block.blockPadding[0].paddingLeft ?? '' }}
+                                        {{ block.blockPadding[0].paddingRight  ?? '' }}
+                                        {{ block.orientation ?? '' }}
+                                        {{ block.mobileOrientation ?? '' }}
+                                        ">
+                                        <div class="stack">
+                                            {% if block.blockTitle %}
+                                                <h4>{{ block.blockTitle }}</h4>
+                                            {% endif %}
+                                            {{ block.textContent }}
+                                            {% set embedCode = block.embed[0].embedCode ?? '' %}
+                                            {{ embedCode|raw }}
+                                        </div>
+                                    </div>
+                                {% case 'image' %}
+                                    <figure class="stretch imageBlock
+                                        {{ block.blockColour ?? '' }}
+                                        {{ block.blockPadding[0].paddingTop  ?? '' }}
+                                        {{ block.blockPadding[0].paddingBottom ?? '' }}
+                                        {{ block.blockPadding[0].paddingLeft ?? '' }}
+                                        {{ block.blockPadding[0].paddingRight  ?? '' }}
+                                        ">
+                                        {% for image in block.image.all() %}
+                                            {% set imageMedium = image.url() ?? '' %}
+                                            {% set imageSmall = image.url() ?? '' %}
+                                            <img srcset="{{ imageMedium }} 576w, {{ imageSmall }} 384w"
+                                                 sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                                                 src="{{ imageMedium }}" alt=""/>
+                                        {% endfor %}
+                                    </figure>
+                                {% case 'copyright' %}
+                                    <p class="copyright">&copy; {{ "now"|date("Y") }} {{ siteName }}</p>
+                                {% default %}
+                                    {% include '_layouts/_grid-blocks/_'~ block.type.handle~'.twig' with {blockType:block.type.handle} %}
+                                {% endswitch %}
+                            {% endfor %}
+                        </div>
+                    </section>
+                    {% if row.mobileExpandLabel and row.mobileExpandLabel != '' %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                {% endswitch %}
+
+            {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+</footer>

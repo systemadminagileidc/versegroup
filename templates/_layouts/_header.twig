@@ -1,0 +1,196 @@
+{#
+    _header.twig
+        Navigation header
+#}
+{% if header.headerBuilder|length %}
+
+    {% set position = entry.headerPosition  %}
+    {% if position == 'default' %}
+        {% set position = header.headerPosition %}
+    {% endif %}
+    <header id="header" class="{{ position ?? '' }}">
+
+        {% for rowKey, row in header.headerBuilder.all() %}
+
+            {% if row.headerSettings|length %}
+                {% set width = row.headerSettings[0].headerWidth ?? '' %}
+
+                {% set colour = row.headerSettings[0].headerColour ?? '' %}
+                {% set colour = entry.headerColour.value ?? colour %}
+                {% if colour == 'default' %}
+                    {% set colour = row.headerSettings[0].headerColour ?? '' %}
+                {% endif %}
+
+                {% set gap = row.headerSettings[0].gap ?? '' %}
+                {% set mobileContact = row.headerSettings[0].mobileContact ?? '' %}
+
+            {% endif %}
+            {% if row.headerContent|length %}
+
+                <section class="grid-row {{ colour }}">
+                    <div class="grid {{ width }} {{ gap }}">
+                        {% if siteMeta.phone|length and mobileContact %}
+                            <button id="contact-icon">
+                                <a href="tel:{{ siteMeta.phone }}"><span class="fa fa-phone"></span></a>
+                            </button>
+                        {% endif %}
+                        {% for blockKey, block in row.headerContent.all() %}
+                            {% switch block.type.handle %}
+                            {% case 'navigationBlock' %}
+                                <div class="nav-mobile-gap"></div>
+                                {% set hoverStyle = block.hoverStyle ?? '' %}
+                                <nav class="{{ hoverStyle }} {{ block.navOrientation ?? '' }} {{ block.navGap ?? '' }}" style="min-height:28px; flex: 1 1 {{ block.width }}%;">
+                                    {% for item in block.navItems.all() %}
+                                        <div class="nav-link">
+                                            <a class="{{ item.navItem.getUrl() == craft.app.request.absoluteUrl ? 'active' }}" href="{{ item.navItem.getUrl() }}">
+                                                {{ item.navItem.getText()|raw }}
+                                                {# Adding icon if selected #}
+                                                {% if item.icon|length > 0 %}
+                                                    {% set img = item.icon.one() %}
+                                                    <img src="{{img.getUrl()}}" alt="{{img.title}}" />
+                                                {% endif %}
+                                            </a>
+                                            {% if item.subNav|length > 0 %}
+                                                <button class="sub-menu fas fa-chevron-down"></button>
+                                                <ul class="sub-nav">
+                                                    {% for subLink in item.subNav.all() %}
+                                                        {% if subLink|length > 0 %}
+                                                            <li>
+                                                                <a href="{{ subLink.url }}"
+                                                                   class="nav-link">{{ subLink.title|raw }}</a>
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </nav>
+                            {% case 'logoBlock' %}
+                                    <a href="{{ siteUrl }}" class="logo centreCentre
+                                          {{ block.padding[0].paddingTop  ?? '' }}
+                                          {{ block.padding[0].paddingBottom ?? '' }}
+                                          {{ block.padding[0].paddingLeft ?? '' }}
+                                          {{ block.padding[0].paddingRight  ?? '' }}"
+                                       style="flex: 1 1 20%; max-width: {{ block.maxWidth ?? '400' }}px; min-width: {{ block.minWidth ?? '400' }}px;align-self: flex-start;">
+                                        {% set image = entry.logo.all() ? entry.logo.all() : block.logo.all() %}
+
+                                        {% include '_layouts/_block-partials/_image-icon.twig' with { imageAll: image, crop: block.crop.value , iconColour: block.iconColour } %}
+
+                                        {# {% include '_layouts/_block-partials/_image-icon.twig' with { imageAll: block.logo.all(), crop: block.crop.value } %} #}
+                                    </a>
+
+                            {% case 'ctaBlock' %}
+                                {% set button = block.button %}
+                                {% if button is defined and button.getUrl() %}
+                                    <a class="button {{ block.buttonStyle ?? '' }} {{ block.buttonColour ?? '' }}" style="flex: 1 1 {{ block.width }}%;" href="{{ button.getUrl() }}"
+                                       target="{{ button.getTarget() }}">{{ button.customText ? button.customText : button.defaultText }}</a>
+                                {% endif %}
+                            {% case 'socialBlock' %}
+                                <nav class="socialLinks">
+                                    {% if block.facebook %}
+                                        {% set fbi = block.facebookIcon.one() %}
+                                        <a href="{{block.facebook}}" target="_blank">{% if fbi %}<img src="{{fbi.getUrl()}}" alt="Facebook" class="socialIcon" />{% else %}Facebook{% endif %}</a>
+                                    {% endif %}
+                                    {% if block.twitter %}
+                                        {% set twi = block.twitterIcon.one() %}
+                                        <a href="{{block.twitter}}" target="_blank">{% if twi %}<img src="{{twi.getUrl()}}" alt="Twitter" class="socialIcon" />{% else %}Twitter{% endif %}</a>
+                                    {% endif %}
+                                    {% if block.instagram %}
+                                        {% set ini = block.instagramIcon.one() %}
+                                        <a href="{{block.instagram}}" target="_blank">{% if ini %}<img src="{{ini.getUrl()}}" alt="Instagram" class="socialIcon" />{% else %}Instagram{% endif %}</a>
+                                    {% endif %}
+                                </nav>
+                            {% case 'spaceBlock' %}
+                                <div class="nav-space-block" style="flex: 1 1 {{ block.width ?? '40' }}%;"> </div>
+                            {% case 'googleTranslateBlock' %}
+                                <nav style="flex: 1 1 {{ block.width ?? '40' }}%;">
+                                    <div id="translateholder"><div id="google_translate_element"></div></div><script>
+                                        function googleTranslateElementInit() {
+                                          new google.translate.TranslateElement({
+                                              pageLanguage: 'en',
+                                              autoDisplay: false,
+                                              includedLanguages: 'en,sq,hy,az,be,bg,zh-CN,zh-TW,hr,cs,da,nl,et,tl,fi,fr,ka,de,el,ht,hi,hu,is,id,ga,it,ja,ko,lv,lt,mk,ms,mt,no,pl,pt,ro,ru,sr,sk,sl,es,sv,th,tr,uk,vi,cy'
+                                          }, 'google_translate_element');
+
+                                          var gte = document.getElementById('google_translate_element');
+                                          gte.addEventListener("DOMSubtreeModified", translateLoaded, false);
+
+                                          {# Adding code to call in the styled select boxes with flags #}
+                                          var gts = $('select.goog-te-combo');
+
+                                          function translateLoaded() {
+                                            gte.removeEventListener("DOMSubtreeModified", translateLoaded);
+                                            $('select.goog-te-combo')[0].addEventListener("DOMSubtreeModified", translationCallback);
+                                          }
+                                            function translationCallback(e) {
+                                                gts = $('.goog-te-combo');
+
+                                                if(gts.children('option').length > 0 && e && e.target) {
+                                                    {# Waiting for last language to be added as google updates the selectbox incrementally #}
+                                                    if(gts.children('option[value="cy"]').length > 0) {
+                                                        e.target.removeEventListener("DOMSubtreeModified", translationCallback);
+                                                        {# using the value as the class #}
+                                                        gts.children('option').each(function(i, o) {
+                                                            {# adding class to use has icon styles, as oppose to sub items #}
+                                                            o.className = o.getAttribute('value') + ' hasIcon';
+                                                        });
+                                                        if(gts.next().hasClass('selectBox')) {
+                                                            gts.selectBox('destroy');
+                                                        } else {
+                                                            gts.selectBox();
+                                                        }
+
+                                                        var cookiecheck = document.cookie.match(/googtrans=([^;]+)/);
+
+                                                        {# Getting preloaded default language #}
+                                                        if(gts.val() == '') {
+                                                            gts.next().children('.selectBox-label').addClass('en');
+                                                            if(cookiecheck && cookiecheck.length > 1 && cookiecheck[1].indexOf('/') > -1) {
+                                                                var lang = cookiecheck[1].split('/');
+                                                                gts.selectBox('value',lang[lang.length-1]);
+                                                                gts.next().children('.selectBox-label').addClass(lang[lang.length-1]);
+                                                            } else {
+                                                                gts.selectBox('value','en');
+                                                                gts.next().children('.selectBox-label').addClass('en');
+                                                            }
+                                                        } else {
+                                                            // If cookies exist
+                                                            if(cookiecheck && cookiecheck.length > 1 && cookiecheck[1].indexOf('/') > -1) {
+                                                                // Get language
+                                                                var lang = cookiecheck[1].split('/');
+                                                                lang = lang[lang.length-1];
+                                                                gts.selectBox('value',lang);
+                                                            }
+                                                        }
+
+                                                        e.target.addEventListener("DOMSubtreeModified", translationCallback);
+                                                        gts.on('change',function() {
+                                                            gts.off('change');
+                                                            var evt = document.createEvent("HTMLEvents");
+                                                            evt.initEvent("change", false, true);
+                                                            gts[0].dispatchEvent(evt);
+                                                        });
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </script>
+                                    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async="async"></script>
+
+                                </nav>
+                                <div class="nav-mobile-gap small"></div>
+                            {% endswitch %}
+                        {% endfor %}
+                        {% if loop.first %}
+                        <button id="menu-icon">
+                            <span></span>
+                        </button>
+                        {% endif %}
+                    </div>
+                </section>
+
+            {% endif %}
+        {% endfor %}
+    </header>
+{% endif %}

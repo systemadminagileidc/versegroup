@@ -1,0 +1,51 @@
+{% set search = search ?? '' %}
+
+{% set categoryId = categoryId ?? '' %}
+{% set categories = craft.categories()
+    .group('category') %}
+
+<section s-replace="#entries" class="grid-row {{ rowSpace }} bg-primary pad-top-300 pad-bottom-300">
+    <div class="grid {{ gridGap }} {{ blockSize ?? ''  }} pad-left-400 pad-right-400">
+        <div class="stack stack-small">
+            <h5><label for="subject">Search</label></h5>
+            <input sprig
+                   s-trigger="keyup changed delay:300ms"
+                   id="search"
+                   name="search"
+                   type="text"
+                   value="{{ search }}"
+                   autocomplete="off"
+                   placeholder="Search..">
+        </div>
+        <div class="stack stack-small">
+            <h5><label for="subject">Browse by department</label></h5>
+            <select sprig name="categoryId">
+                <option value="">All categories</option>
+                {% for category in craft.categories.all() %}
+                    <option value="{{ category.id }}" {{ category.id == categoryId ? 'selected' }}>{{ category.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</section>
+
+<section id="entries" class="grid-row {{ rowSpace }} {{ colour }} {{ paddingTop }} {{ paddingBottom }}">
+    <div class="grid {{ rowLayout }} {{ width }} {{ gridGap }} {{ blockSize ?? ''  }}"
+    {{ sprig('_layouts/_sprig-components/_filter-load-more',{
+        'rowSpace': rowSpace,
+        'width': width,
+        'colour': colour,
+        'paddingTop': paddingTop,
+        'paddingBottom': paddingBottom,
+        'gridGap': gridGap,
+        'blockSize': blockSize,
+        'rowLayout': rowLayout,
+        'section': section,
+        'limit':limit,
+        'search':search,
+        'categoryId':categoryId,
+        'popup': popup,
+        'imageCrop': imageCrop.value,
+    }) }}
+    </div>
+</section>

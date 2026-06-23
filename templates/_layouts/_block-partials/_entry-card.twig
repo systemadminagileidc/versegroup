@@ -1,0 +1,149 @@
+
+{% set imageBlock %}
+    {% if entry.thumbnail is defined and entry.thumbnail|length > 0 %}
+        {% set imageUrl = entry.thumbnail.one() %}
+        {% if imageCrop is defined %}
+            {% switch imageCrop %}
+            {% case 'medium' %}
+                {% set imageMedium = imageUrl.getUrl('medium') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('small') ?? '' %}
+            {% case 'portrait' %}
+                {% set imageMedium = imageUrl.getUrl('portrait') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('portrait') ?? '' %}
+            {% case 'largeSquare' %}
+                {% set imageMedium = imageUrl.getUrl('largeSquare') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('square') ?? '' %}
+            {% case 'square' %}
+                {% set imageMedium = imageUrl.getUrl('square') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('square') ?? '' %}
+            {% case 'fourThree' %}
+                {% set imageMedium = imageUrl.getUrl('fourThree') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('fourThree')?? '' %}
+            {% default %}
+                {% set imageMedium = imageUrl.getUrl('medium') ?? '' %}
+                {% set imageSmall = imageUrl.getUrl('small') ?? '' %}
+            {% endswitch %}
+        {% else %}
+            {% set imageMedium = imageUrl.getUrl('medium') ?? '' %}
+            {% set imageSmall = imageUrl.getUrl('small') ?? '' %}
+        {% endif %}
+
+        <figure>
+            <img srcset="{{ imageMedium }} 576w, {{ imageSmall }} 384w"
+                 sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                 src="{{ imageMedium }}" alt="{{ imageUrl.plainText ?? '' }}"/>
+            {% if imageUrl.text %}
+                <figcaption>
+                    {{ imageUrl.text }}
+                </figcaption>
+            {% endif %}
+        </figure>
+    {% endif %}
+{% endset %}
+
+{% set contentBlock %}
+    <div class="content">
+        {% if entry.title is defined %}
+            <h4>{{ entry.title }}</h4>
+        {% endif %}
+
+        {% set categoryQuery = craft.categories()
+            .group('category')
+            .relatedTo(entry.id) %}
+
+        {% if showPostDate is defined %}
+            {% if showPostDate %}
+                <h6>{{ entry.postDate | date("M d, Y") }}</h6>
+            {% endif %}
+        {% endif %}
+
+        {% if categoryQuery|length %}
+            <hr>
+            <p><strong>Categories:</strong>
+                {% for key, category in categoryQuery.all() %}
+                    {{ category.title }},
+                {% endfor %}
+            </p>
+        {% endif %}
+
+        {% if entry.blogIntro|length %}
+            {% if entry.blogIntro.textArea %}
+                {{ entry.blogIntro.textArea }}
+            {% endif %}
+        {% endif %}
+
+        {% if entry.excerpt is defined and entry.excerpt|length %}
+            {% if useExcerptLimit is defined and useExcerptLimit == 0 %}
+                <p>{{ entry.excerpt }}</p>
+            {% else %}
+                {% set excerptLength = fontSettings.excerptLimit %}
+                <p>{{ entry.excerpt|truncate(excerptLength)|raw }}</p>
+            {% endif %}
+        {% endif %}
+
+        {% if popup is defined and popup == 1 %}
+            <div id="popup-{{ entry.sectionId ~ '-' ~ entry.id }}" class="card-popup mfp-hide">
+                {% if entry.thumbnail is defined and entry.thumbnail|length > 0 %}
+                    <img srcset="{{ imageMedium }} 576w, {{ imageSmall }} 384w"
+                            sizes="(min-width: 920px) 33.3vw, (min-width: 767px) 50vw, 100vw"
+                            src="{{ imageMedium }}" alt=""/>
+                {% endif %}
+
+                <div class="content">
+                    <h4>{{ entry.title }}</h4>
+                    {% if categoryQuery|length %}
+                        <h6><strong>Categories:</strong>
+                            {% for key, category in categoryQuery.all() %}
+                                {{ category.title }},
+                            {% endfor %}
+                        </h6>
+                    {% endif %}
+
+                    {% if entry.blogIntro.textArea %}
+                        {{ entry.blogIntro.textArea }}
+                    {% endif %}
+
+                    {% if entry.excerpt %}
+                        <p>{{ entry.excerpt }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if entry.url is defined %}
+            {% if hideButton is defined and hideButton %}
+            {% else %}
+                <div class="button {{ buttonStyle ?? '' }} {{ buttonColour ?? '' }}">{{ buttonText ?? 'Read More' }}</div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endset %}
+
+{# =========== #}
+{# Card output #}
+{# =========== #}
+<div class="stack card
+{{ cardBgColour ?? '' }}
+{{ master.cardSettings[0].borderRadius ?? '' }}
+{{ master.cardSettings[0].borderColour ?? '' }}
+{{ master.cardSettings[0].titleFont ?? '' }}
+{{ master.cardSettings[0].dropShadow ? 'drop' : ' ' }}
+{{ block.mobileOptions ?? '' }}">
+
+    {# link or popup #}
+    {% if popup is defined and popup == 1 %}
+        <a href="#popup-{{ entry.sectionId ~ '-' ~ entry.id }}" class="open-card-popup">
+    {% elseif entry.url is defined %}
+        <a href="{{ entry.url }}">
+    {% endif %}
+
+    {# Content #}
+    {{imageBlock}}
+    {{contentBlock}}
+
+    {# END link or popup #}
+    {% if popup is defined and popup == 1 or entry.url is defined %}
+        </a>
+    {% endif %}
+
+</div>

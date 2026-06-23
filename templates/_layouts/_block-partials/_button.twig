@@ -1,0 +1,13 @@
+<div class="button-wrap {{ master.buttonSettings[0].mobileOptions ?? '' }}">
+    {% if button is defined and button.getUrl() %}
+        {% set orient = orientation ?? '' %}
+        {% set class = class ?? 'primary' %}
+        {# Get the link url, check it for youtube, vimeo or facebook video.php and add a class to trigger the popup system #}
+        {% set targetUrl = button.getUrl() %}
+        {% if 'youtube' in targetUrl or 'vimeo' in targetUrl or 'video.php' in targetUrl %}
+            {% set class = class ~ ' popup-video' %}
+        {% endif %}
+        <a class="button {{ orient }} {{ class }}" href="{{ button.getUrl() }}"
+           target="{{ button.getTarget() }}">{{ button.customText ? button.customText : button.defaultText }}</a>
+    {% endif %}
+</div>

@@ -1,0 +1,268 @@
+@use "../_abstracts/font-scale";
+@use "../_utilities/_mixins/media-query" as *;
+
+body {
+  font-family: var(--body-font);
+  font-weight: var(--body-weight);
+  //font-size: var(--f0);
+}
+
+.heading-font {
+  font-family: var(--heading-font);
+}
+
+.body-font {
+  font-family: var(--body-font);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  min-height: 0.000001vw;
+  color: var(--base-heading);
+  line-height: 1.2;
+  margin-bottom: var(--f2);
+  font-family: var(--heading-font);
+  font-weight: var(--heading-weight);
+  max-width: var(--max-character-length);
+  letter-spacing: 0.3px;
+
+  strong {
+    color: var(--primary-highlight);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//PLEASE NOTE ALL THESE ARE OVERIDDEN BY THEME SETTINGS -> located in templates
+h1,
+.h1 {
+  font-size: clamp(var(--f3), 10vw, var(--f5));
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+h2,
+.h2 {
+  font-size: clamp(var(--f2), 8vw, var(--f4));
+}
+
+h3,
+.h3 {
+  font-size: clamp(var(--f1), 5vw, var(--f3));
+}
+
+h4,
+.h4 {
+  font-size: clamp(var(--f1), 3vw, var(--f2));
+}
+
+h5,
+.h5 {
+  font-size: clamp(var(--f0), 2vw, var(--f1));
+}
+
+h6,
+.h6 {
+  font-size: clamp(var(--f0), 1vw, var(--f0));
+  font-weight: 100;
+}
+
+html.safari-12,
+html.safari-13 {
+  h1,
+  .h1 {
+    font-size: min(max(var(--f3), 10vw), var(--f5));
+  }
+
+  h2,
+  .h2 {
+    font-size: min(max(var(--f2), 8vw), var(--f4));
+  }
+
+  h3,
+  .h3 {
+    font-size: min(max(var(--f1), 5vw), var(--f3));
+  }
+
+  h4,
+  .h4 {
+    font-size: clamp(var(--f0), 3vw, var(--f2));
+  }
+
+  h5,
+  .h5 {
+    font-size: clamp(var(--f0), 2vw, var(--f1));
+  }
+
+  h6,
+  .h6 {
+    font-size: clamp(var(--f0), 1vw, var(--f0));
+  }
+}
+
+@include mq-min(ultra-large) {
+  h1,
+  .h1 {
+    font-size: clamp(var(--f3)*1.5, 10vw, var(--f5)*1.5);
+    font-style: italic;
+    text-transform: uppercase;
+  }
+
+  h2,
+  .h2 {
+    font-size: clamp(var(--f2)*1.5, 8vw, var(--f4)*1.5);
+  }
+
+  h3,
+  .h3 {
+    font-size: clamp(var(--f1)*1.5, 5vw, var(--f3)*1.5);
+  }
+
+  h4,
+  .h4 {
+    font-size: clamp(var(--f1)*1.5, 3vw, var(--f2)*1.5);
+  }
+
+  h5,
+  .h5 {
+    font-size: clamp(var(--f0)*1.5, 2vw, var(--f1)*1.5);
+  }
+
+  h6,
+  .h6 {
+    font-size: clamp(var(--f0)*1.5, 1vw, var(--f0)*1.5);
+    font-weight: 100;
+  }
+
+  p {
+    font-size: clamp(var(--f0)*1.5, 2vw, var(--f0)*1.5);
+  }
+
+  html.safari-12,
+  html.safari-13 {
+    h1,
+    .h1 {
+      font-size: min(max(var(--f3)*1.5, 10vw), var(--f5)*1.5);
+    }
+
+    h2,
+    .h2 {
+      font-size: min(max(var(--f2)*1.5, 8vw), var(--f4)*1.5);
+    }
+
+    h3,
+    .h3 {
+      font-size: min(max(var(--f1)*1.5, 5vw), var(--f3)*1.5);
+    }
+
+    h4,
+    .h4 {
+      font-size: clamp(var(--f0)*1.5, 3vw, var(--f2)*1.5);
+    }
+
+    h5,
+    .h5 {
+      font-size: clamp(var(--f0)*1.5, 2vw, var(--f1)*1.5);
+    }
+
+    h6,
+    .h6 {
+      font-size: clamp(var(--f0)*1.5, 1vw, var(--f0)*1.5);
+    }
+
+    p {
+      font-size: clamp(var(--f0)*1.5, 2vw, var(--f0)*1.5);
+    }
+  }
+}
+
+a {
+  color: var(--base-link-colour);
+}
+
+p {
+  font-size: clamp(var(--f0), 2vw, var(--f0));
+  margin-bottom: var(--f1);
+  max-width: var(--max-character-length);
+  color: var(--base-body);
+}
+
+p[style*="text-align: center"] {
+  max-width: unset;
+}
+
+ol,
+ul {
+  color: var(--base-body);
+  padding-left: 13px;
+
+  li {
+    color: var(--base-body);
+  }
+}
+
+blockquote {
+  font-size: clamp(var(--f0), 5vw, var(--f2));
+  color: var(--base-heading);
+  font-family: var(--heading-font);
+
+  &:before,
+  &:after {
+    color: var(--tertiary-main);
+    font-size: var(--s2);
+  }
+
+  &:before {
+    content: "\201C";
+  }
+
+  &:after {
+    content: "\201D";
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+cite {
+  color: var(--tertiary-main) !important;
+  font-family: var(--body-font);
+  font-style: normal;
+  font-size: var(--f1);
+  margin-bottom: 0;
+
+  & + p {
+    margin-top: 0 !important;
+    max-width: unset;
+  }
+}
+
+hr {
+  border-top: var(--s-6) solid var(--base-grey);
+  width: 100%;
+}
+
+a {
+  text-decoration: underline;
+}
+
+address {
+  font-style: normal;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

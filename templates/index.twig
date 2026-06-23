@@ -1,0 +1,42 @@
+{% extends "_base-layouts/generic-page-layout.twig" %}
+{#
+This is the base template that contains the main article
+
+Struture:
+-- Hero
+-- Article
+    -- if password:
+        -- login-template
+    -- else:
+        -- page-content.twig
+#}
+{% block content %}
+
+    {% include "_layouts/_hero.twig" %}
+    <article>
+    {% if entry.passwordProtected|length %}
+        {% if craft.app.request.getParam('password') == entry.passwordProtected[0].password %}
+            {% include "_layouts/_page-content.twig" with {pageBuilder:entry.pageBuilder} %}
+        {% else %}
+            <section class="grid-row">
+                <div class="grid narrowest has-one-column pad-top-300 pad-bottom-300">
+                    <div class="stack pad-300">
+                        <h2>Restricted Content</h2>
+                        <p>Please enter your password to view this page</p>
+                        <form class="grid-flex" action="{{ craft.app.request.getUrl() }}" method="POST" accept-charset="utf-8"
+                              class="form-inline">
+                            {{ csrfInput() }}
+                            <input type="password" name="password" value="">
+                            <button class="button master" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% else %}
+        {% include "_layouts/_page-content.twig" with {pageBuilder:entry.pageBuilder} %}
+    {% endif %}
+    </article>
+
+{% endblock %}
+

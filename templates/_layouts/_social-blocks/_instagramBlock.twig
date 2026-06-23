@@ -1,0 +1,21 @@
+{% set items = craft.instagram.getFeed(block.instagramSource) ?
+    craft.instagram.getFeed(block.instagramSource) :
+    craft.instagram.getFeed() %}
+{# {% dd craft.instagram.getFeed("natgeo") %} #}
+{# {% dd block.instagramSource %} #}
+
+{% for itemKey, item in items|slice(0,block.limit) %}
+    {% if item.thumbnail %}
+        <div class="{{ block.type.handle }} {{ gridGap }}">
+            <a href="#popup-{{ rowKey ~ '-' ~ blockKey ~ '-' ~ itemKey }}" class="open-popup-link insta-tile">
+                <img src="{{ item.thumbnail }}" alt=""/>
+                <p><span class="fas fa-heart"></span>{{ item.likes }}</p>
+            </a>
+            <div id="popup-{{ rowKey ~ '-' ~ blockKey ~ '-' ~ itemKey }}" class="instapopup mfp-hide stack">
+                <img src="{{ item.thumbnail }}" alt=""/>
+                <p><span class="fas fa-heart"></span>{{ item.likes }}</p>
+                <p>{{ item.caption }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}

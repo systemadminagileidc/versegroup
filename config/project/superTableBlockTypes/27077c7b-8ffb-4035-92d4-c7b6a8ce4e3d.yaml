@@ -1,0 +1,75 @@
+field: 4ccea5a8-6b0c-496e-a519-0f23a2085269 # Map Repeater
+fieldLayouts:
+  fec8c465-54ef-4f66-9f69-d32ff6d1ebcb:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: cb9ff0f4-0f42-4aaa-84b7-93014a964d96 # Icon Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 72a411e4-95a8-4b9b-b01c-adeb11b9545c # Map
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  72a411e4-95a8-4b9b-b01c-adeb11b9545c: # Map
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: map
+    instructions: ''
+    name: Map
+    searchable: false
+    settings:
+      boundary: '""'
+      boundaryRestrictionNELat: null
+      boundaryRestrictionNELng: null
+      boundaryRestrictionSWLat: null
+      boundaryRestrictionSWLng: null
+      country: null
+      countryRestriction: null
+      height: null
+      hideAddress: ''
+      hideLatLng: null
+      hideMap: ''
+      hideSearch: ''
+      lat: 51.272154
+      lng: 0.514951
+      maxZoom: '18'
+      minZoom: '3'
+      showCurrentLocation: ''
+      showLatLng: ''
+      showW3WField: false
+      showW3WGrid: false
+      size: normal
+      typeRestriction: null
+      zoom: 15
+    translationKeyFormat: null
+    translationMethod: none
+    type: ether\simplemap\fields\MapField
+  cb9ff0f4-0f42-4aaa-84b7-93014a964d96: # Icon Colour
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: iconColour
+    instructions: ''
+    name: 'Icon Colour'
+    searchable: false
+    settings:
+      defaultColor: '#ff0000'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color

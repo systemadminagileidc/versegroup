@@ -1,0 +1,37 @@
+{% if navigation is defined%}
+
+    {% set offset = offset ?? 0 %}
+    <ul>
+        {% if length is defined %}
+            {% set navItems = navigation|slice(offset,halfLength) %}
+        {% else %}
+            {% set navItems = navigation %}
+        {% endif %}
+        {% for link in navItems %}
+            {% switch link.type.handle %}
+            {% case "navLink" %}
+                {% set target = link.linkTarget.one() %}
+                {% if  target|length > 0 %}
+                    <li>
+                        <a href="{{ target.url }}"
+                           class="nav-link">{{ link.linkText }}</a>
+                        {% if link.subLink |length > 0 %}
+                            <button class="sub-menu fas fa-chevron-down"></button>
+                            <ul class="sub-nav">
+                                {% for subLink in link.subLink.all() %}
+                                    {% set subTarget = subLink.subLinkTarget.one() %}
+                                    {% if  subTarget|length > 0 %}
+                                        <li>
+                                            <a href="{{ subTarget.url }}"
+                                               class="nav-link">{{ subLink.subLinkText }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endswitch %}
+        {% endfor %}
+    </ul>
+{% endif %}

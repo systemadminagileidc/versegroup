@@ -1,0 +1,59 @@
+{# -- Base web layout template that all web requests inherit from -- #}
+{% extends "_base-layouts/global-variables.twig" %}
+
+{%- block htmlPage -%}
+    {% minify %}
+    <!DOCTYPE html>
+        {% block htmlTag %}
+            <html lang="{{ craft.app.language |slice(0,2) }}">
+        {% endblock htmlTag %}
+        {% block headTag %}
+    <head>
+        {% endblock headTag %}
+        {% include "_boilerplate/_partials/head-meta.twig" %}
+        {# -- Page content that should be included in the <head> -- #}
+        {% block headContent %}
+        {% endblock headContent %}
+        <!-- Set Colours -->
+        {% include "_inline-css/_colours.twig" %}
+        {% include '_inline-css/_fonts.twig' %}
+        {% include "_inline-css/_mobile-styles.twig" %}
+
+        <!-- Start Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', '{{ alias('@gtm') }}');</script>
+        <!-- End Google Tag Manager -->
+
+        <style>
+            {{ master.stylesheet ?? '' }}
+        </style>
+    </head>
+
+        {% block bodyTag %}
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id={{ alias('@gtm') }}"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        {% endblock bodyTag %}
+        {# -- Page content that should be included in the <body> -- #}
+        {% block bodyContent %}
+        {% endblock bodyContent %}
+    </body>
+        </html>
+    {% endminify %}
+{%- endblock htmlPage -%}

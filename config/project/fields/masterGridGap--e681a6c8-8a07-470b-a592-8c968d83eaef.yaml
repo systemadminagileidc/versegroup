@@ -1,0 +1,101 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 7265e9bc-b902-4d44-9d77-49c982028299 # Master
+handle: masterGridGap
+instructions: 'Set the space between blocks site wide'
+name: 'Master Grid Gap'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - grid-gap-000
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'XX Small'
+        -
+          - value
+          - grid-gap-100
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'X Small'
+        -
+          - value
+          - grid-gap-200
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - grid-gap-300
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - grid-gap-400
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - grid-gap-500
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'X Large'
+        -
+          - value
+          - grid-gap-600
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'XX Large'
+        -
+          - value
+          - grid-gap-700
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,57 @@
+{% set height = block.blockHeight ?? '' %}
+<div class="map-wrapper {{ height }}">
+    <!-- jsdelivr -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    {% set maps = block.mapRepeater.all() %}
+    {# {% dd maps %} #}
+    {% if maps|length == 1 %}
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ alias('@mapApi') }}&callback=initmultipleMaps&libraries=&v=beta&map_ids={{ alias('@mapId') }}"
+                defer></script>
+        {% if block.hideAddresses != 1 %}
+            <div class="pin-info pad-top-300 pad-bottom-300">
+                <p><strong>{{ maps[0].map.address }}</strong></p>
+                <a target="_blank" href="http://maps.google.com/?q={{ maps[0].map.number ~ ' ' ~  maps[0].map.address }}">Get
+                    Directions</a>
+            </div>
+        {% endif %}
+        <div class="map grid-gap-300 pad-top-300 pad-bottom-300">
+            {{ maps[0].map.lat }},
+            {{ maps[0].map.lng }},
+            {{ maps[0].map.zoom }},
+            {{ alias('@mapId') }},
+            {{ maps[0].iconColour }},
+            {{ maps[0].map.address }}
+
+        </div>
+    {% else %}
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ alias('@mapApi') }}&callback=initmultiplePins&libraries=&v=beta&map_ids={{ alias('@mapId') }}"
+                defer></script>
+    {% if block.hideAddresses != 1 %}
+        <div class="location-info has-four-columns row-four grid-gap-300 pad-top-300 pad-bottom-300">
+            {% for key,mapBlock in block.mapRepeater.all() %}
+                <div class="pin-info">
+                    <p><strong>{{ mapBlock.map.address }}</strong></p>
+                    <a target="_blank"
+                       href="http://maps.google.com/?q={{ mapBlock.map.number ~ ' ' ~  mapBlock.map.address }}">Get
+                        Directions</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+        <div id="map" style="width: 100%; height: 500px; grid-column: 1 / -1">
+            <div class="map-info">
+                {{ maps[0].map.zoom|trim }},{{ alias('@mapId') }}
+            </div>
+
+            {% for key,mapBlock in block.mapRepeater.all() %}
+                <div class="location">
+                    {{ mapBlock.map.lat }},
+                    {{ mapBlock.map.lng }},
+                    {{ mapBlock.iconColour }},
+                    {{ mapBlock.map.address }}
+
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

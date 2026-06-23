@@ -1,0 +1,17 @@
+{% set relatedEntry = block.relatedEntry.one() ?? '' %}
+{% set entry = relatedEntry.entry.one() ?? '' %}
+{% set popup = relatedEntry.popup ?? '' %}
+{% set buttonText = relatedEntry.buttonText %}
+{% set hideButton = relatedEntry.hideButton ?? '' %}
+
+{% set cardBgColour = block.cardBackgroundColour ?? '' %}
+{% set imageCrop = block.imageCrop ?? '' %}
+{% set buttonStyle = block.buttonStyle %}
+{% set buttonColour = block.buttonColour %}
+{% set mobileOptions = block.mobileOptions %}
+{% set useExcerptLimit = block.useExcerptLimit ?? '' %}
+
+
+{% include '_layouts/_block-partials/_entry-card.twig' %}
+
+

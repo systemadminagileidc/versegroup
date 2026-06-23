@@ -1,0 +1,112 @@
+columnSuffix: jwfyifay
+contentColumnType: string
+fieldGroup: 1b7fc8a8-249a-4fc5-b47c-24fe458aba9f # Attractions
+handle: attractionImageFocalPoint
+instructions: ''
+name: 'Attraction Image Focal Point'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Center Center'
+        -
+          - value
+          - center-center
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Top Left'
+        -
+          - value
+          - top-left
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Top Center'
+        -
+          - value
+          - top-center
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Top Right'
+        -
+          - value
+          - top-right
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Center Left'
+        -
+          - value
+          - center-left
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Center Right'
+        -
+          - value
+          - center-right
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Bottom Left'
+        -
+          - value
+          - bottom-left
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Bottom Center'
+        -
+          - value
+          - bottom-center
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Bottom Right'
+        -
+          - value
+          - bottom-right
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

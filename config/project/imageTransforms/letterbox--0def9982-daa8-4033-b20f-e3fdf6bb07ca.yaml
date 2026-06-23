@@ -1,0 +1,9 @@
+format: null
+handle: letterbox
+height: 800
+interlace: none
+mode: crop
+name: Letterbox
+position: center-center
+quality: null
+width: 1920

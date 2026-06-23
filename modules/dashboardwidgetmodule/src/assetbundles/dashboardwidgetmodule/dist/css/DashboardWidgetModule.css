@@ -1,0 +1,56 @@
+/**
+ * Dashboard Widget module for Craft CMS
+ *
+ * Dashboard Widget CSS
+ *
+ * @author    Verse
+ * @copyright Copyright (c) 2021 Verse
+ * @link      Verse.co.uk
+ * @package   DashboardWidgetModule
+ * @since     1.0.0
+ */
+
+:root{
+    --measure: 120ch;
+}
+.welcome * {
+    max-width: var(--measure);
+}
+.welcome iframe {
+    max-width: none;
+    margin-top: 2rem;
+}
+.welcome .logo{
+    margin: 2rem auto 0 auto;
+    text-align: center;
+}
+.welcome .logo a{
+    display: block;
+    margin: 0 auto;
+}
+.welcome .logo p {
+    margin-bottom: 0;
+}
+.welcome ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+.welcome ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+.welcome ul ul, ol ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 15px;
+}
+.welcome ol ol, ul ol {
+    list-style-type: lower-latin;
+    list-style-position: inside;
+    margin-left: 15px;
+}
+.welcome li{
+    text-indent: -1rem;
+}

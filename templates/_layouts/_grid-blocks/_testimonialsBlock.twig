@@ -1,0 +1,57 @@
+{% set entryQuery = craft.entries({
+    section: 'testimonials',
+}) %}
+{% if block.settings|length %}
+    {% set slider = block.settings[0].slider ?? '' %}
+    {% set arrows = block.settings[0].arrows ? 'true' : 'false' %}
+    {% set showImage = block.settings[0].showImage ? true : false %}
+    {% set align = block.settings[0].align ?? '' %}
+{% endif %}
+{% set colour = block.blockColour ?? '' %}
+
+{% set testimonials = block.overide.all() ? block.overide.all() : entryQuery.all() %}
+<div class="{{ block.type.handle }}
+{{ block.blockColour ?? '' }}
+{{ block.blockPadding[0].paddingTop  ?? '' }}
+{{ block.blockPadding[0].paddingBottom ?? '' }}
+{{ block.blockPadding[0].paddingLeft ?? '' }}
+{{ block.blockPadding[0].paddingRight  ?? '' }}
+{{ block.orientation ?? '' }}">
+    {% if block.textArea %}
+        <div class="stack">{{ block.textArea[0].text ?? '' }}</div>
+    {% endif %}
+<div class="testimonials {{ slider }} "
+            {% if slider == 'testimonial-slider' %}
+                data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "arrows":{{ arrows }},"dots":true}'
+            {% endif %}
+    >
+        {% for testimonial in testimonials %}
+            <div class="{{ gridGap }} {% if slider != 'testimonial-slider' %} {{ rowSpace }} {% endif %} {% if showImage and testimonial.thumbnail|length %} {{ block.imageOrientation }} has-two-columns {% endif %}">
+                {% if showImage and testimonial.thumbnail|length %}
+                    {% if testimonial.thumbnail|length %}
+                        {% for asset in testimonial.thumbnail.all() %}
+                            <figure>
+                                <img class="stretch" src="{{ asset.getUrl('portrait') }}" alt="{{ asset.title }}"/>
+                            </figure>
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+                <div class="inner {{ align }}"
+                     style="{% if testimonial.thumbnail|length %} {% else %}text-align:center;padding:0 1rem;{% endif %}">
+                    {% if testimonial.plainExcerpt|length %}
+                        <blockquote class="{{ block.textAlign ?? ''}}">
+                            {% set testimonials = testimonial.plainExcerpt ?? '' %}
+                            {{  testimonials|truncate(fontSettings.testimonialLimit)  }}
+                        </blockquote>
+                    {% endif %}
+                    {% if testimonial.title|length %}
+                        <cite class="{{ block.textAlign ?? ''}}">{{ testimonial.title|striptags }}</cite>
+                    {% endif %}
+                    {% if testimonial.plainText|length %}
+                        <p class="{{ block.textAlign ?? ''}}">{{ testimonial.plainText|striptags }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

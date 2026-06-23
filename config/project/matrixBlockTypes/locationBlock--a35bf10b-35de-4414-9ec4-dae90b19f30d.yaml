@@ -1,0 +1,149 @@
+field: 7308fede-1fa5-44c4-9ef0-c470e247147e # Blocks
+fieldLayouts:
+  2f521d1c-2884-4013-9ad8-584b251dc70b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 44bf8c78-c896-44c3-a69a-fe479cf4eae5 # Block Height
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 9b135b43-64d6-4e56-83ca-01866dc7f4bf # Hide addresses
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 4ccea5a8-6b0c-496e-a519-0f23a2085269 # Map Repeater
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4ccea5a8-6b0c-496e-a519-0f23a2085269: # Map Repeater
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mapRepeater
+    instructions: ''
+    name: 'Map Repeater'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - cb9ff0f4-0f42-4aaa-84b7-93014a964d96 # Icon Colour
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 72a411e4-95a8-4b9b-b01c-adeb11b9545c # Map
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_56_maprepeater}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a Location Pin'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  9b135b43-64d6-4e56-83ca-01866dc7f4bf: # Hide addresses
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideAddresses
+    instructions: ''
+    name: 'Hide addresses'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  44bf8c78-c896-44c3-a69a-fe479cf4eae5: # Block Height
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockHeight
+    instructions: ''
+    name: 'Block Height'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - small
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - medium
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - large
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Extra Large'
+            -
+              - value
+              - extraLarge
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: locationBlock
+name: Location
+sortOrder: 10

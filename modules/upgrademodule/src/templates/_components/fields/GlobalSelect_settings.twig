@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Upgrade Module module for Craft CMS
+ *
+ * GlobalSelect Field Settings
+ *
+ * @author    George Hawthorne
+ * @copyright Copyright (c) 2021 George Hawthorne
+ * @link      thomas-conner.com
+ * @package   UpgradeModule
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("modules\\upgrademodule\\assetbundles\\upgrademodule\\UpgradeModuleAsset") %}
+
+{{ forms.textField({
+    label: 'Some Attribute',
+    instructions: 'Enter some attribute here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: field['someAttribute']})
+}}

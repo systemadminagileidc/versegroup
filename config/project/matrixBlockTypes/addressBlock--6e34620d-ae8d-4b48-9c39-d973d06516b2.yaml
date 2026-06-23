@@ -1,0 +1,122 @@
+field: c2525dff-4e5c-4e3f-8072-ae3a6fd14f15 # Block
+fieldLayouts:
+  b1ab363b-3de4-44f4-bfc6-951e61e0164b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: cf9d3978-e76c-45a5-8cee-4ea60fd8d2ba # Location Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7255ccd5-96af-4a51-bb95-e709f178ddf6 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 73773d5c-4044-4f23-bf99-f49fa3bd58a8 # Map
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7255ccd5-96af-4a51-bb95-e709f178ddf6: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  73773d5c-4044-4f23-bf99-f49fa3bd58a8: # Map
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: map
+    instructions: ''
+    name: Map
+    searchable: false
+    settings:
+      boundary: '""'
+      boundaryRestrictionNELat: null
+      boundaryRestrictionNELng: null
+      boundaryRestrictionSWLat: null
+      boundaryRestrictionSWLng: null
+      country: null
+      countryRestriction: null
+      height: null
+      hideAddress: ''
+      hideLatLng: null
+      hideMap: ''
+      hideSearch: ''
+      lat: 51.272154
+      lng: 0.514951
+      maxZoom: '18'
+      minZoom: '3'
+      showCurrentLocation: ''
+      showLatLng: ''
+      showW3WField: false
+      showW3WGrid: false
+      size: normal
+      typeRestriction: null
+      zoom: 15
+    translationKeyFormat: null
+    translationMethod: none
+    type: ether\simplemap\fields\MapField
+  cf9d3978-e76c-45a5-8cee-4ea60fd8d2ba: # Location Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationTitle
+    instructions: ''
+    name: 'Location Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: addressBlock
+name: 'Address Block'
+sortOrder: 3
