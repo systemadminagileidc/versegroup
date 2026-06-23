@@ -1,0 +1,61 @@
+{
+  "name": "craftcms/aws-s3",
+  "description": "Amazon S3 integration for Craft CMS",
+  "type": "craft-plugin",
+  "keywords": [
+    "aws",
+    "cms",
+    "craftcms",
+    "flysystem",
+    "s3",
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/aws-s3/issues?state=open",
+    "source": "https://github.com/craftcms/aws-s3",
+    "docs": "https://github.com/craftcms/aws-s3/blob/master/README.md",
+    "rss": "https://github.com/craftcms/aws-s3/commits/master.atom"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "craftcms/cms": "^3.4.0",
+    "league/flysystem-aws-s3-v3": "^1.0.28"
+  },
+  "require-dev": {
+    "craftcms/phpstan": "dev-main",
+    "craftcms/ecs": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "craft\\awss3\\": "src/"
+    }
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "extra": {
+    "name": "Amazon S3",
+    "handle": "aws-s3",
+    "documentationUrl": "https://github.com/craftcms/aws-s3/blob/master/README.md"
+  },
+  "config": {
+    "platform": {
+      "php": "7.2.5"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}

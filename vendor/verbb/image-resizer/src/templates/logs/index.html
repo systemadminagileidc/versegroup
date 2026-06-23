@@ -1,0 +1,69 @@
+{% extends 'image-resizer/_layouts' %}
+{% import "image-resizer/_macros" as imageResizerMacro %}
+
+{% set crumbs = [
+    { label: "Image Resizer (Verse)" | t('image-resizer'), url: url('image-resizer') },
+    { label: "Logs" | t('image-resizer'), url: url('image-resizer/logs') }
+] %}
+
+{% set selectedTab = 'logs' %}
+
+{% block blockContent %}
+
+    <form method="post" accept-charset="UTF-8">
+        {{ actionInput('image-resizer/logs/clear') }}
+        {{ csrfInput() }}
+
+        <input class="btn right" type="submit" value="{{ 'Clear logs' | t('image-resizer') }}">
+    </form>
+
+    <table id="logs" class="data fullwidth collapsible image-resizer-logs-table">
+        <thead>
+            <tr>
+                <th scope="col">{{ "Filename" | t('image-resizer') }}</th>
+                <th scope="col">{{ "Result" | t('image-resizer') }}</th>
+                <th scope="col">{{ "Timestamp" | t('image-resizer') }}</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for entry in logEntries %}
+                <tr>
+                    <td class="col-label" data-title="{{ 'Filename' | t('image-resizer') }}">
+                        <span class="">{{ entry.filename }}</span>
+                    </td>
+
+                    <td class="col-label" data-title="{{ 'Result' | t('image-resizer') }}">
+                        <span class="log-result {{ entry.result }}">{{ entry.result }}</span>
+
+                        <span class="log-label {{ entry.result }}">
+                            {{ entry.description }}
+
+                            {% if entry.handle == 'success' %}
+                                {% set prevSize = entry.data.prev.size %}
+                                {% set currSize = entry.data.curr.size %}
+                                {% set saved = prevSize - currSize %}
+
+                                {% set filesize = imageResizerMacro.filesize(saved) %}
+                                {% set percentage = ((saved / prevSize) * 100) | number_format %}
+
+                                {{ "Saved {perc}% ({num})." | t('image-resizer', { num: filesize, perc: percentage }) }}
+                            {% endif %}
+
+                            {% if entry.handle == 'error' %}
+                                {{ entry.data.message }}
+                            {% endif %}
+                        </span>
+                    </td>
+
+                    <td data-title="{{ 'Timestamp' | t('image-resizer') }}">
+                        <code>
+                            {{ entry.dateTime | date('short') ~ ' ' ~ entry.dateTime | time('short') }}
+                        </code>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

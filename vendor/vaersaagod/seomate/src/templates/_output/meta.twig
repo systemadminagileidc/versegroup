@@ -1,0 +1,17 @@
+{% set meta = seomate.meta %}
+<link rel="home" href="{{ siteUrl() }}"/>
+{% if craft.app.getResponse().getStatusCode() < 400 %}
+<link rel="canonical" href="{{ seomate.canonicalUrl }}">
+{% if meta['og:url'] is not defined %}<meta property="og:url" content="{{ seomate.canonicalUrl }}"/>{% endif %}
+{% if meta['twitter:url'] is not defined %}<meta name="twitter:url" content="{{ seomate.canonicalUrl }}"/>{% endif %}
+{% if meta['og:locale'] is not defined %}<meta property="og:locale" content="{{ craft.app.getSites().getCurrentSite().language }}"/>{% endif %}
+{% endif %}
+
+{% for key, data in meta if data != '' %}
+    {{- renderMetaTag(key, data) }}
+{% endfor %}
+
+{% set alternateUrls = seomate.alternateUrls ?? null %}
+{% for alternateUrl in alternateUrls if alternateUrls -%}
+    <link rel="alternate" href="{{ alternateUrl.url }}" hreflang="{{ alternateUrl.language }}"/>
+{% endfor %}

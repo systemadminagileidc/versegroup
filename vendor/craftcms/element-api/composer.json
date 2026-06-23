@@ -1,0 +1,61 @@
+{
+  "name": "craftcms/element-api",
+  "description": "Create a JSON API for your elements in Craft",
+  "version": "2.8.6.1",
+  "type": "craft-plugin",
+  "keywords": [
+    "api",
+    "cms",
+    "craftcms",
+    "json",
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/element-api/issues?state=open",
+    "source": "https://github.com/craftcms/element-api",
+    "docs": "https://github.com/craftcms/element-api/blob/v2/README.md",
+    "rss": "https://github.com/craftcms/element-api/commits/v2.atom"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "craftcms/cms": "^3.6.0",
+    "league/fractal": "^0.18.0"
+  },
+  "require-dev": {
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "craft\\elementapi\\": "src/"
+    }
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "extra": {
+    "name": "Element API",
+    "handle": "element-api",
+    "documentationUrl": "https://github.com/craftcms/element-api/blob/v2/README.md"
+  },
+  "config": {
+    "platform": {
+      "php": "7.2.5"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}

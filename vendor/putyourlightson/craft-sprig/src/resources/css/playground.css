@@ -1,0 +1,91 @@
+#header .warning {
+    margin-top: 3px;
+    font-size: 20px;
+}
+
+.playground {
+    height: 600px;
+    display: flex;
+    align-items: flex-start;
+ }
+
+.playground > div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.playground > div:first-of-type {
+    margin-right: 10px;
+}
+
+.playground > div > div {
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.playground .editor {
+    height: 380px;
+}
+
+.playground .variables {
+    height: 66px;
+    flex-grow: 0;
+}
+
+.playground code, .playground .code {
+    font-size: 1em !important;
+}
+
+.playground .sprig-component, .playground textarea.field, .playground input.field {
+    border: none;
+    padding: 10px 5px 8px;
+    background: #fff;
+    margin: 0;
+}
+
+.playground textarea.field:focus, .playground input.field:focus {
+    outline: none;
+    border: 1px solid #e4edf6;
+    padding: 9px 4px 7px;
+}
+
+.playground textarea.field {
+    height: 88%;
+    resize: none;
+}
+
+.playground .output {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.playground .output .sprig-component {
+    height: 380px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.playground .topright {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    margin: 20px;
+}
+
+.playground #spinner {
+    position: absolute;
+    margin: -8px 8px !important;
+}
+
+#share-url {
+    width: 350px;
+}
+
+/*--- Fix ugly accessibility focus on the Monaco editor cursor ---*/
+
+.monaco-mouse-cursor-text:focus,
+.monaco-mouse-cursor-text:focus-visible {
+    box-shadow: none!important;
+}
